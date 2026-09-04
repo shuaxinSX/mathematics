@@ -690,6 +690,65 @@
       box-shadow: 0 0 0 3px rgba(184, 141, 61, 0.15);
     }
 
+    
+    /* 证书预设体系切换栏 */
+    .preset-selector-bar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(184, 141, 61, 0.35);
+      border-radius: 9999px;
+      padding: 6px 16px;
+      margin-bottom: 22px;
+      box-shadow: 0 4px 15px rgba(184, 141, 61, 0.08);
+      z-index: 60;
+    }
+    .preset-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #8c6721;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .preset-tab {
+      background: none;
+      border: 1px solid transparent;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .preset-tab:hover {
+      color: #8c6721;
+      background: rgba(212, 175, 55, 0.12);
+    }
+    .preset-tab.active {
+      background: linear-gradient(135deg, #dfc07e, #b88d3d);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(184, 141, 61, 0.3);
+      font-weight: 700;
+    }
+    .portal-link-btn {
+      color: #7c3aed;
+      border: 1px dashed rgba(124, 58, 237, 0.4);
+      background: rgba(124, 58, 237, 0.06);
+    }
+    .portal-link-btn:hover {
+      background: rgba(124, 58, 237, 0.12);
+      color: #6d28d9;
+    }
+
     /* ==========================================================================
        打印与 A4 导出支持 (@media print)
        ========================================================================== */
@@ -753,6 +812,17 @@
   </header>
 
   <!-- 快捷功能与视图切换工具条 -->
+  
+  <!-- 证书体系预设切换器 -->
+  <div class="preset-selector-bar">
+    <span class="preset-label">📜 选择证书体系：</span>
+    <button class="preset-tab active" id="tabQhExpert" onclick="applyCertPreset('qihang-expert')">🎓 启航联盟 · 命题专家聘书</button>
+    <button class="preset-tab" id="tabQhCoach" onclick="applyCertPreset('qihang-coach')">🏅 启航联盟 · 金牌主教练聘书</button>
+    <button class="preset-tab" id="tabQhSchool" onclick="applyCertPreset('qihang-school')">🏛️ 启航联盟 · 理事成员校授牌</button>
+    <button class="preset-tab" id="tabNorthExpert" onclick="applyCertPreset('north-expert')">📜 北方奥赛 · 命题专家聘书 (历史原版)</button>
+    <a href="qihang-alliance-logo/index.html" class="preset-tab portal-link-btn" title="直达启航联盟品牌视觉规范门户">🎨 查看启航联盟视觉规范门户 →</a>
+  </div>
+
   <div class="toolbar-container">
     <button class="btn btn-gold" id="btnFlip" onclick="toggleCardFlip()">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -823,7 +893,7 @@
           <!-- 1. 顶部学术徽记与标题 -->
           <div class="cert-header">
             <!-- 专属奥林匹克学术殿堂金徽 -->
-            <div class="emblem-wrapper">
+            <div class="emblem-wrapper" id="displayEmblemWrapper">
               <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <!-- 桂冠 -->
                 <path d="M22,65 C18,50 22,34 33,23 C36,32 30,46 32,56" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
@@ -847,7 +917,7 @@
               </svg>
             </div>
 
-            <div class="org-en-sub">NORTH CHINA MATHEMATICAL OLYMPIAD</div>
+            <div class="org-en-sub" id="displayOrgEn">NORTH CHINA MATHEMATICAL OLYMPIAD</div>
             <div class="org-cn-sub" id="displayOrgHead">第二十一届中国北方数学奥林匹克</div>
             
             <div class="ornament-line">
@@ -856,8 +926,8 @@
               <span class="ornament-icon">✦</span>
             </div>
 
-            <h2 class="main-title">聘 任 证 书</h2>
-            <div class="title-en">CERTIFICATE OF APPOINTMENT</div>
+            <h2 class="main-title" id="displayMainTitle">聘 任 证 书</h2>
+            <div class="title-en" id="displayTitleEn">CERTIFICATE OF APPOINTMENT</div>
           </div>
 
           <!-- 2. 正文核心授受文案 -->
@@ -885,27 +955,7 @@
               <div class="issue-date" id="displayDate">二〇二四年八月</div>
 
               <!-- 矢量朱砂印章 (10 字中国北方数学奥林匹克标准排布) -->
-              <svg class="official-seal-svg" viewBox="0 0 120 120">
-                <!-- 印泥外圈 -->
-                <circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="3" stroke-dasharray="100 0.5"/>
-                <circle cx="60" cy="60" r="52" fill="none" stroke="#c92a2a" stroke-width="0.8"/>
-                
-                <!-- 五角星 -->
-                <polygon points="60,38 65,49 77,50 68,58 71,70 60,63 49,70 52,58 43,50 55,49" fill="#c92a2a"/>
-                
-                <!-- 弧形沿圆文字：中国北方数学奥林匹克 (向内微调，留出优雅规整边距) -->
-                <path id="sealPathTop" d="M 20.5,60 A 39.5,39.5 0 1,1 99.5,60" fill="none"/>
-                <text fill="#c92a2a" font-size="9.8" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="1.1">
-                  <textPath href="#sealPathTop" startOffset="50%" text-anchor="middle">
-                    中国北方数学奥林匹克
-                  </textPath>
-                </text>
-
-                <!-- 底部横排文字：组织委员会 -->
-                <text x="60" y="86" text-anchor="middle" fill="#c92a2a" font-size="11.5" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="3">
-                  组织委员会
-                </text>
-              </svg>
+              <div id="displaySealWrapper"><svg class="official-seal-svg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="3" stroke-dasharray="100 0.5"/><circle cx="60" cy="60" r="52" fill="none" stroke="#c92a2a" stroke-width="0.8"/><polygon points="60,38 65,49 77,50 68,58 71,70 60,63 49,70 52,58 43,50 55,49" fill="#c92a2a"/><path id="sealPathTopQH" d="M 16,60 A 44,44 0 1,1 104,60" fill="none"/><text fill="#c92a2a" font-size="7.6" font-family="'Noto Serif SC', serif" font-weight="900" letter-spacing="0.8"><textPath href="#sealPathTopQH" startOffset="50%" text-anchor="middle">高中数学奥林匹克启航联盟</textPath></text><text x="60" y="86" text-anchor="middle" fill="#c92a2a" font-size="10.5" font-family="'Noto Serif SC', serif" font-weight="900" letter-spacing="2.5">组织委员会</text><text x="60" y="98" text-anchor="middle" fill="#c92a2a" font-size="5.5" font-family="'Space Grotesk', monospace" font-weight="700" letter-spacing="1">★ 专用电子印鉴 ★</text></svg></div>
             </div>
 
           </div>
@@ -938,53 +988,10 @@
 
         <!-- 背面中央主视觉徽章 (高定浅色底座 + 香槟金浮雕) -->
         <div class="back-center-piece">
-          <div class="grand-olympiad-crest">
-            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- 浅色底盘微发光 -->
-              <circle cx="100" cy="100" r="95" fill="rgba(255, 255, 255, 0.9)" stroke="#b88d3d" stroke-width="1.2" stroke-dasharray="3 3"/>
-              <circle cx="100" cy="100" r="90" stroke="url(#goldBackGrad)" stroke-width="2.5"/>
-              <circle cx="100" cy="100" r="70" stroke="#b88d3d" stroke-width="1"/>
-
-              <!-- 环形文字：NORTH CHINA MATHEMATICAL OLYMPIAD -->
-              <path id="backSealPath" d="M 28,100 A 72,72 0 1,1 172,100" fill="none"/>
-              <text fill="#7b5917" font-size="8.5" font-family="'Cinzel', serif" font-weight="700" letter-spacing="3.2">
-                <textPath href="#backSealPath" startOffset="50%" text-anchor="middle">
-                  NORTH CHINA MATHEMATICAL OLYMPIAD
-                </textPath>
-              </text>
-
-              <!-- 环形底部：★ AD VERITATEM ★ -->
-              <path id="backSealPathBot" d="M 166,100 A 72,72 0 0,1 34,100" fill="none"/>
-              <text fill="#b88d3d" font-size="8" font-family="'Cinzel', serif" font-weight="700" letter-spacing="4">
-                <textPath href="#backSealPathBot" startOffset="50%" text-anchor="middle">
-                  ★ AD VERITATEM ★
-                </textPath>
-              </text>
-
-              <!-- 中央几何：柏拉图正二十面体与神圣比例晶体 -->
-              <g transform="translate(100, 100) scale(0.65)">
-                <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" stroke="url(#goldBackGrad)" stroke-width="3" fill="rgba(253, 251, 247, 0.85)"/>
-                <line x1="0" y1="-60" x2="0" y2="60" stroke="#b88d3d" stroke-width="2"/>
-                <line x1="-52" y1="-30" x2="52" y2="30" stroke="#b88d3d" stroke-width="1.5"/>
-                <line x1="-52" y1="30" x2="52" y2="-30" stroke="#b88d3d" stroke-width="1.5"/>
-                <polygon points="0,-60 52,30 -52,30" stroke="#c99a3e" stroke-width="2" fill="none"/>
-                <polygon points="0,60 -52,-30 52,-30" stroke="#c99a3e" stroke-width="2" fill="none"/>
-                <circle cx="0" cy="0" r="5" fill="url(#goldBackGrad)"/>
-              </g>
-
-              <defs>
-                <linearGradient id="goldBackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#dfc07e"/>
-                  <stop offset="35%" stop-color="#b88d3d"/>
-                  <stop offset="70%" stop-color="#87611a"/>
-                  <stop offset="100%" stop-color="#dfc07e"/>
-                </linearGradient>
-              </defs>
-            </svg>
-          </div>
+          <div class="grand-olympiad-crest" id="displayBackCrestWrapper"></div>
 
           <h3 class="back-main-heading">North China Mathematical Olympiad</h3>
-          <div class="back-cn-heading">中国北方数学奥林匹克</div>
+          <div class="back-cn-heading" id="displayBackCnHeading">中国北方数学奥林匹克</div>
 
           <div class="back-motto-ribbon">
             <span class="back-latin-motto">Veritas et Numerorum Pulchritudo</span>
@@ -1114,6 +1121,285 @@
     });
 
     // 实时同步输入框内容到证书视图
+    
+    // ==========================================
+    // 启航联盟与北方奥赛 4 大证书体系数据预设
+    // ==========================================
+    const SVG_EMBLEM_QIHANG = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="goldCrestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#dfc07e" />
+          <stop offset="40%" stop-color="#b88d3d" />
+          <stop offset="80%" stop-color="#87611a" />
+          <stop offset="100%" stop-color="#dfc07e" />
+        </linearGradient>
+      </defs>
+      <circle cx="50" cy="50" r="46" stroke="url(#goldCrestGrad)" stroke-width="1.8"/>
+      <circle cx="50" cy="50" r="42" stroke="url(#goldCrestGrad)" stroke-width="0.8" stroke-dasharray="2 2"/>
+      <g transform="translate(18, 14) scale(0.32)">
+        <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="url(#goldCrestGrad)"/>
+        <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="url(#goldCrestGrad)"/>
+        <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="url(#goldCrestGrad)"/>
+        <circle cx="138" cy="28" r="7" fill="url(#goldCrestGrad)"/>
+      </g>
+    </svg>`;
+
+    const SVG_EMBLEM_NORTH = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M22,65 C18,50 22,34 33,23 C36,32 30,46 32,56" stroke="url(#goldGradN)" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M78,65 C82,50 78,34 67,23 C64,32 70,46 68,56" stroke="url(#goldGradN)" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="50" cy="50" r="30" fill="#fcfaf5" stroke="url(#goldGradN)" stroke-width="2"/>
+      <polygon points="50,26 68,39 61,61 39,61 32,39" stroke="url(#goldGradN)" stroke-width="1.5" fill="rgba(212, 175, 55, 0.15)"/>
+      <text x="50" y="56" text-anchor="middle" fill="url(#goldGradN)" font-family="'Cinzel', serif" font-size="19" font-weight="bold">π</text>
+      <path d="M30,76 L50,71 L70,76 L64,84 L50,80 L36,84 Z" fill="url(#goldGradN)"/>
+      <defs>
+        <linearGradient id="goldGradN" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#dfc07e" />
+          <stop offset="40%" stop-color="#b88d3d" />
+          <stop offset="80%" stop-color="#87611a" />
+          <stop offset="100%" stop-color="#dfc07e" />
+        </linearGradient>
+      </defs>
+    </svg>`;
+
+    const SVG_SEAL_QIHANG = `<svg class="official-seal-svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="3" stroke-dasharray="100 0.5"/>
+      <circle cx="60" cy="60" r="52" fill="none" stroke="#c92a2a" stroke-width="0.8"/>
+      <polygon points="60,38 65,49 77,50 68,58 71,70 60,63 49,70 52,58 43,50 55,49" fill="#c92a2a"/>
+      <path id="sealPathTopQH" d="M 16,60 A 44,44 0 1,1 104,60" fill="none"/>
+      <text fill="#c92a2a" font-size="7.6" font-family="'Noto Serif SC', serif" font-weight="900" letter-spacing="0.8">
+        <textPath href="#sealPathTopQH" startOffset="50%" text-anchor="middle">
+          高中数学奥林匹克启航联盟
+        </textPath>
+      </text>
+      <text x="60" y="86" text-anchor="middle" fill="#c92a2a" font-size="10.5" font-family="'Noto Serif SC', serif" font-weight="900" letter-spacing="2.5">
+        组织委员会
+      </text>
+      <text x="60" y="98" text-anchor="middle" fill="#c92a2a" font-size="5.5" font-family="'Space Grotesk', monospace" font-weight="700" letter-spacing="1">
+        ★ 专用电子印鉴 ★
+      </text>
+    </svg>`;
+
+    const SVG_SEAL_NORTH = `<svg class="official-seal-svg" viewBox="0 0 120 120">
+      <circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="3" stroke-dasharray="100 0.5"/>
+      <circle cx="60" cy="60" r="52" fill="none" stroke="#c92a2a" stroke-width="0.8"/>
+      <polygon points="60,38 65,49 77,50 68,58 71,70 60,63 49,70 52,58 43,50 55,49" fill="#c92a2a"/>
+      <path id="sealPathTopN" d="M 20.5,60 A 39.5,39.5 0 1,1 99.5,60" fill="none"/>
+      <text fill="#c92a2a" font-size="9.8" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="1.1">
+        <textPath href="#sealPathTopN" startOffset="50%" text-anchor="middle">
+          中国北方数学奥林匹克
+        </textPath>
+      </text>
+      <text x="60" y="86" text-anchor="middle" fill="#c92a2a" font-size="11.5" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="3">
+        组织委员会
+      </text>
+    </svg>`;
+
+    const SVG_BACK_CREST_QIHANG = `<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="95" fill="rgba(255, 255, 255, 0.9)" stroke="#b88d3d" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <circle cx="100" cy="100" r="90" stroke="url(#goldBackGradQ)" stroke-width="2.5"/>
+      <circle cx="100" cy="100" r="70" stroke="#b88d3d" stroke-width="1"/>
+      <path id="backSealPathQ" d="M 24,100 A 76,76 0 1,1 176,100" fill="none"/>
+      <text fill="#7b5917" font-size="7.5" font-family="'Cinzel', serif" font-weight="800" letter-spacing="2.2">
+        <textPath href="#backSealPathQ" startOffset="50%" text-anchor="middle">
+          HIGH SCHOOL MATHEMATICAL OLYMPIAD
+        </textPath>
+      </text>
+      <path id="backSealPathBotQ" d="M 170,100 A 74,74 0 0,1 30,100" fill="none"/>
+      <text fill="#b88d3d" font-size="7.5" font-family="'Cinzel', serif" font-weight="800" letter-spacing="3">
+        <textPath href="#backSealPathBotQ" startOffset="50%" text-anchor="middle">
+          ★ QIHANG ALLIANCE · π · e · i · φ ★
+        </textPath>
+      </text>
+      <g transform="translate(48, 48) scale(0.52)">
+        <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="url(#goldBackGradQ)"/>
+        <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="url(#goldBackGradQ)"/>
+        <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="url(#goldBackGradQ)"/>
+        <circle cx="138" cy="28" r="7" fill="url(#goldBackGradQ)"/>
+      </g>
+      <defs>
+        <linearGradient id="goldBackGradQ" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#dfc07e"/>
+          <stop offset="35%" stop-color="#b88d3d"/>
+          <stop offset="70%" stop-color="#87611a"/>
+          <stop offset="100%" stop-color="#dfc07e"/>
+        </linearGradient>
+      </defs>
+    </svg>`;
+
+    const SVG_BACK_CREST_NORTH = `<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="100" cy="100" r="95" fill="rgba(255, 255, 255, 0.9)" stroke="#b88d3d" stroke-width="1.2" stroke-dasharray="3 3"/>
+      <circle cx="100" cy="100" r="90" stroke="url(#goldBackGradN)" stroke-width="2.5"/>
+      <circle cx="100" cy="100" r="70" stroke="#b88d3d" stroke-width="1"/>
+      <path id="backSealPathN" d="M 28,100 A 72,72 0 1,1 172,100" fill="none"/>
+      <text fill="#7b5917" font-size="8.5" font-family="'Cinzel', serif" font-weight="700" letter-spacing="3.2">
+        <textPath href="#backSealPathN" startOffset="50%" text-anchor="middle">
+          NORTH CHINA MATHEMATICAL OLYMPIAD
+        </textPath>
+      </text>
+      <path id="backSealPathBotN" d="M 166,100 A 72,72 0 0,1 34,100" fill="none"/>
+      <text fill="#b88d3d" font-size="8" font-family="'Cinzel', serif" font-weight="700" letter-spacing="4">
+        <textPath href="#backSealPathBotN" startOffset="50%" text-anchor="middle">
+          ★ AD VERITATEM ★
+        </textPath>
+      </text>
+      <g transform="translate(100, 100) scale(0.65)">
+        <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" stroke="url(#goldBackGradN)" stroke-width="3" fill="rgba(253, 251, 247, 0.85)"/>
+        <line x1="0" y1="-60" x2="0" y2="60" stroke="#b88d3d" stroke-width="2"/>
+        <line x1="-52" y1="-30" x2="52" y2="30" stroke="#b88d3d" stroke-width="1.5"/>
+        <line x1="-52" y1="30" x2="52" y2="-30" stroke="#b88d3d" stroke-width="1.5"/>
+        <polygon points="0,-60 52,30 -52,30" stroke="#c99a3e" stroke-width="2" fill="none"/>
+        <polygon points="0,60 -52,-30 52,-30" stroke="#c99a3e" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="0" r="5" fill="url(#goldBackGradN)"/>
+      </g>
+      <defs>
+        <linearGradient id="goldBackGradN" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#dfc07e"/>
+          <stop offset="35%" stop-color="#b88d3d"/>
+          <stop offset="70%" stop-color="#87611a"/>
+          <stop offset="100%" stop-color="#dfc07e"/>
+        </linearGradient>
+      </defs>
+    </svg>`;
+
+    const CERT_PRESETS = {
+      'qihang-expert': {
+        pageTitle: '高中数学奥林匹克启航联盟 · 命题专家聘任证书',
+        orgEn: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE',
+        orgCn: '全国高中数学奥林匹克启航联盟',
+        mainTitle: '聘 任 证 书',
+        titleEn: 'CERTIFICATE OF APPOINTMENT',
+        name: '张景中',
+        suffix: '院士',
+        role: '学术委员会顾问 · 命题专家组组长',
+        contest: '全国高中数学奥林匹克启航联盟',
+        authority: '高中数学奥林匹克启航联盟组织委员会',
+        date: '二〇二六年九月',
+        affirmation: '鉴于您在数学奥林匹克领域的深厚学术造诣与崇高威望，特聘请您担任',
+        bodyEnding: '圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。',
+        emblem: SVG_EMBLEM_QIHANG,
+        seal: SVG_SEAL_QIHANG,
+        backCrest: SVG_BACK_CREST_QIHANG,
+        backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
+        backCnHead: '全国高中数学奥林匹克启航联盟',
+        backMotto: '“Per Aspera ad Astra · 启航数学真理之光”'
+      },
+      'qihang-coach': {
+        pageTitle: '高中数学奥林匹克启航联盟 · 金牌主教练聘任证书',
+        orgEn: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE',
+        orgCn: '全国高中数学奥林匹克启航联盟',
+        mainTitle: '聘 任 证 书',
+        titleEn: 'CERTIFICATE OF APPOINTMENT',
+        name: '李晨阳',
+        suffix: '特级教师',
+        role: '国家集训队奥林匹克金牌主教练',
+        contest: '全国高中数学奥林匹克启航联盟',
+        authority: '高中数学奥林匹克启航联盟组织委员会',
+        date: '二〇二六年九月',
+        affirmation: '鉴于您在拔尖创新人才培养中的杰出教练水准与卓著育人成果，特聘任您为',
+        bodyEnding: '主持金牌集训队课程指导与学术梯队集训。特发此证，谨致崇高敬意。',
+        emblem: SVG_EMBLEM_QIHANG,
+        seal: SVG_SEAL_QIHANG,
+        backCrest: SVG_BACK_CREST_QIHANG,
+        backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
+        backCnHead: '全国高中数学奥林匹克启航联盟',
+        backMotto: '“Per Aspera ad Astra · 培根铸魂 启智润心”'
+      },
+      'qihang-school': {
+        pageTitle: '高中数学奥林匹克启航联盟 · 理事成员校授牌证书',
+        orgEn: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE',
+        orgCn: '全国高中数学奥林匹克启航联盟',
+        mainTitle: '成 员 校 证 书',
+        titleEn: 'CERTIFICATE OF MEMBERSHIP',
+        name: '清华大学附属中学',
+        suffix: '',
+        role: '首批学术理事成员校 · 拔尖创新联合培养基地',
+        contest: '全国高中数学奥林匹克启航联盟',
+        authority: '高中数学奥林匹克启航联盟组织委员会',
+        date: '二〇二六年九月',
+        affirmation: '兹确认该校正式加入全国高中数学奥林匹克启航联盟，确立为',
+        bodyEnding: '携手推进高阶数学思维拔尖创新人才早期贯通培养。特颁此证。',
+        emblem: SVG_EMBLEM_QIHANG,
+        seal: SVG_SEAL_QIHANG,
+        backCrest: SVG_BACK_CREST_QIHANG,
+        backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
+        backCnHead: '全国高中数学奥林匹克启航联盟',
+        backMotto: '“Sovereign Alliance of Mathematical Excellence”'
+      },
+      'north-expert': {
+        pageTitle: '第二十一届中国北方数学奥林匹克 · 命题专家聘任证书',
+        orgEn: 'NORTH CHINA MATHEMATICAL OLYMPIAD',
+        orgCn: '第二十一届中国北方数学奥林匹克',
+        mainTitle: '聘 任 证 书',
+        titleEn: 'CERTIFICATE OF APPOINTMENT',
+        name: '顾晓明',
+        suffix: '教授',
+        role: '命题委员会特聘专家',
+        contest: '第二十一届中国北方数学奥林匹克',
+        authority: '中国北方数学奥林匹克组织委员会',
+        date: '二〇二四年八月',
+        affirmation: '鉴于您在数学奥林匹克领域的深厚学术造诣与卓越贡献，特聘请您担任',
+        bodyEnding: '圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。',
+        emblem: SVG_EMBLEM_NORTH,
+        seal: SVG_SEAL_NORTH,
+        backCrest: SVG_BACK_CREST_NORTH,
+        backMainHead: 'NORTH CHINA MATHEMATICAL OLYMPIAD',
+        backCnHead: '第二十一届中国北方数学奥林匹克',
+        backMotto: '“Veritas et Numerorum Pulchritudo”'
+      }
+    };
+
+    let currentPresetKey = 'qihang-expert';
+
+    function applyCertPreset(presetKey) {
+      currentPresetKey = presetKey;
+      const p = CERT_PRESETS[presetKey];
+      if (!p) return;
+
+      // 更新 Tab 高亮
+      document.querySelectorAll('.preset-tab').forEach(tab => tab.classList.remove('active'));
+      if (presetKey === 'qihang-expert') document.getElementById('tabQhExpert').classList.add('active');
+      if (presetKey === 'qihang-coach') document.getElementById('tabQhCoach').classList.add('active');
+      if (presetKey === 'qihang-school') document.getElementById('tabQhSchool').classList.add('active');
+      if (presetKey === 'north-expert') document.getElementById('tabNorthExpert').classList.add('active');
+
+      // 更新页面标题与页眉
+      document.getElementById('pageMainHeader').textContent = p.pageTitle;
+      document.title = p.pageTitle;
+
+      // 更新正面
+      document.getElementById('displayEmblemWrapper').innerHTML = p.emblem;
+      document.getElementById('displayOrgEn').textContent = p.orgEn;
+      document.getElementById('displayOrgHead').textContent = p.orgCn;
+      document.getElementById('displayMainTitle').textContent = p.mainTitle;
+      document.getElementById('displayTitleEn').textContent = p.titleEn;
+
+      document.getElementById('displayName').textContent = p.name;
+      document.getElementById('displayTitleSuffix').textContent = p.suffix;
+      document.getElementById('displayRoleName').textContent = p.role;
+      document.getElementById('displayContestName').textContent = p.contest;
+      document.getElementById('displayBodyText').textContent = p.bodyEnding;
+      
+      const affirmEl = document.querySelector('.academic-affirmation');
+      if (affirmEl) affirmEl.textContent = p.affirmation;
+
+      document.getElementById('displayAuthorityName').textContent = p.authority;
+      document.getElementById('displayDate').textContent = p.date;
+      document.getElementById('displaySealWrapper').innerHTML = p.seal;
+
+      // 更新背面
+      document.getElementById('displayBackCrestWrapper').innerHTML = p.backCrest;
+      document.getElementById('displayBackMainHeading').textContent = p.backMainHead;
+      document.getElementById('displayBackCnHeading').textContent = p.backCnHead;
+      document.getElementById('displayBackMotto').textContent = p.backMotto;
+
+      // 同步输入框
+      document.getElementById('inputName').value = p.name;
+      document.getElementById('inputSuffix').value = p.suffix;
+      document.getElementById('inputRole').value = p.role;
+      document.getElementById('inputContest').value = p.contest;
+      document.getElementById('inputDate').value = p.date;
+    }
+
     function updateCertData() {
       const name = document.getElementById('inputName').value || '受聘专家';
       const suffix = document.getElementById('inputSuffix').value;
@@ -1146,6 +1432,7 @@
         bodyTextEl.textContent = '圆满完成本年度竞赛命题工作，特此证明。';
       }
     }
+    applyCertPreset('qihang-expert');
   </script>
 </body>
 </html>

@@ -1,0 +1,36 @@
+<svg viewBox="0 0 600 200" width="1200" height="400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="logoTextGold" x1="0" y1="0" x2="600" y2="100" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="20%" stop-color="#FDE68A"/>
+      <stop offset="60%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="subTextPurple" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="50%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#E879F9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 几何对齐基准参考线 (淡紫虚线) -->
+  <line x1="40" y1="40" x2="560" y2="40" stroke="rgba(192, 132, 252, 0.25)" stroke-dasharray="4 4"/>
+  <line x1="40" y1="125" x2="560" y2="125" stroke="rgba(192, 132, 252, 0.25)" stroke-dasharray="4 4"/>
+  <line x1="40" y1="168" x2="560" y2="168" stroke="rgba(192, 132, 252, 0.25)" stroke-dasharray="4 4"/>
+
+  <!-- 中文标准字：启航联盟 (专属定制字距 0.18em，几何微衬线与锋芒切角) -->
+  <text x="50" y="118" font-family="'Noto Serif SC', 'Songti SC', 'STSong', serif" font-size="78" font-weight="900" fill="url(#logoTextGold)" letter-spacing="14">
+    启航联盟
+  </text>
+
+  <!-- 英文标准字：QIHANG ALLIANCE (全大写字母，严格与中文两端精准黄金对齐) -->
+  <text x="52" y="158" font-family="'Cinzel', 'Space Grotesk', sans-serif" font-size="20" font-weight="800" fill="url(#subTextPurple)" letter-spacing="10">
+    QIHANG ALLIANCE
+  </text>
+  
+  <!-- 字距与比例标定徽标 -->
+  <rect x="520" y="142" width="40" height="18" rx="3" fill="rgba(245, 158, 11, 0.2)" stroke="#F59E0B" stroke-width="1"/>
+  <text x="540" y="155" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="9" font-weight="700" fill="#FEF08A">
+    0.18em
+  </text>
+</svg>

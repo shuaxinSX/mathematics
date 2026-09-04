@@ -1,0 +1,25 @@
+<svg viewBox="0 0 128 128" width="256" height="256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="favBg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#2E1065"/>
+      <stop offset="100%" stop-color="#0F0521"/>
+    </linearGradient>
+    <linearGradient id="favSail" x1="20" y1="100" x2="100" y2="20" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#7C3AED"/>
+      <stop offset="50%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#FDE047"/>
+    </linearGradient>
+  </defs>
+
+  <!-- iOS 柔和超椭圆容器底座 (Squircle) -->
+  <rect x="2" y="2" width="124" height="124" rx="28" fill="url(#favBg)" stroke="#F59E0B" stroke-width="2.5"/>
+
+  <!-- 经过微调加粗的莫比乌斯核心剪影 -->
+  <g transform="translate(18, 12) scale(0.68)">
+    <path d="M 28 160 C 55 140 80 180 105 160 C 130 140 155 176 178 150 C 158 172 125 180 102 166 C 82 152 48 176 28 160 Z" fill="#06B6D4"/>
+    <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="#C084FC"/>
+    <path d="M 50 150 C 64 108 92 56 138 24 C 120 66 108 115 100 158 Z" fill="url(#favSail)"/>
+    <circle cx="138" cy="24" r="9" fill="#FFFFFF"/>
+    <circle cx="138" cy="24" r="5.5" fill="#FDE047"/>
+  </g>
+</svg>

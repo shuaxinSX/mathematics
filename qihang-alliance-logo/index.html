@@ -1013,6 +1013,255 @@
       font-weight: 700;
     }
 
+    
+    /* ==========================================================================
+       十大核心规范与交付资产专属样式 (10 Core Deliverables)
+       ========================================================================== */
+    .ten-section {
+      margin-bottom: 5.5rem;
+    }
+
+    .ten-grid-2col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .ten-card {
+      background: var(--card-bg);
+      border: 1px solid var(--purple-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(14px);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .ten-card:hover {
+      border-color: var(--brand-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 32px -6px rgba(0, 0, 0, 0.45), 0 0 22px rgba(139, 92, 246, 0.25);
+    }
+
+    .ten-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .ten-card-num {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(124, 58, 237, 0.2);
+      border: 1px solid rgba(192, 132, 252, 0.35);
+      color: #E9D5FF;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      font-family: 'Space Grotesk', monospace;
+    }
+
+    .ten-card-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+
+    .ten-card-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+
+    .ten-preview-stage {
+      background: rgba(10, 6, 22, 0.75);
+      border: 1px dashed var(--purple-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 240px;
+      position: relative;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+    }
+
+    /* 徽标材质切换 */
+    .badge-material-tabs, .lockup-tabs, .mono-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .mini-tab-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .mini-tab-btn:hover {
+      background: rgba(124, 58, 237, 0.25);
+      color: #FFFFFF;
+    }
+
+    .mini-tab-btn.active {
+      background: var(--brand-primary);
+      border-color: var(--brand-neon);
+      color: #FFFFFF;
+      font-weight: 700;
+      box-shadow: 0 0 10px rgba(124, 58, 237, 0.4);
+    }
+
+    /* 小图标尺寸对比器 */
+    .icons-scale-rack {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-around;
+      width: 100%;
+      padding: 1rem 0;
+    }
+
+    .icon-scale-slot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .icon-scale-slot span {
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      font-family: 'Space Grotesk', monospace;
+    }
+
+    /* 水印测试面板 */
+    .watermark-demo-box {
+      width: 100%;
+      height: 220px;
+      background: #FFFFFF;
+      color: #1E293B;
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Noto Serif SC', serif;
+      box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .watermark-overlay-layer {
+      position: absolute;
+      inset: 0;
+      background-image: url("vector_exports/HSMO_Watermark_Pattern.svg");
+      background-size: 260px 260px;
+      background-repeat: repeat;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .watermark-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .watermark-controls input[type="range"] {
+      flex: 1;
+      accent-color: var(--brand-primary);
+    }
+
+    /* 证书直通卡片大横幅 */
+    .cert-portal-banner {
+      background: linear-gradient(135deg, rgba(46, 16, 101, 0.85), rgba(15, 5, 33, 0.95));
+      border: 1.5px solid rgba(245, 158, 11, 0.4);
+      border-radius: var(--radius-lg);
+      padding: 2.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(245, 158, 11, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cert-portal-banner::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cert-banner-info {
+      max-width: 620px;
+    }
+
+    .cert-banner-info h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      color: #FEF08A;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cert-banner-info p {
+      font-size: 0.9rem;
+      color: #E2E8F0;
+      line-height: 1.6;
+    }
+
+    .cert-banner-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0.9rem 1.8rem;
+      background: linear-gradient(135deg, #F59E0B, #D97706);
+      color: #1E0E3E;
+      font-size: 0.95rem;
+      font-weight: 800;
+      border-radius: var(--radius-md);
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+      transition: all 0.25s ease;
+      cursor: pointer;
+    }
+
+    .cert-banner-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6);
+      background: linear-gradient(135deg, #FDE047, #F59E0B);
+    }
+
     /* 生产级矢量工程资产交付区 */
     .downloads-grid {
       display: grid;
@@ -1295,6 +1544,7 @@
     </a>
 
     <ul class="nav-links">
+      <li><a href="#ten-deliverables" style="color: #FDE047; font-weight:700;">★ 十大视觉规范</a></li>
       <li><a href="#master-logo">纯净母标</a></li>
       <li><a href="#lapel-badge-sec">官方金属胸牌</a></li>
       <li><a href="#gallery">1:1 实景画廊</a></li>
@@ -1364,6 +1614,358 @@
         主帆面剔除多余虚线后，无论是大屏多媒体展示，还是极小的单色试卷油印，均展现出极其清晰锐利的现代工业设计美感：
       </p>
     </section>
+
+    
+    <!-- ======================================================================
+         十大核心规范与交付资产总成 (10 CORE DELIVERABLES)
+         ====================================================================== -->
+    <div id="ten-deliverables"></div>
+    <section class="section-title-wrap">
+      <span class="section-eyebrow">Standardization System · 10大标准系统</span>
+      <h2 class="section-heading">高中数学奥林匹克启航联盟 · 十大视觉规范总成</h2>
+      <p class="section-intro">
+        全面规范并落地您要求的 10 大核心资产，确保全国各盟校在胸牌、证书、试卷、服装与多媒体场景中整齐划一、分毫不差：
+      </p>
+    </section>
+
+    <!-- 01. 圆形徽标 / Master Badge (优先级最高) -->
+    <div class="ten-card" style="margin-bottom: 2rem; border-color: rgba(245, 158, 11, 0.45);">
+      <div class="ten-card-header">
+        <div>
+          <span class="ten-card-num">TOP PRIORITY · 01</span>
+          <h3 class="ten-card-title" style="color: #FDE047; margin-top: 4px;">尊崇圆形徽标 · 官方学术大徽章 (Master Badge)</h3>
+        </div>
+        <div class="badge-material-tabs">
+          <button class="mini-tab-btn active" onclick="switchBadgeTexture('color')">① 极光紫金殿堂版</button>
+          <button class="mini-tab-btn" onclick="switchBadgeTexture('night')">② 深空暗夜金属版</button>
+          <button class="mini-tab-btn" onclick="switchBadgeTexture('gold')">③ 纯金高浮雕版</button>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 340px 1fr; gap: 2rem; align-items: center;">
+        <!-- 徽章预览舞台 -->
+        <div class="ten-preview-stage" style="height: 340px; background: radial-gradient(circle, #1F0D3D 0%, #0D041A 100%);">
+          <div id="badgeStageSlot" style="width: 280px; height: 280px; display: flex; align-items: center; justify-content: center;">
+            <img src="vector_exports/HSMO_Badge_Circular_Master.svg" alt="官方圆形学术徽标" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));">
+          </div>
+        </div>
+
+        <!-- 解构与规范说明 -->
+        <div>
+          <h4 style="font-size: 1.1rem; color: #FFFFFF; font-weight: 800; margin-bottom: 0.5rem;">
+            双层同心金属环 · 四大数学常数 · 莫比乌斯无限之帆
+          </h4>
+          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
+            专为最高级别仪式打造！外环为拉丝香槟金包边与深紫环形轨道，顶弧镌刻英文全称 <code style="color:#FEF08A;">HIGH SCHOOL MATHEMATICAL OLYMPIAD</code>，底环点缀 <code style="color:#FEF08A;">★ 启航联盟 · π · e · i · φ ★</code>；内圈嵌以极细天文坐标射线底纹，莫比乌斯之帆破空而起，奇点之星高悬，散发无与伦比的正统学术权威感。
+          </p>
+          <div class="craft-chips" style="margin-bottom: 1.25rem;">
+            <span class="craft-chip">胸牌别针 (25-35mm)</span>
+            <span class="craft-chip">结业聘任证书烫印</span>
+            <span class="craft-chip">金银牌压铸 (65mm)</span>
+            <span class="craft-chip">双面纪念币冲压</span>
+            <span class="craft-chip">万人峰会大屏主标</span>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <a href="vector_exports/HSMO_Badge_Circular_Master.svg" download="HSMO_Badge_Circular_Master.svg" class="download-action-btn" style="max-width: 320px;">
+              ⬇️ 下载圆形徽标生产级矢量文件 (SVG)
+            </a>
+            <button class="btn btn-outline" onclick="openLightbox('assets/mockup_medal.jpg', '圆形徽标在全国奥赛纯金珐琅奖章中的 1:1 实物实拍')">
+              🔍 查看实物奖章实拍
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 列网格：02 中文标准字 & 03 中英组合标识 -->
+    <div class="ten-grid-2col">
+      <!-- 02. 中文标准字 -->
+      <div class="ten-card">
+        <div>
+          <div class="ten-card-header">
+            <span class="ten-card-num">SPEC · 02</span>
+            <span style="font-size: 0.75rem; color: var(--brand-neon);">Tracking 0.18em</span>
+          </div>
+          <h3 class="ten-card-title">“启航联盟”中文标准字规范</h3>
+          <p class="ten-card-sub">
+            固定字体笔触、字距与结构，彻底杜绝不同盟校及印刷厂商自选字体的乱象。
+          </p>
+          <div class="ten-preview-stage" style="min-height: 180px;">
+            <img src="vector_exports/HSMO_Chinese_Logotype_Standard.svg" alt="中文标准字规范图" style="max-width: 95%; max-height: 140px;">
+          </div>
+          <ul class="download-specs-list">
+            <li><span>定制字形：</span><span>几何锋芒切角 · 微衬线现代宋体</span></li>
+            <li><span>标准字距：</span><span>0.18em (空间舒展，微缩清晰)</span></li>
+            <li><span>英文协同：</span><span>QIHANG ALLIANCE (Cinzel 粗体，黄金对齐)</span></li>
+            <li><span>安全留白：</span><span>上下左右至少预留 0.5H 保护区</span></li>
+          </ul>
+        </div>
+        <a href="vector_exports/HSMO_Chinese_Logotype_Standard.svg" download="HSMO_Chinese_Logotype_Standard.svg" class="download-action-btn">
+          ⬇️ 下载中文标准字矢量文件 (SVG)
+        </a>
+      </div>
+
+      <!-- 03. 中英文组合标识 -->
+      <div class="ten-card">
+        <div>
+          <div class="ten-card-header">
+            <span class="ten-card-num">SPEC · 03</span>
+            <div class="lockup-tabs">
+              <button class="mini-tab-btn active" id="btnLockH" onclick="switchLockup('h')">横版 (Horizontal)</button>
+              <button class="mini-tab-btn" id="btnLockV" onclick="switchLockup('v')">竖版 (Vertical)</button>
+            </div>
+          </div>
+          <h3 class="ten-card-title">中英文标准组合标识 (横版 & 竖版)</h3>
+          <p class="ten-card-sub">
+            提供经过严格网格标定的横竖两种黄金版式，灵活适应各类介质长宽比。
+          </p>
+          <div class="ten-preview-stage" style="min-height: 180px;" id="lockupStageSlot">
+            <img src="vector_exports/HSMO_Lockup_Horizontal.svg" alt="横版中英组合" style="max-width: 95%; max-height: 140px;">
+          </div>
+          <ul class="download-specs-list">
+            <li><span>横版构图：</span><span>标志居左，中英双行居右 (适用 Header/信纸)</span></li>
+            <li><span>竖版构图：</span><span>标志置顶，中英对称居中 (适用 封面/海报/主屏)</span></li>
+            <li><span>比例对齐：</span><span>主标与字标严格遵循 1:φ 黄金分割</span></li>
+          </ul>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="vector_exports/HSMO_Lockup_Horizontal.svg" download="HSMO_Lockup_Horizontal.svg" class="download-action-btn" style="flex:1;">
+            ⬇️ 横版 SVG
+          </a>
+          <a href="vector_exports/HSMO_Lockup_Vertical.svg" download="HSMO_Lockup_Vertical.svg" class="download-action-btn" style="flex:1;">
+            ⬇️ 竖版 SVG
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04. 正式全称组合版 -->
+    <div class="ten-card" style="margin-bottom: 2rem;">
+      <div class="ten-card-header">
+        <div>
+          <span class="ten-card-num">SPEC · 04</span>
+          <h3 class="ten-card-title" style="margin-top: 4px;">正式法定全称组合版</h3>
+        </div>
+        <span style="font-size: 0.8rem; color: #F59E0B; font-weight: 700;">★ 规制：长名称不放进主 Logo 本体</span>
+      </div>
+      <p class="ten-card-sub">
+        专门用于公文审批、政府报备、联盟大会主背景板等极庄严场合。<strong>主 Logo 本体严禁塞入长文字以保纯粹性</strong>，全称作为主副层级系统在外侧规整展开：
+      </p>
+      <div class="ten-preview-stage" style="min-height: 160px; padding: 1.25rem;">
+        <img src="vector_exports/HSMO_Lockup_Full_Official.svg" alt="正式全称组合版" style="max-width: 98%; max-height: 130px;">
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+        <div class="craft-chips">
+          <span class="craft-chip">红头正式文件</span>
+          <span class="craft-chip">教育部/省厅报备公函</span>
+          <span class="craft-chip">开幕式巨幅背景板</span>
+          <span class="craft-chip">联合倡议书签章栏</span>
+        </div>
+        <a href="vector_exports/HSMO_Lockup_Full_Official.svg" download="HSMO_Lockup_Full_Official.svg" class="download-action-btn" style="max-width: 280px;">
+          ⬇️ 下载正式全称矢量文件 (SVG)
+        </a>
+      </div>
+    </div>
+
+    <!-- 2 列网格：05 单色版 Logo & 06 简化小图标版 -->
+    <div class="ten-grid-2col">
+      <!-- 05. 单色版 Logo -->
+      <div class="ten-card">
+        <div>
+          <div class="ten-card-header">
+            <span class="ten-card-num">SPEC · 05</span>
+            <div class="mono-tabs">
+              <button class="mini-tab-btn active" onclick="switchMonoColor('black')">纯黑 (#000)</button>
+              <button class="mini-tab-btn" onclick="switchMonoColor('white')">纯白 (#FFF)</button>
+              <button class="mini-tab-btn" onclick="switchMonoColor('navy')">深蓝 (#0F172A)</button>
+            </div>
+          </div>
+          <h3 class="ten-card-title">单色版 Logo 体系 (黑 / 白 / 深蓝)</h3>
+          <p class="ten-card-sub">
+            彻底解决单色印刷、复印传真、深色卫衣丝印与公文专色场景下的防糊墨需求。
+          </p>
+          <div class="ten-preview-stage" id="monoStageSlot" style="background: #FFFFFF; min-height: 180px;">
+            <img src="vector_exports/HSMO_Logo_Mono_Black.svg" id="monoImgTarget" alt="单色版 Logo" style="max-width: 140px; max-height: 140px;">
+          </div>
+          <ul class="download-specs-list">
+            <li><span>切口工法：</span><span>1.5mm 精密负空间切割，杜绝油墨粘连</span></li>
+            <li><span>纯黑版本：</span><span>统考考卷油印 / 报纸出版 / 普通传真</span></li>
+            <li><span>纯白版本：</span><span>暗夜背景 / 卫衣丝印 / PPT 纯深色底</span></li>
+            <li><span>深蓝专色：</span><span>机关红头公文发函 / 商务防伪盖印</span></li>
+          </ul>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="vector_exports/HSMO_Logo_Mono_Black.svg" download="HSMO_Logo_Mono_Black.svg" class="download-action-btn" style="flex:1;">⬇️ 纯黑</a>
+          <a href="vector_exports/HSMO_Logo_Mono_White.svg" download="HSMO_Logo_Mono_White.svg" class="download-action-btn" style="flex:1;">⬇️ 纯白</a>
+          <a href="vector_exports/HSMO_Logo_Mono_Navy.svg" download="HSMO_Logo_Mono_Navy.svg" class="download-action-btn" style="flex:1;">⬇️ 深蓝</a>
+        </div>
+      </div>
+
+      <!-- 06. 简化小图标版 -->
+      <div class="ten-card">
+        <div>
+          <div class="ten-card-header">
+            <span class="ten-card-num">SPEC · 06</span>
+            <span style="font-size: 0.75rem; color: var(--brand-neon);">16px ~ 128px 自适应</span>
+          </div>
+          <h3 class="ten-card-title">简化小图标版 (Favicon / 微信 / App)</h3>
+          <p class="ten-card-sub">
+            针对极小尺寸场景强化轮廓骨架，去除杂碎渐变，在 16px 浏览器标签页依然清晰辨识。
+          </p>
+          <div class="ten-preview-stage" style="min-height: 180px;">
+            <div class="icons-scale-rack">
+              <div class="icon-scale-slot">
+                <img src="vector_exports/HSMO_Icon_Favicon_Simplified.svg" style="width: 16px; height: 16px;" alt="16px">
+                <span>16px 网页Tab</span>
+              </div>
+              <div class="icon-scale-slot">
+                <img src="vector_exports/HSMO_Icon_Favicon_Simplified.svg" style="width: 32px; height: 32px;" alt="32px">
+                <span>32px 书签栏</span>
+              </div>
+              <div class="icon-scale-slot">
+                <img src="vector_exports/HSMO_Icon_Favicon_Simplified.svg" style="width: 56px; height: 56px;" alt="56px">
+                <span>56px 微信群头像</span>
+              </div>
+              <div class="icon-scale-slot">
+                <img src="vector_exports/HSMO_Icon_Favicon_Simplified.svg" style="width: 96px; height: 96px;" alt="96px">
+                <span>96px 小程序图标</span>
+              </div>
+            </div>
+          </div>
+          <ul class="download-specs-list">
+            <li><span>几何容器：</span><span>标准 iOS 超椭圆 Squircle 黄金圆角</span></li>
+            <li><span>骨架强化：</span><span>轮廓加粗 25%，奇点星芒半径放大</span></li>
+            <li><span>适用媒介：</span><span>微信公众号、小程序、浏览器 Favicon、PPT角标</span></li>
+          </ul>
+        </div>
+        <a href="vector_exports/HSMO_Icon_Favicon_Simplified.svg" download="HSMO_Icon_Favicon_Simplified.svg" class="download-action-btn">
+          ⬇️ 下载简化小图标矢量文件 (SVG)
+        </a>
+      </div>
+    </div>
+
+    <!-- 2 列网格：07 水印防伪版 & 08 官方电子印章 -->
+    <div class="ten-grid-2col">
+      <!-- 07. 水印版 -->
+      <div class="ten-card">
+        <div>
+          <div class="ten-card-header">
+            <span class="ten-card-num">SPEC · 07</span>
+            <span style="font-size: 0.75rem; color: #06B6D4;">低透安全防伪</span>
+          </div>
+          <h3 class="ten-card-title">水印版 (试卷 / 讲义 / PPT 底纹)</h3>
+          <p class="ten-card-sub">
+            浅色、低透明度（6%~12%），衬托公式讲义清晰可读，同时具备版权与防伪溯源功能。
+          </p>
+          <div class="watermark-demo-box">
+            <div class="watermark-overlay-layer" id="watermarkLayer" style="opacity: 0.08;"></div>
+            <div style="position: relative; z-index: 2;">
+              <div style="font-size: 0.9rem; font-weight: 800; border-bottom: 1px solid #E2E8F0; padding-bottom: 4px; margin-bottom: 8px;">
+                全国高中数学奥林匹克启航联赛 · 决赛第一试 (示例)
+              </div>
+              <p style="font-size: 0.8rem; line-height: 1.6; color: #334155;">
+                <strong>第一题（40分）：</strong>设函数 $f(x) = \sum_{k=1}^n rac{\sin(kx)}{k}$，求证对任意正整数 $n$ 与实数 $x \in (0, \pi)$，均有拓扑同胚映射存在。
+              </p>
+              <p style="font-size: 0.75rem; color: #64748B; margin-top: 10px;">
+                [机密文件 · 启航联盟命题组版权所有 · 请勿外传]
+              </p>
+            </div>
+          </div>
+          <div class="watermark-controls">
+            <span>调节防伪透明度：<strong id="watermarkValDisplay" style="color:var(--brand-neon);">8%</strong></span>
+            <input type="range" min="4" max="25" value="8" id="watermarkSlider" oninput="adjustWatermark(this.value)">
+          </div>
+        </div>
+        <a href="vector_exports/HSMO_Watermark_Pattern.svg" download="HSMO_Watermark_Pattern.svg" class="download-action-btn" style="margin-top: 1rem;">
+          ⬇️ 下载水印矢量平铺文件 (SVG)
+        </a>
+      </div>
+
+      <!-- 08. 官方电子印章 -->
+      <div class="ten-card">
+        <div>
+          <div class="ten-card-header">
+            <span class="ten-card-num">SPEC · 08</span>
+            <span style="font-size: 0.75rem; color: #EF4444;">标准 42mm 朱砂印</span>
+          </div>
+          <h3 class="ten-card-title">官方电子公章 (启航联盟组委会)</h3>
+          <p class="ten-card-sub">
+            标准 42mm 国际公章规制，真实朱砂印泥微渗色、边缘自然羽化、微倾防伪角度与防伪编码。
+          </p>
+          <div class="ten-preview-stage" style="background: #FFFFFF; min-height: 180px;">
+            <img src="vector_exports/HSMO_Official_Electronic_Seal.svg" alt="启航联盟电子印章" style="max-width: 170px; max-height: 170px; transform: rotate(-5deg); filter: drop-shadow(0 1px 3px rgba(201,42,42,0.3));">
+          </div>
+          <ul class="download-specs-list">
+            <li><span>法定文字：</span><span>高中数学奥林匹克启航联盟组织委员会</span></li>
+            <li><span>印鉴色值：</span><span>传统天然朱砂红 #C92A2A (带微墨渗滤镜)</span></li>
+            <li><span>防伪标记：</span><span>★ 专用电子印鉴 ★ / NO. 2026-HSMO-8848</span></li>
+            <li><span>格式优势：</span><span>纯矢量无损叠加，支持 PDF 电子签章与直接送印</span></li>
+          </ul>
+        </div>
+        <a href="vector_exports/HSMO_Official_Electronic_Seal.svg" download="HSMO_Official_Electronic_Seal.svg" class="download-action-btn">
+          ⬇️ 下载电子印章矢量源文件 (SVG)
+        </a>
+      </div>
+    </div>
+
+    <!-- 09. 胸牌视觉模板系统 -->
+    <div class="ten-card" style="margin-bottom: 2rem;">
+      <div class="ten-card-header">
+        <div>
+          <span class="ten-card-num">SPEC · 09</span>
+          <h3 class="ten-card-title" style="margin-top: 4px;">胸牌与参会证视觉模板体系 (4 大角色全覆盖)</h3>
+        </div>
+        <div class="badge-material-tabs">
+          <span style="font-size: 0.8rem; color: var(--text-dim); align-self: center;">涵盖两类制式：</span>
+          <span class="craft-chip">72×24mm 金属磁吸胸牌</span>
+          <span class="craft-chip">A6 (105×148mm) 挂绳胸卡</span>
+        </div>
+      </div>
+      <p class="ten-card-sub">
+        统一规范四类人员身份视觉代码：<strong>专家组 (EXPERT 香槟金)</strong>、<strong>主教练 (COACH 耀金紫)</strong>、<strong>工作人员 (STAFF 钛金银)</strong> 与 <strong>集训队员 (DELEGATE 极光青)</strong>：
+      </p>
+      
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.25rem;">
+        <!-- 左边：4角色金属胸牌 -->
+        <div class="ten-preview-stage" style="min-height: 200px; padding: 1rem;">
+          <img src="vector_exports/HSMO_Badge_Nameplate_System.svg" alt="4角色金属胸牌体系" style="max-width: 95%; max-height: 180px;">
+        </div>
+        <!-- 右边：A6 挂绳胸卡 -->
+        <div class="ten-preview-stage" style="min-height: 200px; padding: 1rem;">
+          <img src="vector_exports/HSMO_A6_Pass_Template.svg" alt="A6 挂绳胸卡模板" style="max-width: 95%; max-height: 180px;">
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 12px; justify-content: flex-end;">
+        <a href="vector_exports/HSMO_Badge_Nameplate_System.svg" download="HSMO_Badge_Nameplate_System.svg" class="download-action-btn" style="max-width: 260px;">
+          ⬇️ 下载 4 角色金属胸牌 (SVG)
+        </a>
+        <a href="vector_exports/HSMO_A6_Pass_Template.svg" download="HSMO_A6_Pass_Template.svg" class="download-action-btn" style="max-width: 260px;">
+          ⬇️ 下载 A6 挂绳胸卡模板 (SVG)
+        </a>
+      </div>
+    </div>
+
+    <!-- 10. 证书/聘书视觉模板 (联动现有仓库高定模板) -->
+    <div class="cert-portal-banner">
+      <div class="cert-banner-info">
+        <span class="ten-card-num" style="background: rgba(245, 158, 11, 0.25); border-color: #FDE047; color: #FEF08A;">
+          SPEC · 10 (SYSTEM LINK)
+        </span>
+        <h3 style="margin-top: 8px;">
+          <span>📜</span> 证书与聘书高定视觉模板系统（已全面集成启航联盟）
+        </h3>
+        <p>
+          直接使用当前仓库已有的顶级高定浅色系（温润羊皮白 + 香槟金浮雕）证书模版，现已完成<strong>启航联盟 3 大证书场景预设的全面升级</strong>！支持 <strong>命题专家聘书</strong>、<strong>金牌主教练聘书</strong>、<strong>理事成员校授牌证书</strong> 一键秒切，深度搭载新版莫比乌斯黄金徽标与组委会朱砂电子红印，具备 3D 拟真物理翻转、在线实时编辑与 A4 矢量打印导出！
+        </p>
+      </div>
+      <div>
+        <a href="../index.html" target="_blank" class="cert-banner-cta">
+          <span>🚀 打开证书交互工作台</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
 
     <div class="deep-dive-card">
       <div class="deep-dive-header">
@@ -2173,6 +2775,81 @@
       <circle cx="138" cy="28" r="4.5" fill="url(#bGold)"/>
       <path d="M 138 18 L 138 38 M 128 28 L 148 28" stroke="#FEF08A" stroke-width="1.5"/>
     </svg>`;
+
+    
+    // ==========================================
+    // 十大规范交互控制脚本 (10 Deliverables JS)
+    // ==========================================
+
+    // 01. 徽标材质切换
+    function switchBadgeTexture(type) {
+      const slot = document.getElementById('badgeStageSlot');
+      const btns = event.target.parentElement.querySelectorAll('.mini-tab-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      if (type === 'color') {
+        slot.innerHTML = `<img src="vector_exports/HSMO_Badge_Circular_Master.svg" alt="极光紫金殿堂版" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));">`;
+        showToast("已切换至：全彩极光紫金徽标");
+      } else if (type === 'night') {
+        slot.innerHTML = `<img src="vector_exports/HSMO_Badge_Circular_Master.svg" alt="深空暗夜金属版" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.8)) brightness(0.85) contrast(1.2);">`;
+        showToast("已切换至：深空暗夜金属徽标");
+      } else if (type === 'gold') {
+        slot.innerHTML = `<img src="vector_exports/HSMO_Badge_Circular_Master.svg" alt="纯金高浮雕版" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 10px 25px rgba(245, 158, 11, 0.4)) sepia(0.9) saturate(3) hue-rotate(5deg);">`;
+        showToast("已切换至：纯金高浮雕徽标");
+      }
+    }
+
+    // 03. 中英组合横竖版切换
+    function switchLockup(mode) {
+      const slot = document.getElementById('lockupStageSlot');
+      const btnH = document.getElementById('btnLockH');
+      const btnV = document.getElementById('btnLockV');
+
+      if (mode === 'h') {
+        btnH.classList.add('active');
+        btnV.classList.remove('active');
+        slot.innerHTML = `<img src="vector_exports/HSMO_Lockup_Horizontal.svg" alt="横版中英组合" style="max-width: 95%; max-height: 140px;">`;
+        showToast("已展示：横版中英文标准组合");
+      } else {
+        btnV.classList.add('active');
+        btnH.classList.remove('active');
+        slot.innerHTML = `<img src="vector_exports/HSMO_Lockup_Vertical.svg" alt="竖版中英组合" style="max-width: 95%; max-height: 170px;">`;
+        showToast("已展示：竖版中英文庄重组合");
+      }
+    }
+
+    // 05. 单色版颜色切换
+    function switchMonoColor(color) {
+      const stage = document.getElementById('monoStageSlot');
+      const img = document.getElementById('monoImgTarget');
+      const btns = event.target.parentElement.querySelectorAll('.mini-tab-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      if (color === 'black') {
+        stage.style.background = '#FFFFFF';
+        img.src = 'vector_exports/HSMO_Logo_Mono_Black.svg';
+        showToast("已展示：纯黑单色版 (白纸试卷印刷)");
+      } else if (color === 'white') {
+        stage.style.background = '#0F0521';
+        img.src = 'vector_exports/HSMO_Logo_Mono_White.svg';
+        showToast("已展示：纯白反白版 (深色卫衣/深色PPT)");
+      } else if (color === 'navy') {
+        stage.style.background = '#F8FAFC';
+        img.src = 'vector_exports/HSMO_Logo_Mono_Navy.svg';
+        showToast("已展示：深蓝专色版 (公函/专色合同)");
+      }
+    }
+
+    // 07. 水印透明度滑块
+    function adjustWatermark(val) {
+      const layer = document.getElementById('watermarkLayer');
+      const display = document.getElementById('watermarkValDisplay');
+      const opacity = val / 100;
+      layer.style.opacity = opacity;
+      display.innerText = `${val}%`;
+    }
 
     function renderVariant(idx) {
       currentVarIdx = idx;

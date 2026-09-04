@@ -1,0 +1,66 @@
+<svg viewBox="0 0 420 592" width="840" height="1184" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="passBg" x1="0" y1="0" x2="420" y2="592" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1B0E33"/>
+      <stop offset="60%" stop-color="#2D1252"/>
+      <stop offset="100%" stop-color="#0E051D"/>
+    </linearGradient>
+    <linearGradient id="passGold" x1="40" y1="40" x2="380" y2="550" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="40%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+  </defs>
+
+  <!-- A6 紧凑圆角卡片底板 -->
+  <rect x="4" y="4" width="412" height="584" rx="20" fill="url(#passBg)" stroke="url(#passGold)" stroke-width="2"/>
+  
+  <!-- 顶部挂绳穿孔槽示意 (椭圆孔) -->
+  <rect x="175" y="16" width="70" height="10" rx="5" fill="#0A0414" stroke="#475569" stroke-width="1"/>
+
+  <!-- 顶部联盟官方标徽与标题 -->
+  <text x="210" y="65" text-anchor="middle" font-family="'Cinzel', serif" font-size="10" font-weight="700" fill="#E2D8F7" letter-spacing="3">
+    HIGH SCHOOL MATHEMATICAL OLYMPIAD
+  </text>
+  <text x="210" y="90" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="21" font-weight="900" fill="#FDE047" letter-spacing="3">
+    高中数学奥林匹克启航联盟
+  </text>
+  <text x="210" y="110" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="8" font-weight="600" fill="#A78BFA" letter-spacing="4">
+    全国拔尖创新人才集训选拔营 · 官方通行证
+  </text>
+
+  <!-- 照片与肖像占位框 -->
+  <rect x="140" y="130" width="140" height="175" rx="10" fill="#14062B" stroke="url(#passGold)" stroke-width="1.5"/>
+  <circle cx="210" cy="195" r="32" fill="#2E1065" stroke="#C084FC" stroke-width="1.5"/>
+  <path d="M 175 270 C 175 235 245 235 245 270 Z" fill="#2E1065"/>
+
+  <!-- 持卡人姓名与所属盟校 -->
+  <text x="210" y="340" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="28" font-weight="900" fill="#FFFFFF" letter-spacing="4">
+    张 景 涵
+  </text>
+  <text x="210" y="370" text-anchor="middle" font-family="'Noto Serif SC', sans-serif" font-size="13" font-weight="600" fill="#CBD5E1">
+    清华大学附属中学 · 高二奥赛梯队
+  </text>
+
+  <!-- 醒目身份色块栏 (可换: 专家/教练/队员/裁判) -->
+  <rect x="40" y="400" width="340" height="46" rx="8" fill="linear-gradient(135deg, #7C3AED, #4C1D95)" stroke="#FDE047" stroke-width="1.5"/>
+  <text x="210" y="430" text-anchor="middle" font-family="'Space Grotesk', 'Noto Serif SC', sans-serif" font-size="17" font-weight="900" fill="#FEF08A" letter-spacing="4">
+    ★ DELEGATE 全国集训队员 ★
+  </text>
+
+  <!-- 防伪条形码 / 二维码区域 -->
+  <rect x="50" y="470" width="70" height="70" rx="6" fill="#FFFFFF"/>
+  <rect x="58" y="478" width="54" height="54" fill="#1E1B4B"/>
+  <rect x="65" y="485" width="40" height="40" fill="#FFFFFF"/>
+
+  <!-- 编码与全息防伪注记 -->
+  <text x="140" y="495" font-family="'Space Grotesk', monospace" font-size="12" font-weight="800" fill="#FDE047">
+    ID: HSMO-2026-N089
+  </text>
+  <text x="140" y="515" font-family="'Noto Serif SC', sans-serif" font-size="9" font-weight="500" fill="#94A3B8">
+    通行权限：万人峰会全场 · 闭门研讨厅 · 竞赛考场
+  </text>
+  <text x="140" y="533" font-family="'Space Grotesk', sans-serif" font-size="8.5" font-weight="600" fill="#A855F7">
+    VALID: 2026.09 - 2027.09 · 全国组委会验证
+  </text>
+</svg>

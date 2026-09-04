@@ -1,0 +1,25 @@
+<svg viewBox="0 0 600 600" width="1200" height="1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 45度倾斜防伪几何网格与极细单色莫比乌斯母标 -->
+  <g transform="rotate(-45 300 300)" opacity="0.08" stroke="#7C3AED" fill="none">
+    <!-- 外围同心圆环 -->
+    <circle cx="300" cy="300" r="280" stroke-width="2"/>
+    <circle cx="300" cy="300" r="260" stroke-width="1" stroke-dasharray="6 4"/>
+    <circle cx="300" cy="300" r="210" stroke-width="1.5"/>
+
+    <!-- 环形文字水印 -->
+    <text x="300" y="65" text-anchor="middle" font-family="'Cinzel', 'Noto Serif SC', serif" font-size="14" font-weight="700" fill="#7C3AED" letter-spacing="4">
+      HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE
+    </text>
+    <text x="300" y="555" text-anchor="middle" font-family="'Noto Serif SC', serif" font-size="14" font-weight="700" fill="#7C3AED" letter-spacing="6">
+      ★ 全国高中数学奥林匹克启航联盟 · 官方防伪水印 ★
+    </text>
+
+    <!-- 中心母标轮廓线 -->
+    <g transform="translate(150, 150) scale(1.5)" stroke-width="2">
+      <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z"/>
+      <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z"/>
+      <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z"/>
+      <circle cx="138" cy="28" r="6"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,55 @@
+<svg viewBox="0 0 920 220" width="1840" height="440" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="offSail1" x1="40" y1="170" x2="160" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4C1D95"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <linearGradient id="offSail2" x1="120" y1="160" x2="170" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="60%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#E879F9"/>
+    </linearGradient>
+    <linearGradient id="offHull" x1="30" y1="170" x2="175" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="40%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#D946EF"/>
+    </linearGradient>
+    <radialGradient id="offStar" cx="138" cy="28" r="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="40%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="offGoldText" x1="0" y1="0" x2="600" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="25%" stop-color="#FDE68A"/>
+      <stop offset="70%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 左侧独立纯净母标 -->
+  <g transform="translate(15, 10)">
+    <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="url(#offHull)"/>
+    <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="url(#offSail2)"/>
+    <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="url(#offSail1)"/>
+    <circle cx="138" cy="28" r="8" fill="url(#offStar)"/>
+    <circle cx="138" cy="28" r="2.2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 中间纵向分割标线 -->
+  <line x1="210" y1="35" x2="210" y2="185" stroke="rgba(245, 158, 11, 0.45)" stroke-width="1.5"/>
+
+  <!-- 右侧正式法定全称体系 (双层排布，字号层级严密) -->
+  <text x="240" y="80" font-family="'Noto Serif SC', 'Songti SC', serif" font-size="20" font-weight="600" fill="#C084FC" letter-spacing="4">
+    全国拔尖创新人才培养 · 重点中学学术共同体
+  </text>
+  
+  <text x="238" y="128" font-family="'Noto Serif SC', 'Songti SC', serif" font-size="44" font-weight="900" fill="url(#offGoldText)" letter-spacing="4">
+    中国高中数学奥林匹克竞赛启航联盟
+  </text>
+
+  <text x="240" y="162" font-family="'Cinzel', 'Space Grotesk', sans-serif" font-size="12" font-weight="700" fill="#E2E8F0" letter-spacing="2">
+    CHINA HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE
+  </text>
+</svg>

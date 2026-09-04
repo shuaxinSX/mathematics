@@ -1,0 +1,57 @@
+<svg viewBox="0 0 400 480" width="800" height="960" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vSail1" x1="40" y1="170" x2="160" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4C1D95"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <linearGradient id="vSail2" x1="120" y1="160" x2="170" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="60%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#E879F9"/>
+    </linearGradient>
+    <linearGradient id="vHull" x1="30" y1="170" x2="175" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="40%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#D946EF"/>
+    </linearGradient>
+    <radialGradient id="vStar" cx="138" cy="28" r="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#FDE047"/>
+      <stop offset="70%" stop-color="#F59E0B" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="vTextGold" x1="0" y1="0" x2="400" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#FDE68A"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 上方居中图形 (等比缩放) -->
+  <g transform="translate(100, 30)">
+    <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="url(#vHull)"/>
+    <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="url(#vSail2)"/>
+    <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="url(#vSail1)"/>
+    <circle cx="138" cy="28" r="8" fill="url(#vStar)"/>
+    <circle cx="138" cy="28" r="2.2" fill="#FFFFFF"/>
+  </g>
+
+  <!-- 下方居中文本 (中文标准字 + 英文标准字) -->
+  <text x="200" y="275" text-anchor="middle" font-family="'Noto Serif SC', 'Songti SC', serif" font-size="58" font-weight="900" fill="url(#vTextGold)" letter-spacing="14">
+    启航联盟
+  </text>
+  
+  <text x="200" y="320" text-anchor="middle" font-family="'Cinzel', 'Space Grotesk', sans-serif" font-size="16" font-weight="800" fill="#C084FC" letter-spacing="8">
+    QIHANG ALLIANCE
+  </text>
+  
+  <line x1="80" y1="345" x2="320" y2="345" stroke="rgba(245, 158, 11, 0.3)" stroke-width="1"/>
+
+  <text x="200" y="370" text-anchor="middle" font-family="'Space Grotesk', sans-serif" font-size="10.5" font-weight="600" fill="#94A3B8" letter-spacing="3">
+    HIGH SCHOOL MATHEMATICAL OLYMPIAD
+  </text>
+  <text x="200" y="392" text-anchor="middle" font-family="'Space Grotesk', serif" font-size="9" font-weight="600" fill="#64748B" letter-spacing="5">
+    π · e · i · φ
+  </text>
+</svg>
