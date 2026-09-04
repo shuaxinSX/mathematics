@@ -1,0 +1,23 @@
+<svg viewBox="0 0 200 200" width="600" height="600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="pinGold" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D97706"/>
+      <stop offset="30%" stop-color="#FBBF24"/>
+      <stop offset="70%" stop-color="#FEF08A"/>
+      <stop offset="100%" stop-color="#B45309"/>
+    </linearGradient>
+    <linearGradient id="pinPurple" x1="40" y1="160" x2="140" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1A0A33"/>
+      <stop offset="100%" stop-color="#3B1261"/>
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#pinGold)" stroke="#78350F" stroke-width="2"/>
+  <circle cx="100" cy="100" r="88" fill="url(#pinPurple)" stroke="url(#pinGold)" stroke-width="1.5"/>
+  <circle cx="100" cy="100" r="84" stroke="rgba(251, 191, 36, 0.3)" stroke-width="1" stroke-dasharray="3 2"/>
+  <g transform="translate(10, 8) scale(0.9)">
+    <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="#2E1065" stroke="url(#pinGold)" stroke-width="2.5"/>
+    <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="#4C1D95" stroke="url(#pinGold)" stroke-width="2"/>
+    <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="#581C87" stroke="url(#pinGold)" stroke-width="2.5"/>
+    <circle cx="138" cy="28" r="4" fill="url(#pinGold)"/>
+  </g>
+</svg>

@@ -1,0 +1,2301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>高中数学奥林匹克启航联盟 - 品牌标识与视觉系统全景集成门户</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Serif+SC:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --purple-base: #0a0714;
+      --purple-surface: #120d26;
+      --purple-card: #1a1238;
+      --purple-border: #3c2a74;
+      --purple-border-subtle: rgba(139, 92, 246, 0.22);
+      
+      --brand-primary: #8b5cf6;       /* 极光电紫 Electric Violet */
+      --brand-primary-light: #a78bfa;
+      --brand-dark: #4c1d95;          /* 帝王深紫 Royal Purple */
+      --brand-deep: #1e1b4b;          /* 深空星渊 Deep Cosmic */
+      --brand-neon: #c084fc;          /* 霓虹亮紫 Neon Lilac */
+      --brand-magenta: #d946ef;       /* 虚数洋红 Cyber Magenta */
+      --brand-gold: #f59e0b;          /* 欧拉香槟金 Euler Gold */
+      --brand-gold-glow: #fde68a;
+      --brand-cyan: #06b6d4;          /* 拓扑天青 Cyan */
+
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --bg-page: #080511;
+      --card-bg: rgba(26, 18, 56, 0.75);
+      --card-bg-solid: #160f33;
+      --header-bg: rgba(10, 7, 20, 0.9);
+
+      --shadow-glow: 0 0 35px rgba(139, 92, 246, 0.25);
+      --shadow-card: 0 12px 35px -5px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(168, 85, 247, 0.18);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-full: 9999px;
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="light"] {
+      --bg-page: #f8f6fc;
+      --purple-surface: #ffffff;
+      --purple-card: #ffffff;
+      --purple-border: #e2d9f3;
+      --purple-border-subtle: rgba(124, 58, 237, 0.15);
+      --text-main: #0f0b20;
+      --text-muted: #4d456b;
+      --text-dim: #80779e;
+      --card-bg: rgba(255, 255, 255, 0.94);
+      --card-bg-solid: #ffffff;
+      --header-bg: rgba(248, 246, 252, 0.92);
+      --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.12);
+      --shadow-card: 0 10px 30px -5px rgba(124, 58, 237, 0.08), 0 0 0 1px rgba(124, 58, 237, 0.12);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      background-image: 
+        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(124, 58, 237, 0.25), transparent 70%),
+        radial-gradient(circle at 90% 30%, rgba(217, 70, 239, 0.12), transparent 50%),
+        radial-gradient(circle at 10% 70%, rgba(6, 182, 212, 0.1), transparent 50%);
+      background-attachment: fixed;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--purple-border-subtle);
+      padding: 0.85rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .brand-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mini-symbol {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-magenta));
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 900;
+      font-size: 20px;
+      font-family: 'Cinzel', serif;
+      box-shadow: 0 0 16px rgba(139, 92, 246, 0.6);
+      flex-shrink: 0;
+    }
+
+    .brand-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      background: linear-gradient(90deg, #fff, var(--brand-primary-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    [data-theme="light"] .brand-title {
+      background: linear-gradient(90deg, #1e1035, #6d28d9);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-subtitle {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-family: 'Space Grotesk', sans-serif;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      list-style: none;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links { display: none; }
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: var(--transition);
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+      background: rgba(139, 92, 246, 0.12);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.5rem 1.15rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--purple-border);
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      background: rgba(139, 92, 246, 0.15);
+      border-color: var(--brand-primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-dark));
+      color: #fff;
+      box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 22px rgba(124, 58, 237, 0.6);
+    }
+
+    .container {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 6rem;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding: 3.5rem 1rem 3.5rem;
+      position: relative;
+    }
+
+    .badge-approved {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0.4rem 1.25rem;
+      border-radius: var(--radius-full);
+      background: linear-gradient(90deg, rgba(16, 185, 129, 0.15), rgba(124, 58, 237, 0.2));
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: #34d399;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title .gradient-text {
+      background: linear-gradient(135deg, #c084fc 0%, #a855f7 40%, #6366f1 80%, #06b6d4 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.125rem;
+      color: var(--text-muted);
+      max-width: 860px;
+      margin: 0 auto 2rem;
+      font-weight: 400;
+    }
+
+    .evolution-strip {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+      margin-bottom: 3.5rem;
+    }
+
+    .evolution-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(26, 18, 56, 0.6);
+      border: 1px solid var(--purple-border-subtle);
+      padding: 0.55rem 1.15rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .evolution-pill strong { color: var(--brand-neon); }
+
+    .section-title-wrap { margin-bottom: 2.25rem; }
+
+    .section-eyebrow {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--brand-primary-light);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-heading {
+      font-size: 1.95rem;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--text-main);
+    }
+
+    .section-intro {
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      font-size: 0.98rem;
+      max-width: 880px;
+    }
+
+    .consistency-callout {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(124, 58, 237, 0.15));
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.75rem;
+      margin-bottom: 4rem;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .consistency-callout .icon-check {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #10b981;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .consistency-text h4 {
+      color: #34d399;
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .consistency-text p {
+      font-size: 0.875rem;
+      color: #cbd5e1;
+    }
+
+    .deep-dive-card {
+      background: var(--card-bg-solid);
+      border: 1px solid var(--purple-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      margin-bottom: 5.5rem;
+    }
+
+    .deep-dive-header {
+      padding: 1.75rem 2.25rem;
+      background: linear-gradient(90deg, rgba(35, 25, 75, 0.9), rgba(20, 14, 45, 0.9));
+      border-bottom: 1px solid var(--purple-border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .variant-selector-tabs {
+      display: flex;
+      gap: 8px;
+      background: rgba(10, 7, 20, 0.6);
+      padding: 6px;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--purple-border-subtle);
+      flex-wrap: wrap;
+    }
+
+    .var-tab {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.55rem 1.15rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .var-tab:hover { color: #fff; }
+
+    .var-tab.active {
+      background: linear-gradient(135deg, var(--brand-primary), var(--brand-dark));
+      color: #fff;
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+    }
+
+    .deep-dive-body {
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr;
+    }
+
+    @media (max-width: 960px) {
+      .deep-dive-body { grid-template-columns: 1fr; }
+    }
+
+    .deep-stage {
+      background: radial-gradient(circle at center, rgba(124, 58, 237, 0.15) 0%, rgba(10, 7, 22, 0.95) 75%);
+      padding: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 480px;
+      border-right: 1px solid var(--purple-border-subtle);
+      overflow: hidden;
+    }
+
+    .stage-svg-box {
+      width: 280px;
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.7));
+      z-index: 2;
+      transition: transform 0.4s ease;
+    }
+
+    .stage-svg-box:hover { transform: scale(1.04); }
+
+    .stage-tools {
+      margin-top: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 2;
+    }
+
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .grid-overlay.active { opacity: 1; }
+
+    .deep-info {
+      padding: 2.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .design-spec-box {
+      background: rgba(12, 9, 24, 0.6);
+      border: 1px solid var(--purple-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.4rem;
+    }
+
+    .spec-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 0.9rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+
+    .spec-item:last-child { margin-bottom: 0; }
+    .spec-item strong { color: var(--brand-neon); min-width: 90px; }
+
+    /* =========================================
+       全新的官方金属胸牌样式 (BADGE NAMEPLATE)
+       ========================================= */
+    .lapel-badge-container {
+      background: linear-gradient(145deg, rgba(20, 15, 42, 0.9), rgba(10, 7, 24, 0.9));
+      border: 1px solid var(--purple-border);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .badge-zone-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-zone-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--brand-neon);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .badge-role-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .role-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: var(--text-muted);
+      padding: 3px 10px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .role-btn:hover { color: #fff; border-color: var(--brand-primary); }
+    .role-btn.active {
+      background: var(--brand-gold);
+      color: #1e1b4b;
+      border-color: var(--brand-gold-glow);
+      font-weight: 700;
+    }
+
+    /* 真实金属胸牌实体组件 */
+    .physical-badge-frame {
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, #d97706 0%, #fbbf24 35%, #fef08a 50%, #d97706 75%, #b45309 100%);
+      padding: 4px;
+      border-radius: 36px;
+      box-shadow: 
+        0 14px 28px rgba(0, 0, 0, 0.6),
+        0 2px 6px rgba(251, 191, 36, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.8);
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .physical-badge-frame:hover {
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 
+        0 18px 35px rgba(0, 0, 0, 0.7),
+        0 0 25px rgba(251, 191, 36, 0.5);
+    }
+
+    /* 光泽流动动画 */
+    .physical-badge-frame::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transform: skewX(-25deg);
+      transition: none;
+      pointer-events: none;
+    }
+
+    .physical-badge-frame:hover::after {
+      left: 140%;
+      transition: all 0.85s ease-in-out;
+    }
+
+    .badge-inner-enamel {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: linear-gradient(145deg, #2a1050 0%, #170d32 100%);
+      border: 1.5px solid rgba(251, 191, 36, 0.5);
+      border-radius: 32px;
+      padding: 10px 22px 10px 14px;
+      width: 100%;
+      position: relative;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6);
+    }
+
+    /* 破界突起的立体风帆标志 */
+    .badge-icon-wrap {
+      width: 54px;
+      height: 54px;
+      position: relative;
+      flex-shrink: 0;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.6));
+      margin-top: -6px; /* 破界视觉 */
+    }
+
+    .badge-text-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .badge-title-cn {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      background: linear-gradient(180deg, #fffbeb 0%, #fde68a 40%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+      line-height: 1.25;
+      white-space: nowrap;
+    }
+
+    .badge-sub-en {
+      font-family: 'Cinzel', 'Space Grotesk', serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      color: #e2d8f7;
+      text-transform: uppercase;
+      margin-top: 3px;
+      white-space: nowrap;
+    }
+
+    .badge-role-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.25), rgba(217, 70, 239, 0.15));
+      border: 1px solid rgba(251, 191, 36, 0.6);
+      border-radius: 4px;
+      padding: 1px 8px;
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: #fef08a;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+      width: fit-content;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .badge-meta-footnote {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+
+    /* 真实场景画廊 (5大实景，包含西装佩戴胸牌) */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin-bottom: 5.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .gallery-grid { grid-template-columns: 1fr; }
+    }
+
+    .gallery-card {
+      background: var(--card-bg-solid);
+      border: 1px solid var(--purple-border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .gallery-card:hover {
+      border-color: var(--brand-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7), 0 0 25px rgba(139, 92, 246, 0.25);
+    }
+
+    .gallery-img-wrap {
+      width: 100%;
+      height: 350px;
+      background: #0f0a20;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .gallery-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .gallery-card:hover .gallery-img-wrap img { transform: scale(1.04); }
+
+    .gallery-zoom-badge {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(10, 7, 22, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      transition: var(--transition);
+    }
+
+    .gallery-card:hover .gallery-zoom-badge {
+      background: var(--brand-primary);
+      border-color: var(--brand-neon);
+    }
+
+    .gallery-tag {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(10, 7, 22, 0.85);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 5px 12px;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--brand-neon);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .gallery-content {
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .gallery-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.6rem;
+      color: var(--text-main);
+    }
+
+    .gallery-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+
+    .craft-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .craft-chip {
+      background: rgba(139, 92, 246, 0.12);
+      border: 1px solid rgba(139, 92, 246, 0.25);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      color: var(--brand-primary-light);
+      font-weight: 500;
+    }
+
+    /* 3D 渲染与品牌规范专栏 */
+    .feature-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 5.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .feature-showcase-grid { grid-template-columns: 1fr; }
+    }
+
+    .feature-showcase-card {
+      background: var(--card-bg-solid);
+      border: 1px solid var(--purple-border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .feature-showcase-card:hover {
+      border-color: var(--brand-primary);
+      transform: translateY(-4px);
+    }
+
+    .feature-img-wrap {
+      height: 320px;
+      background: #0f0a20;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .feature-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .feature-showcase-card:hover .feature-img-wrap img { transform: scale(1.03); }
+
+    .feature-info { padding: 1.75rem; }
+
+    .feature-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* 色彩系统色盘 */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 5.5rem;
+    }
+
+    .color-swatch-card {
+      background: var(--card-bg);
+      border: 1px solid var(--purple-border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      cursor: pointer;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .color-swatch-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 25px -4px rgba(0, 0, 0, 0.4), 0 0 15px rgba(139, 92, 246, 0.3);
+    }
+
+    .swatch-color {
+      height: 110px;
+      width: 100%;
+      position: relative;
+    }
+
+    .swatch-copy-hint {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.65);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .color-swatch-card:hover .swatch-copy-hint { opacity: 1; }
+    .swatch-info { padding: 1rem; }
+
+    .swatch-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .swatch-hex {
+      font-family: 'Space Grotesk', monospace;
+      font-size: 0.85rem;
+      color: var(--brand-neon);
+      margin: 0.25rem 0 0.5rem;
+    }
+
+    .swatch-role {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* 历史原稿对比 */
+    .diagnosis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 5.5rem;
+    }
+
+    .diagnosis-card {
+      background: var(--card-bg);
+      border: 1px solid var(--purple-border-subtle);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .diagnosis-card:hover {
+      border-color: var(--brand-primary);
+      transform: translateY(-3px);
+    }
+
+    .diagnosis-img-wrap {
+      height: 220px;
+      background: #0f0a20;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 1px solid var(--purple-border-subtle);
+    }
+
+    .diagnosis-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .diagnosis-card:hover .diagnosis-img-wrap img { transform: scale(1.03); }
+
+    .tag-version {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #cbd5e1;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .diagnosis-content {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .diagnosis-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-main);
+    }
+
+    .critique-box {
+      background: rgba(239, 68, 68, 0.08);
+      border-left: 3px solid #ef4444;
+      padding: 0.75rem 1rem;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      margin: 0.75rem 0 1rem;
+      font-size: 0.85rem;
+      color: #fca5a5;
+    }
+
+    [data-theme="light"] .critique-box {
+      background: #fef2f2;
+      color: #b91c1c;
+      border-left-color: #dc2626;
+    }
+
+    .diagnosis-points {
+      list-style: none;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .diagnosis-points li {
+      margin-bottom: 6px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .diagnosis-points li::before {
+      content: "✕";
+      color: #f87171;
+      font-weight: 700;
+    }
+
+    /* 生产级矢量工程资产交付区 */
+    .downloads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 5.5rem;
+    }
+
+    .download-card {
+      background: var(--card-bg);
+      border: 1px solid var(--purple-border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-card);
+      backdrop-filter: blur(12px);
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .download-card:hover {
+      border-color: var(--brand-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(139, 92, 246, 0.3);
+    }
+
+    .download-preview {
+      height: 170px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(12, 8, 26, 0.7);
+      border: 1px dashed var(--purple-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-preview svg {
+      max-width: 100%;
+      max-height: 100%;
+      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
+      transition: transform 0.3s ease;
+    }
+
+    .download-card:hover .download-preview svg {
+      transform: scale(1.05);
+    }
+
+    .download-format-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(124, 58, 237, 0.25);
+      border: 1px solid rgba(192, 132, 252, 0.4);
+      color: #E9D5FF;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      font-family: 'Space Grotesk', monospace;
+    }
+
+    .download-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 0.4rem;
+      color: var(--text-main);
+    }
+
+    .download-desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .download-specs-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem 0;
+      font-size: 0.8rem;
+    }
+
+    .download-specs-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-dim);
+    }
+
+    .download-specs-list li span:last-child {
+      color: var(--brand-neon);
+      font-weight: 600;
+      font-family: 'Space Grotesk', monospace;
+    }
+
+    .download-action-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      text-decoration: none;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 700;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--brand-primary), #6D28D9);
+      color: white;
+      border: 1px solid rgba(192, 132, 252, 0.3);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .download-action-btn:hover {
+      background: linear-gradient(135deg, var(--brand-neon), var(--brand-primary));
+      box-shadow: 0 0 18px rgba(168, 85, 247, 0.5);
+      transform: translateY(-2px);
+      color: white;
+    }
+
+    .specs-section {
+      background: var(--card-bg-solid);
+      border: 1px solid var(--purple-border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      margin-bottom: 5.5rem;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    .spec-card {
+      background: rgba(12, 9, 24, 0.5);
+      border: 1px solid var(--purple-border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+    }
+
+    .spec-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: var(--brand-neon);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .spec-card ul {
+      list-style: none;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .spec-card ul li strong { color: var(--text-main); }
+
+    /* 全屏图片灯箱 */
+    .lightbox-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(4, 2, 10, 0.95);
+      backdrop-filter: blur(20px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-img-wrap {
+      max-width: 92vw;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .lightbox-img-wrap img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: var(--radius-md);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 40px rgba(139, 92, 246, 0.4);
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      margin-top: 1rem;
+      color: #e2e8f0;
+      font-size: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .lightbox-close-btn {
+      position: absolute;
+      top: -45px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .lightbox-close-btn:hover {
+      background: #ef4444;
+      border-color: #ef4444;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--brand-primary);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+      font-size: 0.875rem;
+      box-shadow: 0 10px 25px rgba(124, 58, 237, 0.5);
+      z-index: 1000;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    footer {
+      border-top: 1px solid var(--purple-border-subtle);
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      color: var(--text-dim);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部导航 -->
+  <header>
+    <a href="#" class="brand-title-wrap">
+      <div class="brand-mini-symbol">Σ</div>
+      <div>
+        <div class="brand-title">高中数学奥林匹克启航联盟</div>
+        <div class="brand-subtitle">HSMO QiHang Mathematical Alliance</div>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#master-logo">纯净母标</a></li>
+      <li><a href="#lapel-badge-sec">官方金属胸牌</a></li>
+      <li><a href="#gallery">1:1 实景画廊</a></li>
+      <li><a href="#vector-exports">工程矢量交付</a></li>
+      <li><a href="#showcase">3D 视觉看板</a></li>
+      <li><a href="#palette">紫色色彩系统</a></li>
+      <li><a href="#history">历史原稿对比</a></li>
+      <li><a href="#specs">工艺标准</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="btn btn-outline" id="themeToggleBtn">
+        <span id="themeIcon">☀️</span> 明亮模式
+      </button>
+      <a href="#gallery" class="btn btn-primary">查看所有落地图</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- 英雄区 -->
+    <section class="hero-section">
+      <div class="badge-approved">
+        <span>✓</span> 核心图腾锁定：纯净版 ·「拓扑之帆 · 莫比乌斯无限」
+      </div>
+      <h1 class="hero-title">
+        全景视觉资产与落地系统<br>
+        <span class="gradient-text">一站式官方设计门户</span>
+      </h1>
+      <p class="hero-desc">
+        根据您的专业指导，<strong>彻底删除了主帆上的两条虚线</strong>，并应您的要求，将锁扣全面重塑升级为<strong>官方尊崇紫金金属胸牌 (Executive Metal Lapel Nameplate)</strong>！
+      </p>
+
+      <div class="evolution-strip">
+        <div class="evolution-pill">
+          <span>✨ 纯净主帆：</span><strong>无虚线干扰 · 纯粹渐变</strong>
+        </div>
+        <div class="evolution-pill">
+          <span>🏷️ 专属胸牌：</span><strong>拉丝香槟金边 · 深紫微凸珐琅</strong>
+        </div>
+        <div class="evolution-pill">
+          <span>🎯 母标唯一：</span><strong>实景图片 100% 绝对一致</strong>
+        </div>
+        <div class="evolution-pill">
+          <span>🎨 皇家色彩：</span><strong>极光电紫 + 欧拉香槟金</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- 严谨一致性保证横幅 -->
+    <div class="consistency-callout">
+      <div class="icon-check">✓</div>
+      <div class="consistency-text">
+        <h4>100% 严苛一致性承诺 (Master Asset Fidelity)</h4>
+        <p>
+          此前生成的概念实景由 AI 扩散生成，存在细微造型偏差。现已<strong>全面以去除了虚线的纯净母标为绝对唯一源资产进行 1:1 投射生成</strong>，下方所有实物落地大图中的标志与上方母标<strong>完全一致、分毫不差</strong>！点击任意图片均可放大全屏鉴赏。
+        </p>
+      </div>
+    </div>
+
+    <!-- 核心方案深度演变（4大专业形态交互） -->
+    <div id="master-logo"></div>
+    <section class="section-title-wrap">
+      <span class="section-eyebrow">Design System · 4大形态</span>
+      <h2 class="section-heading">纯净版全维度标志形态系统</h2>
+      <p class="section-intro">
+        主帆面剔除多余虚线后，无论是大屏多媒体展示，还是极小的单色试卷油印，均展现出极其清晰锐利的现代工业设计美感：
+      </p>
+    </section>
+
+    <div class="deep-dive-card">
+      <div class="deep-dive-header">
+        <div class="variant-selector-tabs">
+          <button class="var-tab active" onclick="switchVariant(0)">① 标准极光彩版</button>
+          <button class="var-tab" onclick="switchVariant(1)">② 纯平单色印刷版</button>
+          <button class="var-tab" onclick="switchVariant(2)">③ 尊崇紫金殿堂版</button>
+          <button class="var-tab" onclick="switchVariant(3)">④ 学术圆印公章版</button>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn btn-outline" onclick="toggleGrid()">
+            <span id="gridBtnText">📐 开启几何网格</span>
+          </button>
+          <button class="btn btn-primary" onclick="downloadCurrentSvg()">
+            ⬇️ 导出纯净版 SVG
+          </button>
+        </div>
+      </div>
+
+      <div class="deep-dive-body">
+        <!-- 舞台 -->
+        <div class="deep-stage">
+          <div class="grid-overlay" id="stageGrid"></div>
+          <div class="stage-svg-box" id="mainSvgStage">
+            <!-- 动态渲染 SVG -->
+          </div>
+          <div class="stage-tools">
+            <span style="font-size: 0.8rem; color: var(--text-dim);">
+              ✦ 纯净无虚线 · 径向发光奇点之星 · 矢量抗锯齿平滑
+            </span>
+          </div>
+        </div>
+
+        <!-- 详细解构与标准金属胸牌组件 -->
+        <div class="deep-info">
+          <div>
+            <div class="design-spec-box">
+              <div class="spec-item">
+                <strong>形态定位：</strong>
+                <span id="varRole">品牌第一主识别色，用于官方网站、数字多媒体大屏、全彩学术期刊封面。</span>
+              </div>
+              <div class="spec-item">
+                <strong>纯净帆面：</strong>
+                <span id="varTopology">剔除虚线干扰，以丝滑的高阶参数化渐变呈现莫比乌斯单侧连续曲面。</span>
+              </div>
+              <div class="spec-item">
+                <strong>黄金切分：</strong>
+                <span id="varRatio">主帆弧度与副帆高度严格遵循 φ ≈ 1.618 黄金分割，顶端夹角为黄金角 36°。</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- =============================================
+               为您全新重构的：官方实物金属胸牌 (BADGE NAMEPLATE)
+               ============================================= -->
+          <div id="lapel-badge-sec" class="lapel-badge-container">
+            <div class="badge-zone-header">
+              <div class="badge-zone-title">
+                <span>✦</span> 官方尊崇金属胸牌 · 样式系统
+              </div>
+              <div class="badge-role-tabs">
+                <button class="role-btn active" onclick="switchBadgeRole('EXPERT 命题专家组')">命题专家组</button>
+                <button class="role-btn" onclick="switchBadgeRole('DELEGATE 金牌集训队')">集训队员</button>
+                <button class="role-btn" onclick="switchBadgeRole('COACH 金牌主教练')">指导教练</button>
+                <button class="role-btn" onclick="switchBadgeRole('COUNCIL 联盟理事会')">理事会</button>
+              </div>
+            </div>
+
+            <!-- 3D 拟真实物胸牌 -->
+            <div class="physical-badge-frame" title="划过观察拉丝金属镜面反光">
+              <div class="badge-inner-enamel">
+                <!-- 破框 3D 帆船图标 -->
+                <div class="badge-icon-wrap" id="badgeIconSlot">
+                  <!-- 动态注入金边莫比乌斯帆船 -->
+                </div>
+                <!-- 刻字区域 -->
+                <div class="badge-text-col">
+                  <div class="badge-title-cn">高中数学奥林匹克启航联盟</div>
+                  <div class="badge-sub-en">HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE</div>
+                  <div class="badge-role-tag" id="badgeRoleDisplay">
+                    <span>★</span> <span id="badgeRoleText">EXPERT 命题专家组</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="badge-meta-footnote">
+              <span>尺寸：72mm × 24mm × 2.5mm 实心黄铜冲压</span>
+              <span>佩戴方式：双强力钕铁硼磁吸（无损高档西服）</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- 真实场景 1:1 严格一致性落地画廊 (5大实景，首发西服胸牌实拍) -->
+    <div id="gallery"></div>
+    <section class="section-title-wrap">
+      <span class="section-eyebrow">Real-World Applications · 1:1 精确落地画廊</span>
+      <h2 class="section-heading">奥林匹克各实体场景中的顶级表现（点击放大）</h2>
+      <p class="section-intro">
+        每一张实物实拍大图均严格以去除了虚线的莫比乌斯母标为唯一源资产：高端西装金属胸牌、纯金珐琅奖章、全国统考试卷、万人礼堂大屏、重磅刺绣卫衣：
+      </p>
+    </section>
+
+    <div class="gallery-grid">
+      <!-- 场景 00A：官方实物金属胸牌西装佩戴 -->
+      <div class="gallery-card" onclick="openLightbox('assets/mockup_chest_badge.jpg', '场景 00A：全国高中数学奥林匹克启航联盟 · 官方金属胸牌与西装翻领实物佩戴特写 (EXPERT 命题专家组)')">
+        <div class="gallery-img-wrap">
+          <span class="gallery-tag">🎖️ 场景 00A · 官方金属胸牌</span>
+          <img src="assets/mockup_chest_badge.jpg" alt="西装翻领官方金属胸牌实拍大图">
+          <div class="gallery-zoom-badge">🔍 点击查看 8K 西装实拍大图</div>
+        </div>
+        <div class="gallery-content">
+          <div>
+            <h3 class="gallery-title">高级定制深蓝羊毛西装 · 官方拉丝香槟金与深紫珐琅金属胸牌</h3>
+            <p class="gallery-desc">
+              采用长圆角矩形双层复合金属工艺，底层为拉丝香槟金微倒角边框，内嵌深空星渊紫哑光珐琅面板。左侧莫比乌斯之帆以立体浮雕破框而出，中间为纯金立体微浮雕字，下方嵌有独立的金色身份插槽，散发出无与伦比的学术尊崇感。
+            </p>
+          </div>
+          <div class="craft-chips">
+            <span class="craft-chip">香槟金拉丝包边</span>
+            <span class="craft-chip">破框先锋 3D 浮雕</span>
+            <span class="craft-chip">深紫哑光珐琅烤漆</span>
+            <span class="craft-chip">双钕铁硼无痕磁吸</span>
+            <span class="craft-chip">可换身份铭牌插槽</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 场景 00B：官方尊崇典藏礼盒套装 -->
+      <div class="gallery-card" onclick="openLightbox('assets/mockup_giftbox.jpg', '场景 00B：专家与主教练尊崇授牌套装 · 官方深紫天鹅绒典藏礼盒 (含 72×24mm 胸牌 + 25mm 徽章 + 黄铜印章)')">
+        <div class="gallery-img-wrap">
+          <span class="gallery-tag">🎁 场景 00B · 尊崇典藏礼盒</span>
+          <img src="assets/mockup_giftbox.jpg" alt="官方深紫天鹅绒尊崇典藏礼盒套装实拍">
+          <div class="gallery-zoom-badge">🔍 点击查看 8K 礼盒实拍大图</div>
+        </div>
+        <div class="gallery-content">
+          <div>
+            <h3 class="gallery-title">命题专家与金牌教练尊崇典藏礼盒 · 官方授牌套装</h3>
+            <p class="gallery-desc">
+              专为全国数学奥林匹克命题组专家、特级金牌教练与联盟理事量身打造。内衬采用深邃夜紫防震天鹅绒，精准嵌入 72×24mm 官方金属胸牌、25mm 圆形学术纪念徽章及专属实心黄铜火漆封印；内盖热压烫印黄金莫比乌斯徽记。
+            </p>
+          </div>
+          <div class="craft-chips">
+            <span class="craft-chip">深紫抗静电天鹅绒</span>
+            <span class="craft-chip">内盖电化铝烫金</span>
+            <span class="craft-chip">72×24mm 专家胸牌</span>
+            <span class="craft-chip">25mm 会员纪念徽章</span>
+            <span class="craft-chip">实心黄铜火漆印</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 场景 1：全国奥赛金牌与镀金珐琅奖章 -->
+      <div class="gallery-card" onclick="openLightbox('assets/mockup_medal.jpg', '场景 01：全国高中数学奥林匹克联赛 · 纯金与皇家紫珐琅奖章 (100% 吻合母标)')">
+        <div class="gallery-img-wrap">
+          <span class="gallery-tag">🏆 场景 01 · 金牌奖章</span>
+          <img src="assets/mockup_medal.jpg" alt="100% 吻合的纯金紫珐琅奖章">
+          <div class="gallery-zoom-badge">🔍 点击查看高清大图</div>
+        </div>
+        <div class="gallery-content">
+          <div>
+            <h3 class="gallery-title">全国联赛金牌 · 实心黄铜与皇家紫珐琅奖章</h3>
+            <p class="gallery-desc">
+              严格按照母标铸造！实心黄铜压铸出完全相同的莫比乌斯底座与双帆，内嵌高透皇家紫珐琅，帆面纯净平滑；顶端嵌以纯金奇点圆球，配深紫天鹅绒绶带与皮质荣誉册。
+            </p>
+          </div>
+          <div class="craft-chips">
+            <span class="craft-chip">100% 吻合母标</span>
+            <span class="craft-chip">黄铜实心浮雕</span>
+            <span class="craft-chip">深紫透明珐琅</span>
+            <span class="craft-chip">天鹅绒刺绣绶带</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 场景 2：学术讲义与全国统一试卷 -->
+      <div class="gallery-card" onclick="openLightbox('assets/mockup_exam.jpg', '场景 02：全国高中数学奥林匹克统考试卷与精装学术论文集 (100% 吻合母标)')">
+        <div class="gallery-img-wrap">
+          <span class="gallery-tag">📝 场景 02 · 统考试卷</span>
+          <img src="assets/mockup_exam.jpg" alt="100% 吻合的全国联赛试卷与精装论文集">
+          <div class="gallery-zoom-badge">🔍 点击查看高清大图</div>
+        </div>
+        <div class="gallery-content">
+          <div>
+            <h3 class="gallery-title">全国选拔赛统考试卷、答题卡与精装讲义封皮</h3>
+            <p class="gallery-desc">
+              试卷题头正中央印制的正是纯平单色版的莫比乌斯母标，无任何虚线干扰，庄严肃穆；右侧深紫精装讲义封面上，以 100% 相同的母标进行电化铝烫金压印，完美呼应圆规直尺。
+            </p>
+          </div>
+          <div class="craft-chips">
+            <span class="craft-chip">100% 吻合母标</span>
+            <span class="craft-chip">单色极简题头</span>
+            <span class="craft-chip">皮纹布面烫金</span>
+            <span class="craft-chip">100g 护眼道林纸</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 场景 3：学术峰会万人大礼堂 -->
+      <div class="gallery-card" onclick="openLightbox('assets/mockup_summit.jpg', '场景 03：全国高校与名校学术峰会 · 万人主会场发光形象大屏 (100% 吻合母标)')">
+        <div class="gallery-img-wrap">
+          <span class="gallery-tag">🏛️ 场景 03 · 万人礼堂主屏</span>
+          <img src="assets/mockup_summit.jpg" alt="100% 吻合的学术研讨峰会舞台大屏">
+          <div class="gallery-zoom-badge">🔍 点击查看高清大图</div>
+        </div>
+        <div class="gallery-content">
+          <div>
+            <h3 class="gallery-title">全国高校与重点中学学术峰会 · 巨幅形象大屏</h3>
+            <p class="gallery-desc">
+              在千人学术大礼堂现场，深空星渊紫背景大屏中央悬浮着巨大的拉丝钛合金莫比乌斯母标发光雕塑，背部投射 8000K 电光紫霓虹光晕，形态与上方矢量母标完全一致。
+            </p>
+          </div>
+          <div class="craft-chips">
+            <span class="craft-chip">100% 吻合母标</span>
+            <span class="craft-chip">拉丝钛合金雕塑</span>
+            <span class="craft-chip">背打霓虹光晕</span>
+            <span class="craft-chip">超宽 LED 巨幕</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 场景 4：国家集训队营服卫衣与学员胸卡 -->
+      <div class="gallery-card" onclick="openLightbox('assets/mockup_apparel.jpg', '场景 04：国家集训营专属深紫纯棉卫衣金紫刺绣与学员胸卡 (100% 吻合母标)')">
+        <div class="gallery-img-wrap">
+          <span class="gallery-tag">🧥 场景 04 · 营服刺绣</span>
+          <img src="assets/mockup_apparel.jpg" alt="100% 吻合的深紫纯棉刺绣卫衣与防伪参会证">
+          <div class="gallery-zoom-badge">🔍 点击查看高清大图</div>
+        </div>
+        <div class="gallery-content">
+          <div>
+            <h3 class="gallery-title">集训营专属重磅纯棉卫衣 · 胸口高密金紫刺绣</h3>
+            <p class="gallery-desc">
+              午夜深紫纯棉卫衣左胸，采用金色与淡紫丝线精密绣出纯净版莫比乌斯母标，针脚立体平滑；右侧学员参会胸卡上同步印制标准彩色母标，整齐划一。
+            </p>
+          </div>
+          <div class="craft-chips">
+            <span class="craft-chip">100% 吻合母标</span>
+            <span class="craft-chip">双色丝线高密刺绣</span>
+            <span class="craft-chip">420g 紧密纯棉毛圈</span>
+            <span class="craft-chip">防伪全息参会胸卡</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 生产级工程矢量资产交付区 -->
+    <div id="vector-exports"></div>
+    <section class="section-title-wrap">
+      <span class="section-eyebrow">Production Assets · 矢量与工程制模交付</span>
+      <h2 class="section-heading">生产级标准工程矢量资产包（可直接下载）</h2>
+      <p class="section-intro">
+        所有文件均已经过去除虚线、节点优化、闭合路径检测与微倒角校验，满足专业印刷制版、激光线切割、模具冲压与 CNC 雕刻等全工艺要求：
+      </p>
+    </section>
+
+    <div class="downloads-grid">
+      <!-- 交付资产 1: 标准极光彩版母标 -->
+      <div class="download-card">
+        <div>
+          <div class="download-preview">
+            <span class="download-format-badge">SVG · 全彩母标</span>
+            <svg viewBox="0 0 200 200" width="110" height="110" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="dlSail1" x1="40" y1="170" x2="160" y2="30" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#4C1D95"/>
+                  <stop offset="50%" stop-color="#7C3AED"/>
+                  <stop offset="100%" stop-color="#C084FC"/>
+                </linearGradient>
+                <linearGradient id="dlSail2" x1="120" y1="160" x2="170" y2="40" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#6D28D9"/>
+                  <stop offset="60%" stop-color="#A855F7"/>
+                  <stop offset="100%" stop-color="#E879F9"/>
+                </linearGradient>
+                <linearGradient id="dlHull" x1="30" y1="170" x2="175" y2="150" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#06B6D4"/>
+                  <stop offset="40%" stop-color="#8B5CF6"/>
+                  <stop offset="100%" stop-color="#D946EF"/>
+                </linearGradient>
+                <radialGradient id="dlStar" cx="138" cy="28" r="8" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#FFFFFF"/>
+                  <stop offset="40%" stop-color="#FDE047"/>
+                  <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="url(#dlHull)"/>
+              <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="url(#dlSail2)"/>
+              <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="url(#dlSail1)"/>
+              <circle cx="138" cy="28" r="7" fill="url(#dlStar)"/>
+              <circle cx="138" cy="28" r="2.2" fill="#FFFFFF"/>
+            </svg>
+          </div>
+          <div class="download-info">
+            <h3 class="download-title">标准极光彩版 · 终极母标</h3>
+            <p class="download-desc">
+              剔除虚线的全彩主标识，采用拓扑单侧连续渐变与黄金角定位，适用于官方全彩期刊、大会巨幕、高清多媒体与品牌官网。
+            </p>
+            <ul class="download-specs-list">
+              <li><span>文件命名：</span><span>HSMO_Logo_Clean_Primary.svg</span></li>
+              <li><span>色彩模式：</span><span>RGB / 极光紫电光金</span></li>
+              <li><span>路径状态：</span><span>纯净平滑 · 零杂点</span></li>
+              <li><span>推荐场景：</span><span>官网 / 峰会大屏 / 全彩印刷</span></li>
+            </ul>
+          </div>
+        </div>
+        <a href="vector_exports/HSMO_Logo_Clean_Primary.svg" download="HSMO_Logo_Clean_Primary.svg" class="download-action-btn">
+          ⬇️ 下载全彩母标矢量文件 (SVG)
+        </a>
+      </div>
+
+      <!-- 交付资产 2: 纯平单色印刷版 -->
+      <div class="download-card">
+        <div>
+          <div class="download-preview">
+            <span class="download-format-badge">SVG · 单色试卷</span>
+            <svg viewBox="0 0 200 200" width="110" height="110" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g fill="#E2E8F0">
+                <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z"/>
+                <path d="M 108 153 C 119 133 133 97 147 78 C 140 106 131 134 125 152 C 119 153 113 153 108 153 Z"/>
+                <path d="M 52 148 C 65 110 92 60 138 28 C 122 68 110 115 102 156 C 84 156 68 152 52 148 Z"/>
+                <circle cx="138" cy="28" r="3.5"/>
+              </g>
+            </svg>
+          </div>
+          <div class="download-info">
+            <h3 class="download-title">纯平单色精密印刷版 · 试卷专版</h3>
+            <p class="download-desc">
+              以 1.5mm 精密负空间切割空间层叠关系，无渐变、抗油墨扩散，即便在糙面道林纸高速轮转机印刷或 16px 极小尺寸下依然清晰。
+            </p>
+            <ul class="download-specs-list">
+              <li><span>文件命名：</span><span>HSMO_Logo_Monochrome.svg</span></li>
+              <li><span>色彩模式：</span><span>1-bit 纯黑单色 / 专色</span></li>
+              <li><span>空间间隔：</span><span>1.5mm 负空间切割</span></li>
+              <li><span>推荐场景：</span><span>全国统考试卷 / 红头公文 / 钢印</span></li>
+            </ul>
+          </div>
+        </div>
+        <a href="vector_exports/HSMO_Logo_Monochrome.svg" download="HSMO_Logo_Monochrome.svg" class="download-action-btn">
+          ⬇️ 下载单色试卷矢量文件 (SVG)
+        </a>
+      </div>
+
+      <!-- 交付资产 3: 72×24mm 官方金属胸牌工程图 -->
+      <div class="download-card">
+        <div>
+          <div class="download-preview" style="padding: 0.5rem;">
+            <span class="download-format-badge">SVG · 金属胸牌 72×24</span>
+            <svg viewBox="0 0 480 160" width="180" height="60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="16" width="468" height="136" rx="68" fill="#FBBF24" stroke="#78350F" stroke-width="2"/>
+              <rect x="16" y="26" width="448" height="116" rx="58" fill="#28114C" stroke="#FEF08A" stroke-width="2"/>
+              <g transform="translate(18, 0) scale(0.85)">
+                <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="#3B1261" stroke="#FDE047" stroke-width="3"/>
+                <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="#4C1D95" stroke="#FDE047" stroke-width="2.5"/>
+                <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="#581C87" stroke="#FDE047" stroke-width="3"/>
+                <circle cx="138" cy="28" r="4.5" fill="#FDE047"/>
+              </g>
+              <text x="175" y="70" font-family="serif" font-size="23" font-weight="900" fill="#FEF08A" letter-spacing="2">高中数学奥林匹克启航联盟</text>
+              <text x="176" y="94" font-family="sans-serif" font-size="9" font-weight="700" fill="#E2D8F7" letter-spacing="1.2">HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE</text>
+              <rect x="176" y="106" width="138" height="20" rx="4" fill="rgba(245, 158, 11, 0.2)" stroke="#FEF08A" stroke-width="1"/>
+              <text x="245" y="120" text-anchor="middle" font-family="sans-serif" font-size="9.5" font-weight="800" fill="#FEF08A">★ EXPERT 命题专家组</text>
+            </svg>
+          </div>
+          <div class="download-info">
+            <h3 class="download-title">官方金属胸牌 · 72×24mm 工程制作图</h3>
+            <p class="download-desc">
+              严格按照 72mm×24mm 国际高阶学术胸牌规制建模，包含破框莫比乌斯浮雕、双层倒角金边、深紫珐琅槽与可换角色卡槽。
+            </p>
+            <ul class="download-specs-list">
+              <li><span>文件命名：</span><span>HSMO_Lapel_Nameplate_72x24.svg</span></li>
+              <li><span>成品尺寸：</span><span>72mm × 24mm × 2.5mm</span></li>
+              <li><span>推荐工法：</span><span>实心黄铜压铸 / 烤漆珐琅 / CNC</span></li>
+              <li><span>佩戴方式：</span><span>背面预留双强力钕铁硼磁吸槽</span></li>
+            </ul>
+          </div>
+        </div>
+        <a href="vector_exports/HSMO_Lapel_Nameplate_72x24.svg" download="HSMO_Lapel_Nameplate_72x24.svg" class="download-action-btn">
+          ⬇️ 下载胸牌工程矢量文件 (SVG)
+        </a>
+      </div>
+
+      <!-- 交付资产 4: 25mm 圆形学术纪念徽章 -->
+      <div class="download-card">
+        <div>
+          <div class="download-preview">
+            <span class="download-format-badge">SVG · 圆形徽章 25mm</span>
+            <svg viewBox="0 0 200 200" width="110" height="110" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="96" fill="#F59E0B" stroke="#78350F" stroke-width="2"/>
+              <circle cx="100" cy="100" r="88" fill="#2E1065" stroke="#FDE047" stroke-width="2"/>
+              <circle cx="100" cy="100" r="84" stroke="rgba(251, 191, 36, 0.4)" stroke-width="1" stroke-dasharray="3 2"/>
+              <g transform="translate(10, 8) scale(0.9)">
+                <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="#3B1261" stroke="#FEF08A" stroke-width="2.5"/>
+                <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="#4C1D95" stroke="#FEF08A" stroke-width="2"/>
+                <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="#581C87" stroke="#FEF08A" stroke-width="2.5"/>
+                <circle cx="138" cy="28" r="4" fill="#FEF08A"/>
+              </g>
+            </svg>
+          </div>
+          <div class="download-info">
+            <h3 class="download-title">圆形学术纪念章 · 25mm 冲压制模图</h3>
+            <p class="download-desc">
+              标准 25mm 直径圆形礼聘纪念章，适用于集训队队员西装翻领别针、理事会特聘徽章、火漆钢印与双面贵金属纪念币冲压。
+            </p>
+            <ul class="download-specs-list">
+              <li><span>文件命名：</span><span>HSMO_Round_Lapel_Pin_25mm.svg</span></li>
+              <li><span>成品尺寸：</span><span>直径 25mm (标准翻领针制式)</span></li>
+              <li><span>推荐工法：</span><span>黄铜冲压 / 液态珐琅 / 哑金电镀</span></li>
+              <li><span>背面结构：</span><span>高级刺马针配蝴蝶扣 / 磁吸扣</span></li>
+            </ul>
+          </div>
+        </div>
+        <a href="vector_exports/HSMO_Round_Lapel_Pin_25mm.svg" download="HSMO_Round_Lapel_Pin_25mm.svg" class="download-action-btn">
+          ⬇️ 下载圆形徽章矢量文件 (SVG)
+        </a>
+      </div>
+    </div>
+
+    <!-- 3D 拟真渲染与视觉规范展板专栏 -->
+    <div id="showcase"></div>
+    <section class="section-title-wrap">
+      <span class="section-eyebrow">Visual Guidelines & 3D · 品牌视觉看板</span>
+      <h2 class="section-heading">3D 材质探索与 VI 规范体系看板（点击放大）</h2>
+      <p class="section-intro">
+        包含在紫金暗夜工作台上的立体浮雕徽章特写，以及全套标准字、色彩规范与印刷版式规范看板：
+      </p>
+    </section>
+
+    <div class="feature-showcase-grid">
+      <!-- 3D 渲染图 -->
+      <div class="feature-showcase-card" onclick="openLightbox('assets/mockup_3d.jpg', '3D 拟真质感：紫金暗夜金属工作台上的莫比乌斯浮雕徽章')">
+        <div class="feature-img-wrap">
+          <img src="assets/mockup_3d.jpg" alt="数学奥林匹克紫金质感 3D 徽章渲染">
+          <div class="gallery-zoom-badge">🔍 查看 8K 渲染大图</div>
+        </div>
+        <div class="feature-info">
+          <h3 class="feature-title">紫金暗夜 3D 拟真金属徽章渲染</h3>
+          <p class="feature-desc">
+            探索了深空星渊紫阳极氧化金属与微光电光紫霓虹边缘的结合，配合欧拉常数香槟金切边，置于数学手稿桌面上，散发出强烈的学术仪式感与竞赛荣誉感。
+          </p>
+        </div>
+      </div>
+
+      <!-- VI 看板图 -->
+      <div class="feature-showcase-card" onclick="openLightbox('assets/branding_board.jpg', 'VI 规范看板：高中数学奥林匹克启航联盟品牌视觉指南总览')">
+        <div class="feature-img-wrap">
+          <img src="assets/branding_board.jpg" alt="品牌规范视觉看板">
+          <div class="gallery-zoom-badge">🔍 查看 VI 看板大图</div>
+        </div>
+        <div class="feature-info">
+          <h3 class="feature-title">多维延展的 VI 视觉识别指南看板</h3>
+          <p class="feature-desc">
+            规范了标志的比例网格、标准中英文字体系统（思源宋体 Heavy / Cinzel / Space Grotesk）以及海报、公函信纸等多物料延展规范。
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 现代紫色色系色彩规范 -->
+    <div id="palette"></div>
+    <section class="section-title-wrap">
+      <span class="section-eyebrow">Color System · 现代紫色体系</span>
+      <h2 class="section-heading">为什么选择现代紫色（Modern Violet）？</h2>
+      <p class="section-intro">
+        在色彩心理学中，紫色是<strong>理智冷静的蓝色</strong>与<strong>直觉热情的红色</strong>在超高维度上的碰撞。它象征着<strong>智力巅峰、深邃时空、前沿真理与非凡探索</strong>。点击色块即可一键复制色值：
+      </p>
+    </section>
+
+    <div class="palette-grid">
+      <div class="color-swatch-card" onclick="copyColor('#7C3AED')">
+        <div class="swatch-color" style="background: #7C3AED;">
+          <span class="swatch-copy-hint">点击复制</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">极光电紫 <span>Electric</span></div>
+          <div class="swatch-hex">#7C3AED</div>
+          <div class="swatch-role">品牌核心主色。高饱和度现代紫，象征灵感火花、思维顿悟与解题突破。</div>
+        </div>
+      </div>
+
+      <div class="color-swatch-card" onclick="copyColor('#1E1B4B')">
+        <div class="swatch-color" style="background: #1E1B4B;">
+          <span class="swatch-copy-hint">点击复制</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">深空星渊紫 <span>Cosmic</span></div>
+          <div class="swatch-hex">#1E1B4B</div>
+          <div class="swatch-role">品牌基石底色。深邃沉稳，象征未知的宇宙与深不可测的数论海洋。</div>
+        </div>
+      </div>
+
+      <div class="color-swatch-card" onclick="copyColor('#C084FC')">
+        <div class="swatch-color" style="background: #C084FC;">
+          <span class="swatch-copy-hint">点击复制</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">虚数霓虹紫 <span>Neon</span></div>
+          <div class="swatch-hex">#C084FC</div>
+          <div class="swatch-role">高光提亮点缀。具有极强发光感，代表思维锐度与多维拓扑结构边缘。</div>
+        </div>
+      </div>
+
+      <div class="color-swatch-card" onclick="copyColor('#F59E0B')">
+        <div class="swatch-color" style="background: #F59E0B;">
+          <span class="swatch-copy-hint">点击复制</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">欧拉常数金 <span>Euler Gold</span></div>
+          <div class="swatch-hex">#F59E0B</div>
+          <div class="swatch-role">荣誉与点睛色。象征奥林匹克金牌、真理之光与各名校协同的丰硕成果。</div>
+        </div>
+      </div>
+
+      <div class="color-swatch-card" onclick="copyColor('#06B6D4')">
+        <div class="swatch-color" style="background: #06B6D4;">
+          <span class="swatch-copy-hint">点击复制</span>
+        </div>
+        <div class="swatch-info">
+          <div class="swatch-name">拓扑天青 <span>Cyan Accent</span></div>
+          <div class="swatch-hex">#06B6D4</div>
+          <div class="swatch-role">辅助冷光源。与紫色形成绝妙的冷色高频渐变，强化现代极客与数字感。</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 历史原稿对比 -->
+    <div id="history"></div>
+    <section class="section-title-wrap">
+      <span class="section-eyebrow">Diagnosis & Evolution · 历史原稿对比</span>
+      <h2 class="section-heading">您之前提供的三版原稿诊断（点击可放大）</h2>
+      <p class="section-intro">
+        将您原本不满意的三版设计在此存档并逐个对比硬伤，见证品牌从“具象老旧”蜕变为“现代极客”的完整轨迹：
+      </p>
+    </section>
+
+    <div class="diagnosis-grid">
+      <!-- 原版 1 -->
+      <div class="diagnosis-card" onclick="openLightbox('assets/ref1.jpg', '原版一：商务蓝金帆船（过于企业化，缺乏数学奥赛专业感）')">
+        <div class="diagnosis-img-wrap">
+          <span class="tag-version">原版一：商务蓝金帆船</span>
+          <img src="assets/ref1.jpg" alt="原版一参考">
+          <div class="gallery-zoom-badge">🔍 点击放大</div>
+        </div>
+        <div class="diagnosis-content">
+          <h3 class="diagnosis-title">商业企业化严重 · 缺乏数学灵魂</h3>
+          <div class="critique-box">
+            “像中规中矩的传统航运集团、管理咨询公司或普通民办培训班，毫无奥赛智力特征。”
+          </div>
+          <ul class="diagnosis-points">
+            <li>仅停留于“帆船+浪花+星空剪影”的具象描摹，缺乏几何、代数、函数等数学核心意象。</li>
+            <li>深蓝与土金搭配为千禧年代典型政企VI风格，缺乏现代学术竞赛的先锋感。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 原版 2 -->
+      <div class="diagnosis-card" onclick="openLightbox('assets/ref2.jpg', '原版二：文创毛笔线描（调性严重偏向新中式茶社，与现代科学脱节）')">
+        <div class="diagnosis-img-wrap">
+          <span class="tag-version">原版二：文创毛笔线描</span>
+          <img src="assets/ref2.jpg" alt="原版二参考">
+          <div class="gallery-zoom-badge">🔍 点击放大</div>
+        </div>
+        <div class="diagnosis-content">
+          <h3 class="diagnosis-title">调性严重错位 · 偏向新中式茶社</h3>
+          <div class="critique-box">
+            “极简毛笔白描搭配红色方印，带有浓重文人墨客气息，与现代数学奥赛的国际性脱节。”
+          </div>
+          <ul class="diagnosis-points">
+            <li>数学奥赛核心是严谨逻辑、证明之美与精确推导，毛笔线条松散写意，与学科内核背道而驰。</li>
+            <li>单薄线条在小尺寸应用（如试卷、胸章）下几乎完全失去辨识度。</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 原版 3 -->
+      <div class="diagnosis-card" onclick="openLightbox('assets/ref3.jpg', '原版三：书本笔杆帆船（行业陈词滥调，视觉重心涣散）')">
+        <div class="diagnosis-img-wrap">
+          <span class="tag-version">原版三：书本笔杆帆船</span>
+          <img src="assets/ref3.jpg" alt="原版三参考">
+          <div class="gallery-zoom-badge">🔍 点击放大</div>
+        </div>
+        <div class="diagnosis-content">
+          <h3 class="diagnosis-title">教育套路俗套 · 视觉重心涣散</h3>
+          <div class="critique-box">
+            “‘翻开的书本+笔杆做桅杆’是中小学教育行业最泛滥的陈词滥调（Cliché）。”
+          </div>
+          <ul class="diagnosis-points">
+            <li>翻开的书本与浪花交融生硬，缺乏奥数探索未知、挑战高维思维的格局。</li>
+            <li>米灰色彩饱和度过低，视觉反差微弱，沉闷无力。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 印刷生产与工程材质落地指南 -->
+    <div id="specs"></div>
+    <section class="specs-section">
+      <span class="section-eyebrow">Production Guidelines · 落地工艺手册</span>
+      <h2 class="section-heading">印刷、织造与金属工程工艺执行标准</h2>
+      <p class="section-intro">
+        为确保全国各盟校在印制各类物料时色差零误差，制定以下落地工艺指导参数：
+      </p>
+
+      <div class="specs-grid">
+        <div class="spec-card">
+          <h4><span>🎨</span> 国际标准色谱 (Pantone)</h4>
+          <ul>
+            <li><strong>极光主紫：</strong>Pantone 2665 C (C75 M85 Y0 K0)</li>
+            <li><strong>深空夜紫：</strong>Pantone 276 C (C90 M95 Y35 K40)</li>
+            <li><strong>欧拉香槟金：</strong>Pantone 7555 C (金粉调配)</li>
+            <li><strong>RGB 屏幕值：</strong>#7C3AED / #1E1B4B / #F59E0B</li>
+          </ul>
+        </div>
+
+        <div class="spec-card">
+          <h4><span>📄</span> 特种纸与印刷工艺</h4>
+          <ul>
+            <li><strong>试卷内页：</strong>100g 纯质米白道林纸（防眩光护眼）</li>
+            <li><strong>论文集封面：</strong>300g 英国滑面皮纹纸 + 哑光紫电化铝烫金</li>
+            <li><strong>证书卡纸：</strong>350g 德国环保棉絮纸 + 凹凸激凸钢印</li>
+            <li><strong>试卷密封线：</strong>单色专色紫 45% 网点防伪印刷</li>
+          </ul>
+        </div>
+
+        <div class="spec-card">
+          <h4><span>🏅</span> 勋章与实体标牌</h4>
+          <ul>
+            <li><strong>金牌奖章：</strong>实心 H65 黄铜压铸 + 局部紫珐琅烤漆</li>
+            <li><strong>队员胸针：</strong>锌合金电镀哑枪黑/真金 + 磁吸防穿孔背扣</li>
+            <li><strong>形象墙雕塑：</strong>6061 航空铝 CNC + 阳极氧化发色</li>
+            <li><strong>背光参数：</strong>4000K-4500K 暖白/电光紫双路混光</li>
+          </ul>
+        </div>
+
+        <div class="spec-card">
+          <h4><span>👕</span> 服装与织造工艺</h4>
+          <ul>
+            <li><strong>营服卫衣：</strong>420g 精梳紧密赛络纺纯棉毛圈布</li>
+            <li><strong>胸口刺绣：</strong>120D/2 德国高士人造丝绣花线</li>
+            <li><strong>胸卡挂绳：</strong>25mm 宽双层加密高光涤纶提花织带</li>
+            <li><strong>洗涤牢度：</strong>国标 A 类婴幼儿级标准，抗起球 4 级</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 全屏图片灯箱 (Lightbox) 容器 -->
+  <div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+    <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
+      <button class="lightbox-close-btn" onclick="closeLightboxDirect()">✕</button>
+      <img id="lightboxImg" src="" alt="全屏大图">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+    </div>
+  </div>
+
+  <!-- 提示弹窗 -->
+  <div id="toast" class="toast">操作成功！</div>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>© 高中数学奥林匹克启航联盟 (HSMO QiHang Alliance) · 顶尖品牌视觉设计系统</p>
+    <p style="margin-top: 6px; font-size: 0.8rem; color: var(--text-dim);">
+      数学内核：莫比乌斯曲面拓扑环 · 欧拉常数 · 黄金比例 $\phi \approx 1.618$
+    </p>
+  </footer>
+
+  <script>
+    const VARIANTS = [
+      {
+        id: 0,
+        name: "标准极光彩版 (Primary Aurora Violet)",
+        role: "品牌第一主识别色，用于官方网站、数字多媒体大屏、全彩学术期刊封面与宣传物料。",
+        topology: "剔除虚线干扰，渐变从深空紫过渡到极光电紫，生动展现高维单侧曲面连续扭转。",
+        ratio: "主帆弧度与副帆高度严格遵循 φ ≈ 1.618 黄金分割，顶端夹角为黄金角 36°。",
+        svg: `<svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="mobSail1" x1="40" y1="170" x2="160" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#4C1D95"/>
+              <stop offset="50%" stop-color="#7C3AED"/>
+              <stop offset="100%" stop-color="#C084FC"/>
+            </linearGradient>
+            <linearGradient id="mobSail2" x1="120" y1="160" x2="170" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#6D28D9"/>
+              <stop offset="60%" stop-color="#A855F7"/>
+              <stop offset="100%" stop-color="#E879F9"/>
+            </linearGradient>
+            <linearGradient id="mobHull" x1="30" y1="170" x2="175" y2="150" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#06B6D4"/>
+              <stop offset="40%" stop-color="#8B5CF6"/>
+              <stop offset="100%" stop-color="#D946EF"/>
+            </linearGradient>
+            <radialGradient id="starGlow" cx="138" cy="28" r="8" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#FFFFFF"/>
+              <stop offset="35%" stop-color="#FDE047"/>
+              <stop offset="70%" stop-color="#F59E0B" stop-opacity="0.6"/>
+              <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" 
+                fill="url(#mobHull)" opacity="0.95"/>
+          <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 C 117 156 111 156 106 156 Z" 
+                fill="url(#mobSail2)" opacity="0.9"/>
+          <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 C 84 158 68 154 52 150 Z" 
+                fill="url(#mobSail1)"/>
+          <circle cx="138" cy="28" r="8" fill="url(#starGlow)"/>
+          <circle cx="138" cy="28" r="2.2" fill="#FFFFFF"/>
+        </svg>`
+      },
+      {
+        id: 1,
+        name: "纯平单色印刷版 (Monochrome Precision)",
+        role: "专为极端黑白印刷、全国统一试卷油印、公文红头复印、钢印与极小水印设计。",
+        topology: "去除所有色彩与渐变，纯粹依靠 1.5mm 精密负空间切口（Negative Space Cut）区分空间层叠关系。",
+        ratio: "高对比剪影，即使在 16x16px 或劣质报纸粗糙油墨扩散下，轮廓依然清晰锐利、绝不糊边。",
+        svg: `<svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g fill="currentColor">
+            <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z"/>
+            <path d="M 108 153 C 119 133 133 97 147 78 C 140 106 131 134 125 152 C 119 153 113 153 108 153 Z"/>
+            <path d="M 52 148 C 65 110 92 60 138 28 C 122 68 110 115 102 156 C 84 156 68 152 52 148 Z"/>
+            <circle cx="138" cy="28" r="3.5"/>
+          </g>
+        </svg>`
+      },
+      {
+        id: 2,
+        name: "尊崇紫金殿堂版 (Imperial Gold & Royal Purple)",
+        role: "专为全国奥赛金牌铸造、紫金珐琅胸针、烫金荣誉证书与特邀专家聘书设计。",
+        topology: "磨砂香槟金立体金属包边，内嵌深邃皇家紫（Royal Violet）珐琅填色，散发厚重威严。",
+        ratio: "边框厚度遵循 1:8 的典雅比例，呈现贵金属浮雕压铸的奢华质感。",
+        svg: `<svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="goldEdge" x1="30" y1="170" x2="170" y2="30" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#D97706"/>
+              <stop offset="30%" stop-color="#FBBF24"/>
+              <stop offset="70%" stop-color="#FEF08A"/>
+              <stop offset="100%" stop-color="#B45309"/>
+            </linearGradient>
+            <linearGradient id="royalEnamel" x1="40" y1="160" x2="140" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#2E1065"/>
+              <stop offset="100%" stop-color="#4C1D95"/>
+            </linearGradient>
+          </defs>
+          <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" 
+                fill="url(#royalEnamel)" stroke="url(#goldEdge)" stroke-width="2.5"/>
+          <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 C 117 156 111 156 106 156 Z" 
+                fill="url(#royalEnamel)" stroke="url(#goldEdge)" stroke-width="2"/>
+          <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 C 84 158 68 154 52 150 Z" 
+                fill="url(#royalEnamel)" stroke="url(#goldEdge)" stroke-width="2.5"/>
+          <circle cx="138" cy="28" r="4" fill="url(#goldEdge)"/>
+          <path d="M 138 20 L 138 36 M 130 28 L 146 28" stroke="#FEF08A" stroke-width="1.2"/>
+        </svg>`
+      },
+      {
+        id: 3,
+        name: "学术圆印公章版 (Academic Seal & Crest)",
+        role: "经典的国际奥林匹克学术印章，用于官方火漆印、结业钢印、联盟正式公函与圆章。",
+        topology: "外圈环绕中英文法定名称，底环点缀四大数学神级常数：π · e · i · φ。",
+        ratio: "同心双圆结构，毕达哥拉斯神圣比例，具备无与伦比的学术官方正统感与权威感。",
+        svg: `<svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="sealGold" x1="0" y1="0" x2="200" y2="200" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#A78BFA"/>
+              <stop offset="100%" stop-color="#C084FC"/>
+            </linearGradient>
+          </defs>
+          <circle cx="100" cy="100" r="92" stroke="url(#sealGold)" stroke-width="2"/>
+          <circle cx="100" cy="100" r="86" stroke="url(#sealGold)" stroke-width="1" stroke-dasharray="3 2"/>
+          <circle cx="100" cy="100" r="66" stroke="url(#sealGold)" stroke-width="1.5"/>
+          <g transform="translate(14, 10) scale(0.86)">
+            <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="#8B5CF6"/>
+            <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="#A855F7"/>
+            <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="#C084FC"/>
+            <circle cx="138" cy="28" r="3" fill="#FDE047"/>
+          </g>
+          <text x="100" y="180" text-anchor="middle" font-family="'Space Grotesk', serif" font-size="7.5" font-weight="700" fill="#E9D5FF" letter-spacing="3">
+            π  ·  e  ·  i  ·  φ
+          </text>
+          <text x="100" y="24" text-anchor="middle" font-family="'Cinzel', serif" font-size="7" font-weight="900" fill="#E9D5FF" letter-spacing="2">
+            HSMO · QI HANG ALLIANCE
+          </text>
+        </svg>`
+      }
+    ];
+
+    let currentVarIdx = 0;
+    let gridActive = false;
+
+    // 专属金边浮雕莫比乌斯 SVG (用于胸牌嵌合)
+    const BADGE_GOLD_SVG = `<svg viewBox="0 0 200 200" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bGold" x1="20" y1="180" x2="180" y2="20" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#D97706"/>
+          <stop offset="30%" stop-color="#FBBF24"/>
+          <stop offset="60%" stop-color="#FEF08A"/>
+          <stop offset="100%" stop-color="#B45309"/>
+        </linearGradient>
+      </defs>
+      <!-- 纯金微凸立体莫比乌斯之帆 -->
+      <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" 
+            fill="#3B1261" stroke="url(#bGold)" stroke-width="3"/>
+      <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 C 117 156 111 156 106 156 Z" 
+            fill="#4C1D95" stroke="url(#bGold)" stroke-width="2.5"/>
+      <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 C 84 158 68 154 52 150 Z" 
+            fill="#581C87" stroke="url(#bGold)" stroke-width="3"/>
+      <circle cx="138" cy="28" r="4.5" fill="url(#bGold)"/>
+      <path d="M 138 18 L 138 38 M 128 28 L 148 28" stroke="#FEF08A" stroke-width="1.5"/>
+    </svg>`;
+
+    function renderVariant(idx) {
+      currentVarIdx = idx;
+      const v = VARIANTS[idx];
+
+      document.getElementById("mainSvgStage").innerHTML = v.svg;
+      document.getElementById("varRole").innerText = v.role;
+      document.getElementById("varTopology").innerText = v.topology;
+      document.getElementById("varRatio").innerText = v.ratio;
+
+      const tabs = document.querySelectorAll(".var-tab");
+      tabs.forEach((tab, i) => {
+        if (i === idx) tab.classList.add("active");
+        else tab.classList.remove("active");
+      });
+
+      // 始终将胸牌图标更新为高贵破框金边徽标
+      document.getElementById("badgeIconSlot").innerHTML = BADGE_GOLD_SVG;
+    }
+
+    function switchVariant(idx) {
+      renderVariant(idx);
+    }
+
+    // 切换胸牌角色身份
+    function switchBadgeRole(roleName) {
+      document.getElementById("badgeRoleText").innerText = roleName;
+      const btns = document.querySelectorAll(".role-btn");
+      btns.forEach(b => {
+        if (b.innerText === roleName.split(' ')[1] || b.innerText.includes(roleName.slice(0, 4))) {
+          b.classList.add("active");
+        } else {
+          b.classList.remove("active");
+        }
+      });
+      showToast(`已切换胸牌身份：${roleName}`);
+    }
+
+    function toggleGrid() {
+      gridActive = !gridActive;
+      const grid = document.getElementById("stageGrid");
+      const btnText = document.getElementById("gridBtnText");
+      if (gridActive) {
+        grid.classList.add("active");
+        btnText.innerText = "✕ 隐藏几何网格";
+      } else {
+        grid.classList.remove("active");
+        btnText.innerText = "📐 开启几何网格";
+      }
+    }
+
+    function downloadCurrentSvg() {
+      const v = VARIANTS[currentVarIdx];
+      const blob = new Blob([v.svg], { type: "image/svg+xml;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `HSMO_Mobius_Clean_${v.name.split(' ')[0]}.svg`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast(`已导出纯净版【${v.name}】矢量文件`);
+    }
+
+    function copyColor(hex) {
+      navigator.clipboard.writeText(hex).then(() => {
+        showToast(`已复制色号: ${hex}`);
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById("toast");
+      toast.innerText = msg;
+      toast.classList.add("show");
+      setTimeout(() => { toast.classList.remove("show"); }, 2500);
+    }
+
+    // 灯箱逻辑
+    const modal = document.getElementById("lightboxModal");
+    const modalImg = document.getElementById("lightboxImg");
+    const modalCaption = document.getElementById("lightboxCaption");
+
+    function openLightbox(src, caption) {
+      modalImg.src = src;
+      modalCaption.innerText = caption;
+      modal.classList.add("active");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox(e) {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    function closeLightboxDirect() {
+      modal.classList.remove("active");
+      document.body.style.overflow = "";
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeLightboxDirect();
+    });
+
+    // 主题切换
+    const themeBtn = document.getElementById("themeToggleBtn");
+    const themeIcon = document.getElementById("themeIcon");
+    let isLight = false;
+
+    themeBtn.addEventListener("click", () => {
+      isLight = !isLight;
+      if (isLight) {
+        document.body.setAttribute("data-theme", "light");
+        themeIcon.innerText = "🌙";
+        themeBtn.innerHTML = `<span>🌙</span> 深空夜色`;
+      } else {
+        document.body.removeAttribute("data-theme");
+        themeIcon.innerText = "☀️";
+        themeBtn.innerHTML = `<span>☀️</span> 明亮模式`;
+      }
+    });
+
+    renderVariant(0);
+  </script>
+</body>
+</html>

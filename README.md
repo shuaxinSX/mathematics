@@ -1,60 +1,54 @@
-# 数学奥林匹克命题专家聘任证书 (Mathematics Olympiad Appointment Certificate)
+# 数学奥林匹克学术视觉与数字化系统工坊 (Mathematics Olympiad Visual Suite)
 
-> 第二十一届中国北方数学奥林匹克 · 命题专家聘任证书交互式网页重构高定版  
-> North China Mathematical Olympiad · Official Academic Appointment Dossier
-
----
-
-## 📖 项目简介 (Overview)
-
-本项目是对**中国北方数学奥林匹克命题专家聘任证书**的全新高定数字化重构。设计摒弃了传统模板的粗糙感与违和元素，采用**全浅色系（温润纯棉羊皮白 + 香槟金金属浮雕）**的顶级学术殿堂视觉规范，为数学奥林匹克命题专家量身打造了一件兼具学术尊崇感与艺术收藏价值的数字典范。
+> 汇聚全国及区域数学奥林匹克竞赛的顶尖数字化设计、学术聘书与品牌视觉系统。  
+> Academic visual identity, digital credentials, and industrial vector systems for Mathematical Olympiads.
 
 ---
 
-## ✨ 核心设计亮点 (Design Features)
+## 📁 核心项目导航 (Repository Projects)
 
-- 📜 **正面内页 (Certificate Face)**：
-  - **特种纸质感**：采用纯白水彩棉纸底色，结合极细金色的**斐波那契对数螺旋**与**柏拉图几何投影**防伪底纹。
-  - **专属学术桂冠金徽**：由荣誉桂冠、正多面体晶体及核心符号 $\pi$ 构成，彰显出题学者的权威地位。
-  - **矢量朱砂印鉴**：10 字弧形排布的“中国北方数学奥林匹克组织委员会”矢量红印，呈现微透叠印与自然微倾的盖印效果。
-  
-- 🏛️ **背面封底 (Sovereign Dossier Cover)**：
-  - **浅色珠光装帧**：大面积温润羊皮象牙白微渐变，辅以 7% 柔和金色几何星轨坐标网格。
-  - **压凹烫金中央大徽章**：环绕刻印 `NORTH CHINA MATHEMATICAL OLYMPIAD` 与拉丁箴言 *“Veritas et Numerorum Pulchritudo”*（真理与数学之美）。
-
-- 💫 **交互与数字体验 (Web Interactions)**：
-  - **3D 拟真物理翻转**：支持鼠标点击或快捷键流畅翻转正反两面。
-  - **冷烫金漫反射流光**：鼠标在纸面滑动时，跟随光标流转细腻的珍珠母贝金属光泽。
-  - **双面并排预览**：一键切换为平面并排模式，便于同时审视正反面对比。
-  - **实时在线编辑器**：内置即改即显的编辑抽屉，可随时修改专家姓名、称谓、赛事名称、落款日期等。
-  - **A4 级高清打印输出**：内置 `@media print` 打印引擎，正反面精准分页，可直接一键导出或打印为矢量高清 PDF。
+| 项目名称 | 核心主题 | 访问入口 | 交付成果 |
+| :--- | :--- | :--- | :--- |
+| **01. 北方奥赛命题专家聘任证书** | 第二十一届北方数学奥林匹克命题专家聘任证书交互重构版 | [`./index.html`](./index.html) | 全浅色羊皮白、3D 物理翻转、冷烫金流光、矢量朱砂印鉴、A4 矢量打印 |
+| **02. 高中数学奥林匹克启航联盟** | 启航联盟「拓扑之帆 · 莫比乌斯无限」全套 VI 与工程落地 | [`./qihang-alliance-logo/index.html`](./qihang-alliance-logo/index.html) | 纯净母标系统、72×24mm 官方金属胸牌、25mm 纪念徽章、6 大实拍画廊、生产级 SVG 包 |
 
 ---
 
-## 🚀 运行与使用指南 (Getting Started)
+## 💎 项目一：高中数学奥林匹克启航联盟视觉系统 (`qihang-alliance-logo/`)
 
-1. **直接本地预览**：
-   双击打开根目录下的 [`index.html`](./index.html) 即可在任意现代浏览器（Chrome、Safari、Edge 等）中运行，无需任何环境配置与外部依赖。
-
-2. **在线访问 (GitHub Pages)**：
-   若已开启 GitHub Pages，可直接通过浏览器访问在线部署版本。
-
-3. **快捷操作**：
-   - 点击 **“3D 翻转卡片”**：在正面内页与背面封套间翻转。
-   - 点击 **“双面并排对比预览”**：并排审视正反两面版式。
-   - 点击 **“打印 / 导出为高清 PDF”**（快捷键 `Cmd + P` / `Ctrl + P`）：生成可直接送印的标准 A4 印刷文件。
+- **设计理念**：以**莫比乌斯曲面拓扑环**与**领航之帆**为图腾，融入欧拉常数香槟金与高维极光电紫，彻底摒弃多余虚线与行业陈词滥调。
+- **实物落地保障**：包含西装翻领实物金属胸牌、官方深紫天鹅绒授牌礼盒、全国奥赛纯金珐琅奖章、全国统考试卷与精装论文集、学术峰会万人大礼堂钛合金发光大屏、国家集训营刺绣卫衣。所有场景 100% 吻合矢量母标。
+- **生产级工程矢量**：
+  - `qihang-alliance-logo/vector_exports/HSMO_Logo_Clean_Primary.svg` (全彩母标)
+  - `qihang-alliance-logo/vector_exports/HSMO_Logo_Monochrome.svg` (单色试卷)
+  - `qihang-alliance-logo/vector_exports/HSMO_Lapel_Nameplate_72x24.svg` (72×24mm 金属胸牌)
+  - `qihang-alliance-logo/vector_exports/HSMO_Round_Lapel_Pin_25mm.svg` (25mm 圆形徽章)
+- **子目录详情**：详见 [`qihang-alliance-logo/README.md`](./qihang-alliance-logo/README.md)。
 
 ---
 
-## 🛠️ 技术栈 (Tech Stack)
+## 📜 项目二：第二十一届北方数学奥林匹克专家聘任证书 (`./`)
 
-- **结构与语义**：HTML5 + 纯矢量 SVG 图形
-- **排版与样式**：现代 CSS3 (3D Transforms, CSS Grid, Backdrop-filter, Shimmer FX)
-- **字体规范**：Cinzel, Cormorant Garamond, Noto Serif SC, 思源宋体 / 系统宋体
-- **交互逻辑**：原生 JavaScript (Vanilla JS，零第三方依赖)
+- **设计规范**：采用温润纯棉羊皮白底色，结合斐波那契对数螺旋防伪底纹与专属正多面体晶体桂冠金徽。
+- **交互与功能**：支持正反双面拟真 3D 翻转、冷烫金漫反射流光、实时在线编辑专家档案与一键导出 A4 印刷标准 PDF。
 
 ---
 
-## 📄 版权与许可
+## 🚀 运行方式 (Quick Start)
 
-本项目由中国北方数学奥林匹克命题证书重构设计团队精心打磨呈现。
+双击直接在任意浏览器中打开对应网页即可流畅体验：
+```bash
+# 体验项目一：高中数学奥林匹克启航联盟视觉门户
+open qihang-alliance-logo/index.html
+
+# 体验项目二：第二十一届北方奥林匹克命题专家聘书
+open index.html
+```
+
+---
+
+## 🛠️ 技术与实现 (Tech Stack)
+
+- **图形与排版**：原生标准 HTML5 + 纯矢量 SVG，零第三方外部库依赖
+- **视觉引擎**：CSS3 3D Matrix, Perspective Flip, Specular Reflection Lighting, Backdrop Filters
+- **工程标准**：满足印刷制版（Pantone 专色）、激光线切割、五轴 CNC 雕刻与金属冲压模具要求

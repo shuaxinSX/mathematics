@@ -1,0 +1,30 @@
+<svg viewBox="0 0 200 200" width="1000" height="1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mobSail1" x1="40" y1="170" x2="160" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#4C1D95"/>
+      <stop offset="50%" stop-color="#7C3AED"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <linearGradient id="mobSail2" x1="120" y1="160" x2="170" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6D28D9"/>
+      <stop offset="60%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#E879F9"/>
+    </linearGradient>
+    <linearGradient id="mobHull" x1="30" y1="170" x2="175" y2="150" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#06B6D4"/>
+      <stop offset="40%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#D946EF"/>
+    </linearGradient>
+    <radialGradient id="starGlow" cx="138" cy="28" r="8" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="35%" stop-color="#FDE047"/>
+      <stop offset="70%" stop-color="#F59E0B" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="url(#mobHull)" opacity="0.95"/>
+  <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 C 117 156 111 156 106 156 Z" fill="url(#mobSail2)" opacity="0.9"/>
+  <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 C 84 158 68 154 52 150 Z" fill="url(#mobSail1)"/>
+  <circle cx="138" cy="28" r="8" fill="url(#starGlow)"/>
+  <circle cx="138" cy="28" r="2.2" fill="#FFFFFF"/>
+</svg>
