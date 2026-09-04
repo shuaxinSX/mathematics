@@ -285,10 +285,20 @@
     }
 
     .emblem-wrapper {
-      width: 72px;
-      height: 72px;
-      margin-bottom: 6px;
-      filter: drop-shadow(0 2px 5px rgba(184, 141, 61, 0.3));
+      width: 78px;
+      height: 78px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 3px 8px rgba(12, 121, 79, 0.22));
+    }
+
+    .emblem-wrapper img, .emblem-wrapper svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .org-en-sub {
@@ -299,6 +309,12 @@
       font-weight: 600;
       text-transform: uppercase;
       margin-bottom: 3px;
+    }
+
+    .org-en-sub:empty, .title-en:empty, .back-main-heading:empty {
+      display: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
 
     .org-cn-sub {
@@ -364,15 +380,17 @@
 
     .recipient-name-box {
       display: inline-block;
-      min-width: 150px;
-      border-bottom: 1.5px solid #b88d3d;
-      padding: 0 16px 2px;
-      margin: 0 6px;
+      min-width: 140px;
+      border-bottom: 2px solid #0d1e35;
+      padding: 0 14px 1px;
+      margin: 0 4px;
+      line-height: 1.1;
+      vertical-align: baseline;
       font-family: 'Noto Serif SC', 'Songti SC', serif;
-      font-size: 22px;
+      font-size: 21px;
       font-weight: 800;
-      color: #0a192f;
-      letter-spacing: 3px;
+      color: #0d1e35;
+      letter-spacing: 2px;
       text-align: center;
     }
 
@@ -808,7 +826,7 @@
       全浅色系高定方案 · 象牙金与羊皮质感
     </div>
     <h1 class="project-title" id="pageMainHeader">第二十一届中国北方数学奥林匹克 · 命题证书</h1>
-    <p class="project-sub">NORTH CHINA MATHEMATICAL OLYMPIAD · CERTIFICATE OF PROPOSITION</p>
+    <p class="project-sub" id="pageSubHeader">第二十一届中国北方数学奥林匹克 · 官方学术命题证书系统</p>
   </header>
 
   <!-- 快捷功能与视图切换工具条 -->
@@ -892,32 +910,12 @@
           
           <!-- 1. 顶部学术徽记与标题 -->
           <div class="cert-header">
-            <!-- 专属奥林匹克学术殿堂金徽 -->
+            <!-- 中国北方数学奥林匹克官方徽标 CNMO -->
             <div class="emblem-wrapper" id="displayEmblemWrapper">
-              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <!-- 桂冠 -->
-                <path d="M22,65 C18,50 22,34 33,23 C36,32 30,46 32,56" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
-                <path d="M78,65 C82,50 78,34 67,23 C64,32 70,46 68,56" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
-                <!-- 正十二面体几何核心 (浅色透底) -->
-                <circle cx="50" cy="50" r="30" fill="#fcfaf5" stroke="url(#goldGrad)" stroke-width="2"/>
-                <polygon points="50,26 68,39 61,61 39,61 32,39" stroke="url(#goldGrad)" stroke-width="1.5" fill="rgba(212, 175, 55, 0.15)"/>
-                <!-- 数学符号核心 π 与 顶点 -->
-                <text x="50" y="56" text-anchor="middle" fill="url(#goldGrad)" font-family="'Cinzel', serif" font-size="19" font-weight="bold">π</text>
-                <!-- 底部学术丝带 -->
-                <path d="M30,76 L50,71 L70,76 L64,84 L50,80 L36,84 Z" fill="url(#goldGrad)"/>
-                
-                <defs>
-                  <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#dfc07e" />
-                    <stop offset="40%" stop-color="#b88d3d" />
-                    <stop offset="80%" stop-color="#87611a" />
-                    <stop offset="100%" stop-color="#dfc07e" />
-                  </linearGradient>
-                </defs>
-              </svg>
+              <img src="assets/cnmo_official_logo.png" alt="中国北方数学奥林匹克 CNMO 官方徽标">
             </div>
 
-            <div class="org-en-sub" id="displayOrgEn">NORTH CHINA MATHEMATICAL OLYMPIAD</div>
+            <div class="org-en-sub" id="displayOrgEn"></div>
             <div class="org-cn-sub" id="displayOrgHead">第二十一届中国北方数学奥林匹克</div>
             
             <div class="ornament-line">
@@ -927,13 +925,13 @@
             </div>
 
             <h2 class="main-title" id="displayMainTitle">命 题 证 书</h2>
-            <div class="title-en" id="displayTitleEn">CERTIFICATE OF PROPOSITION</div>
+            <div class="title-en" id="displayTitleEn"></div>
           </div>
 
           <!-- 2. 正文核心授受文案 -->
           <div class="cert-body" id="certBodyContent" style="width: 86%; margin: 18px auto; text-align: justify; line-height: 2.3; font-size: 16.5px; color: #1a2536;">
             <p style="text-indent: 2em; margin-bottom: 12px;">
-              兹证明 <span class="recipient-name-box" id="displayName" style="min-width: 140px; border-bottom: 1.5px solid #0d1e35; padding: 0 12px; display: inline-block; text-align: center; font-weight: 800; color: #0d1e35;">熊昌进</span> 老师所提供的数学竞赛试题，经<span id="displayCommittee">中国北方奥林匹克主试委员会</span>审定，入选<span id="displayContestYear">2026年第二十一届中国北方数学奥林匹克</span>竞赛试题。
+              兹证明 <span class="recipient-name-box" id="displayName">熊昌进</span> 老师所提供的数学竞赛试题，经<span id="displayCommittee">中国北方奥林匹克主试委员会</span>审定，入选<span id="displayContestYear">2026年第二十一届中国北方数学奥林匹克</span>竞赛试题。
             </p>
             <p style="text-indent: 2em;" id="displayBodyEnding">
               特颁此证，以资证明。
@@ -990,18 +988,18 @@
         <div class="back-center-piece">
           <div class="grand-olympiad-crest" id="displayBackCrestWrapper"></div>
 
-          <h3 class="back-main-heading" id="displayBackMainHeading">North China Mathematical Olympiad</h3>
+          <h3 class="back-main-heading" id="displayBackMainHeading"></h3>
           <div class="back-cn-heading" id="displayBackCnHeading">中国北方数学奥林匹克</div>
 
           <div class="back-motto-ribbon">
-            <span class="back-latin-motto" id="displayBackMotto">Veritas et Numerorum Pulchritudo</span>
+            <span class="back-latin-motto" id="displayBackMotto">“格物致知 · 极数穷理”</span>
           </div>
         </div>
 
         <!-- 背面底端学术版权注记 -->
         <div class="back-footer-notes">
-          <div style="font-weight: 600; color: #475569;">OFFICIAL APPOINTMENT DOSSIER · ACADEMIC COMMITTEE</div>
-          <div style="margin-top: 4px; color: #64748b;">本聘书由中国北方数学奥林匹克组织委员会严格审定并颁发 · 载入赛事学术档案册</div>
+          <div id="displayBackSubNote" style="font-weight: 600; color: #475569;">中国北方数学奥林匹克组织委员会 · 命题主试工作档案</div>
+          <div style="margin-top: 4px; color: #64748b;">本证书由中国北方数学奥林匹克组织委员会严格审定并颁发 · 载入赛事学术档案册</div>
         </div>
 
       </div>
@@ -1146,22 +1144,7 @@
       </g>
     </svg>`;
 
-    const SVG_EMBLEM_NORTH = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M22,65 C18,50 22,34 33,23 C36,32 30,46 32,56" stroke="url(#goldGradN)" stroke-width="2.5" stroke-linecap="round"/>
-      <path d="M78,65 C82,50 78,34 67,23 C64,32 70,46 68,56" stroke="url(#goldGradN)" stroke-width="2.5" stroke-linecap="round"/>
-      <circle cx="50" cy="50" r="30" fill="#fcfaf5" stroke="url(#goldGradN)" stroke-width="2"/>
-      <polygon points="50,26 68,39 61,61 39,61 32,39" stroke="url(#goldGradN)" stroke-width="1.5" fill="rgba(212, 175, 55, 0.15)"/>
-      <text x="50" y="56" text-anchor="middle" fill="url(#goldGradN)" font-family="'Cinzel', serif" font-size="19" font-weight="bold">π</text>
-      <path d="M30,76 L50,71 L70,76 L64,84 L50,80 L36,84 Z" fill="url(#goldGradN)"/>
-      <defs>
-        <linearGradient id="goldGradN" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#dfc07e" />
-          <stop offset="40%" stop-color="#b88d3d" />
-          <stop offset="80%" stop-color="#87611a" />
-          <stop offset="100%" stop-color="#dfc07e" />
-        </linearGradient>
-      </defs>
-    </svg>`;
+    const SVG_EMBLEM_NORTH = `<img src="assets/cnmo_official_logo.png" alt="中国北方数学奥林匹克 CNMO 官方徽标" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 3px 8px rgba(12, 121, 79, 0.22));">`;
 
     const SVG_SEAL_QIHANG = `<svg class="official-seal-svg" viewBox="0 0 120 120">
       <circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="1.8"/>
@@ -1228,49 +1211,16 @@
       </defs>
     </svg>`;
 
-    const SVG_BACK_CREST_NORTH = `<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="95" fill="rgba(255, 255, 255, 0.9)" stroke="#b88d3d" stroke-width="1.2" stroke-dasharray="3 3"/>
-      <circle cx="100" cy="100" r="90" stroke="url(#goldBackGradN)" stroke-width="2.5"/>
-      <circle cx="100" cy="100" r="70" stroke="#b88d3d" stroke-width="1"/>
-      <path id="backSealPathN" d="M 28,100 A 72,72 0 1,1 172,100" fill="none"/>
-      <text fill="#7b5917" font-size="8.5" font-family="'Cinzel', serif" font-weight="700" letter-spacing="3.2">
-        <textPath href="#backSealPathN" startOffset="50%" text-anchor="middle">
-          NORTH CHINA MATHEMATICAL OLYMPIAD
-        </textPath>
-      </text>
-      <path id="backSealPathBotN" d="M 166,100 A 72,72 0 0,1 34,100" fill="none"/>
-      <text fill="#b88d3d" font-size="8" font-family="'Cinzel', serif" font-weight="700" letter-spacing="4">
-        <textPath href="#backSealPathBotN" startOffset="50%" text-anchor="middle">
-          ★ AD VERITATEM ★
-        </textPath>
-      </text>
-      <g transform="translate(100, 100) scale(0.65)">
-        <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" stroke="url(#goldBackGradN)" stroke-width="3" fill="rgba(253, 251, 247, 0.85)"/>
-        <line x1="0" y1="-60" x2="0" y2="60" stroke="#b88d3d" stroke-width="2"/>
-        <line x1="-52" y1="-30" x2="52" y2="30" stroke="#b88d3d" stroke-width="1.5"/>
-        <line x1="-52" y1="30" x2="52" y2="-30" stroke="#b88d3d" stroke-width="1.5"/>
-        <polygon points="0,-60 52,30 -52,30" stroke="#c99a3e" stroke-width="2" fill="none"/>
-        <polygon points="0,60 -52,-30 52,-30" stroke="#c99a3e" stroke-width="2" fill="none"/>
-        <circle cx="0" cy="0" r="5" fill="url(#goldBackGradN)"/>
-      </g>
-      <defs>
-        <linearGradient id="goldBackGradN" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#dfc07e"/>
-          <stop offset="35%" stop-color="#b88d3d"/>
-          <stop offset="70%" stop-color="#87611a"/>
-          <stop offset="100%" stop-color="#dfc07e"/>
-        </linearGradient>
-      </defs>
-    </svg>`;
+    const SVG_BACK_CREST_NORTH = `<img src="assets/cnmo_official_logo.png" alt="中国北方数学奥林匹克 CNMO 官方徽标" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 6px 18px rgba(12, 121, 79, 0.28));">`;
 
     
     const CERT_PRESETS = {
       'north-proposal': {
         pageTitle: '第二十一届中国北方数学奥林匹克 · 命题证书',
-        orgEn: 'NORTH CHINA MATHEMATICAL OLYMPIAD',
+        orgEn: '', // 彻底去除英文
         orgCn: '第二十一届中国北方数学奥林匹克',
         mainTitle: '命 题 证 书',
-        titleEn: 'CERTIFICATE OF PROPOSITION',
+        titleEn: '', // 彻底去除英文
         name: '熊昌进',
         committee: '中国北方奥林匹克主试委员会',
         contest: '2026年第二十一届中国北方数学奥林匹克',
@@ -1280,9 +1230,9 @@
         seal: '', // 公章处留白
         sealShow: false,
         backCrest: SVG_BACK_CREST_NORTH,
-        backMainHead: 'NORTH CHINA MATHEMATICAL OLYMPIAD',
-        backCnHead: '第二十一届中国北方数学奥林匹克',
-        backMotto: '“Veritas et Numerorum Pulchritudo”'
+        backMainHead: '', // 彻底去除英文
+        backCnHead: '中国北方数学奥林匹克',
+        backMotto: '“格物致知 · 极数穷理”'
       },
       'qihang-expert': {
         pageTitle: '高中数学奥林匹克启航联盟 · 命题专家聘任证书',
@@ -1386,7 +1336,7 @@
       if (presetKey === 'north-proposal') {
         bodyBox.innerHTML = `
           <p style="text-indent: 2em; margin-bottom: 12px;">
-            兹证明 <span class="recipient-name-box" id="displayName" style="min-width: 140px; border-bottom: 1.5px solid #0d1e35; padding: 0 12px; display: inline-block; text-align: center; font-weight: 800; color: #0d1e35;">${p.name || '__________'}</span> 老师所提供的数学竞赛试题，经<span id="displayCommittee">${p.committee}</span>审定，入选<span id="displayContestYear">${p.contest}</span>竞赛试题。
+            兹证明 <span class="recipient-name-box" id="displayName">${p.name || '__________'}</span> 老师所提供的数学竞赛试题，经<span id="displayCommittee">${p.committee}</span>审定，入选<span id="displayContestYear">${p.contest}</span>竞赛试题。
           </p>
           <p style="text-indent: 2em;" id="displayBodyEnding">
             特颁此证，以资证明。
@@ -1395,7 +1345,7 @@
       } else {
         bodyBox.innerHTML = `
           <p style="text-indent: 2em; margin-bottom: 12px;">
-            兹聘任 <span class="recipient-name-box" id="displayName" style="min-width: 140px; border-bottom: 1.5px solid #0d1e35; padding: 0 12px; display: inline-block; text-align: center; font-weight: 800; color: #0d1e35;">${p.name || '__________'}</span> 为<strong style="color: #0d1e35;" id="displayContestYear">${p.contest}</strong><span id="displayCommittee" style="color:#8c6721; font-weight:700;"> · ${p.mainTitle}</span>。
+            兹聘任 <span class="recipient-name-box" id="displayName">${p.name || '__________'}</span> 为<strong style="color: #0d1e35;" id="displayContestYear">${p.contest}</strong><span id="displayCommittee" style="color:#8c6721; font-weight:700;"> · ${p.mainTitle}</span>。
           </p>
           <p style="text-indent: 2em;" id="displayBodyEnding">
             圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。
