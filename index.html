@@ -467,6 +467,10 @@
       margin-bottom: 6px;
     }
 
+    .org-official-name.north-authority-single-line {
+      white-space: nowrap;
+    }
+
     .issue-date {
       font-size: 14px;
       font-weight: 600;
@@ -943,8 +947,8 @@
 
             <!-- 组织委员会落款与公章留白处 -->
             <div class="sign-authority" style="position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; min-width: 220px;">
-              <div class="org-official-name" id="displayAuthorityName" style="font-size: 16px; font-weight: 800; color: #0d1e35; line-height: 1.5; letter-spacing: 2px;">
-                中国北方数学奥林匹克<br>组织委员会
+              <div class="org-official-name north-authority-single-line" id="displayAuthorityName" style="font-size: 16px; font-weight: 800; color: #0d1e35; line-height: 1.5; letter-spacing: 2px;">
+                中国北方数学奥林匹克组织委员会
               </div>
               <div class="issue-date" id="displayDate" style="margin-top: 10px; font-size: 15px; font-weight: 700; color: #334155; letter-spacing: 3px;">
                 2026年8月
@@ -991,7 +995,7 @@
           </div>
 
           <h3 class="back-main-heading" id="displayBackMainHeading"></h3>
-          <div class="back-cn-heading" id="displayBackCnHeading">中国北方数学奥林匹克</div>
+          <div class="back-cn-heading" id="displayBackCnHeading">第二十一届中国北方数学奥林匹克</div>
 
           <div class="back-motto-ribbon">
             <span class="back-latin-motto" id="displayBackMotto">“格物致知 · 极数穷理”</span>
@@ -1226,14 +1230,14 @@
         name: '熊昌进',
         committee: '中国北方奥林匹克主试委员会',
         contest: '2026年第二十一届中国北方数学奥林匹克',
-        authority: '中国北方数学奥林匹克<br>组织委员会',
+        authority: '中国北方数学奥林匹克组织委员会',
         date: '2026年8月',
         emblem: SVG_EMBLEM_NORTH,
         seal: '', // 公章处留白
         sealShow: false,
         backCrest: SVG_BACK_CREST_NORTH,
         backMainHead: '', // 彻底去除英文
-        backCnHead: '中国北方数学奥林匹克',
+        backCnHead: '第二十一届中国北方数学奥林匹克',
         backMotto: '“格物致知 · 极数穷理”'
       },
       'qihang-expert': {
@@ -1356,6 +1360,7 @@
       }
 
       document.getElementById('displayAuthorityName').innerHTML = p.authority;
+      document.getElementById('displayAuthorityName').classList.toggle('north-authority-single-line', presetKey === 'north-proposal');
       document.getElementById('displayDate').textContent = p.date;
       
       // 公章留白处理
