@@ -1,35 +1,29 @@
 <svg viewBox="0 0 400 400" width="800" height="800" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <filter id="sealInkBleed" x="-5%" y="-5%" width="110%" height="110%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise"/>
-      <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5" xChannelSelector="R" yChannelSelector="G"/>
-    </filter>
+    <path id="sealArcPath" d="M 59.0 251.3 A 150 150 0 1 1 341.0 251.3" fill="none"/>
   </defs>
 
-  <!-- 带有微弱印泥渗色与自然质感的朱砂红图层 -->
-  <g fill="#C92A2A" stroke="#C92A2A" filter="url(#sealInkBleed)">
-    <!-- 外圈实线圆环 (国际标准 1.2mm 比例) -->
-    <circle cx="200" cy="200" r="186" fill="none" stroke-width="7"/>
-    <circle cx="200" cy="200" r="176" fill="none" stroke-width="1.5"/>
+  <!-- 纯正国家标准矢量电子公章 (零噪点扭曲，线条纯净规整，严谨水平正置) -->
+  <g fill="#C92A2A" stroke="#C92A2A">
+    <!-- 外圈实线圆环 (标准 5.5px 外框 + 1.2px 辅助环) -->
+    <circle cx="200" cy="200" r="186" fill="none" stroke-width="5.5"/>
+    <circle cx="200" cy="200" r="180" fill="none" stroke-width="1.2"/>
 
-    <!-- 环形文字路径：高中数学奥林匹克启航联盟组织委员会 -->
-    <path id="sealTextPath" d="M 40 200 A 160 160 0 1 1 360 200" fill="none"/>
-    <text font-family="'Noto Serif SC', 'Songti SC', 'STSong', serif" font-size="23.5" font-weight="900" letter-spacing="3.5">
-      <textPath href="#sealTextPath" startOffset="50%" text-anchor="middle">
+    <!-- 环形上部法定全称：高中数学奥林匹克启航联盟组织委员会 -->
+    <text font-family="'Noto Serif SC', 'Songti SC', 'STSong', serif" font-size="19.5" font-weight="900" letter-spacing="1.2" stroke="none">
+      <textPath href="#sealArcPath" startOffset="50%" text-anchor="middle">
         高中数学奥林匹克启航联盟组织委员会
       </textPath>
     </text>
 
-    <!-- 中心五角星与莫比乌斯星芒图形 -->
-    <g transform="translate(130, 130) scale(0.7)">
-      <polygon points="100,20 123,80 188,80 135,120 155,180 100,140 45,180 65,120 12,80 77,80" fill="#C92A2A"/>
-    </g>
+    <!-- 中心正五角星 (严格水平居中对称，五角尖顶向上) -->
+    <polygon points="200.00,158.00 209.43,187.02 239.94,187.02 215.26,204.96 224.69,233.98 200.00,216.04 175.31,233.98 184.74,204.96 160.06,187.02 190.57,187.02" fill="#C92A2A" stroke="none"/>
 
-    <!-- 底部横向防伪字样 -->
-    <text x="200" y="325" text-anchor="middle" font-family="'Space Grotesk', 'Noto Serif SC', sans-serif" font-size="14" font-weight="700" letter-spacing="3">
+    <!-- 底部横向防伪字样 (水平居中对齐) -->
+    <text x="200" y="295" text-anchor="middle" font-family="'Noto Serif SC', 'Songti SC', sans-serif" font-size="13" font-weight="800" letter-spacing="4" stroke="none">
       ★ 专用电子印鉴 ★
     </text>
-    <text x="200" y="348" text-anchor="middle" font-family="'Space Grotesk', monospace" font-size="10.5" font-weight="600" letter-spacing="2">
+    <text x="200" y="322" text-anchor="middle" font-family="'Space Grotesk', monospace" font-size="10" font-weight="700" letter-spacing="2" stroke="none">
       NO. 2026-HSMO-8848
     </text>
   </g>

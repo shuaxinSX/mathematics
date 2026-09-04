@@ -33,13 +33,12 @@
       <stop offset="80%" stop-color="#F59E0B" stop-opacity="0.8"/>
       <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
     </radialGradient>
-    <filter id="badgeDropShadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
+    <path id="badgeTopPath" d="M 73.3 167.6 A 195 195 0 0 1 426.7 167.6" fill="none"/>
+    <path id="badgeBotPath" d="M 62.4 337.5 A 207 207 0 0 0 437.6 337.5" fill="none"/>
   </defs>
 
   <!-- 外层金色拉丝包边与微凸外环 -->
-  <circle cx="250" cy="250" r="242" fill="url(#badgeGoldRing)" filter="url(#badgeDropShadow)"/>
+  <circle cx="250" cy="250" r="242" fill="url(#badgeGoldRing)"/>
   <circle cx="250" cy="250" r="236" fill="#14062B" stroke="#92400E" stroke-width="2"/>
   
   <!-- 外圈深紫文字环轨道 -->
@@ -47,42 +46,35 @@
   <circle cx="250" cy="250" r="172" fill="#14062B" stroke="url(#badgeGoldRing)" stroke-width="2.5"/>
   <circle cx="250" cy="250" r="166" stroke="rgba(253, 224, 71, 0.4)" stroke-width="1.5" stroke-dasharray="4 3"/>
 
-  <!-- 环形文字路径 (顶部中英文) -->
-  <path id="topTextArc" d="M 65 250 A 185 185 0 0 1 435 250" fill="none"/>
-  <path id="bottomTextArc" d="M 435 250 A 185 185 0 0 1 65 250" fill="none"/>
-
-  <text fill="url(#badgeGoldRing)" font-family="'Cinzel', 'Space Grotesk', serif" font-size="14.5" font-weight="900" letter-spacing="4">
-    <textPath href="#topTextArc" startOffset="50%" text-anchor="middle">
+  <!-- 顶部英文文字 (顺时针，自然正立) -->
+  <text fill="url(#badgeGoldRing)" font-family="'Cinzel', 'Space Grotesk', serif" font-size="14" font-weight="900" letter-spacing="3.8">
+    <textPath href="#badgeTopPath" startOffset="50%" text-anchor="middle">
       HIGH SCHOOL MATHEMATICAL OLYMPIAD
     </textPath>
   </text>
-  <text fill="#FEF08A" font-family="'Noto Serif SC', 'Songti SC', serif" font-size="13" font-weight="700" letter-spacing="5">
-    <textPath href="#bottomTextArc" startOffset="50%" text-anchor="middle">
+
+  <!-- 底部中文与常数 (逆时针左向右，100% 正立，绝不倒置) -->
+  <text fill="#FEF08A" font-family="'Noto Serif SC', 'Songti SC', serif" font-size="14.5" font-weight="700" letter-spacing="4.5">
+    <textPath href="#badgeBotPath" startOffset="50%" text-anchor="middle">
       ★ 启航联盟 · π · e · i · φ ★
     </textPath>
   </text>
 
-  <!-- 内部中心盘: 极细几何坐标射线底纹 -->
-  <g opacity="0.18" stroke="#FDE047" stroke-width="0.75">
-    <line x1="250" y1="84" x2="250" y2="416"/>
-    <line x1="84" y1="250" x2="416" y2="250"/>
-    <line x1="133" y1="133" x2="367" y2="367"/>
-    <line x1="133" y1="367" x2="367" y2="133"/>
-    <circle cx="250" cy="250" r="120" fill="none" stroke-dasharray="2 4"/>
+  <!-- 左右侧黄金分界星点 -->
+  <circle cx="48" cy="250" r="3.5" fill="#FDE047" opacity="0.75"/>
+  <circle cx="452" cy="250" r="3.5" fill="#FDE047" opacity="0.75"/>
+
+  <!-- 内部中心盘: 极细几何同心星轨与坐标线 -->
+  <g opacity="0.18" stroke="#FDE047" stroke-width="0.8">
+    <circle cx="250" cy="250" r="132" fill="none" stroke-dasharray="3 3"/>
+    <circle cx="250" cy="250" r="92" fill="none"/>
   </g>
 
-  <!-- 中央纯净莫比乌斯之帆母标 (等比缩放居中) -->
+  <!-- 中央纯净莫比乌斯之帆母标 -->
   <g transform="translate(100, 100) scale(1.5)">
-    <!-- 拓扑底座船体 -->
-    <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" 
-          fill="url(#badgeHull)" opacity="0.95"/>
-    <!-- 右侧后帆 -->
-    <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 C 117 156 111 156 106 156 Z" 
-          fill="url(#badgeSail2)" opacity="0.9"/>
-    <!-- 左侧主帆 (纯净渐变流线，无虚线) -->
-    <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 C 84 158 68 154 52 150 Z" 
-          fill="url(#badgeSail1)"/>
-    <!-- 奇点之星光芒 -->
+    <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="url(#badgeHull)" opacity="0.95"/>
+    <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="url(#badgeSail2)" opacity="0.9"/>
+    <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="url(#badgeSail1)"/>
     <circle cx="138" cy="28" r="14" fill="url(#badgeStarGlow)"/>
     <circle cx="138" cy="28" r="3.5" fill="#FFFFFF"/>
   </g>
