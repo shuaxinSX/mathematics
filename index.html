@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第二十一届中国北方数学奥林匹克 · 命题专家聘任证书</title>
+  <!-- Google Fonts: 顶级学术与典雅衬线字体 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* 全浅色系高定方案：温润羊皮白、象牙金与香槟金属 (Luminous Ivory & Champagne Gold) */
+      --bg-canvas: #f2f5f8;
+      --paper-front: #fdfbf7;
+      --paper-front-warm: #f6f1e5;
+      --paper-back: #faf7f0;
+      --paper-back-shadow: #ece5d6;
+
+      /* 香槟金箔色谱 */
+      --gold-primary: #b88d3d;
+      --gold-light: #f7e7b4;
+      --gold-dark: #7e5c1a;
+      --gold-gradient: linear-gradient(135deg, #dfc07e 0%, #b88d3d 50%, #87611a 100%);
+      --gold-gradient-soft: linear-gradient(135deg, #eed59e 0%, #b88d3d 100%);
+      --gold-text-gradient: linear-gradient(135deg, #8f681b 0%, #c99a3e 50%, #7e5711 100%);
+
+      /* 墨色与朱砂 */
+      --seal-red: #c92a2a;
+      --seal-red-dark: #a61e1e;
+      --ink-primary: #141f30;
+      --ink-secondary: #33445c;
+      --ink-muted: #64748b;
+      --ink-light: #8fa0b5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle at 50% 15%, #ffffff 0%, #f3f5f8 55%, #e5e9ef 100%);
+      color: var(--ink-primary);
+      font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 28px 16px 65px;
+      overflow-x: hidden;
+    }
+
+    /* 顶部导航与控制栏 */
+    header {
+      text-align: center;
+      margin-bottom: 24px;
+      max-width: 900px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 16px;
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid rgba(184, 141, 61, 0.35);
+      border-radius: 9999px;
+      font-size: 12px;
+      color: #8c6721;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(184, 141, 61, 0.08);
+    }
+
+    h1.project-title {
+      font-family: 'Cinzel', 'Noto Serif SC', serif;
+      font-size: 27px;
+      font-weight: 700;
+      color: #162438;
+      letter-spacing: 2px;
+      margin-bottom: 6px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    }
+
+    p.project-sub {
+      color: #64748b;
+      font-size: 13.5px;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+    }
+
+    /* 快捷工具条 */
+    .toolbar-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 28px;
+      z-index: 50;
+    }
+
+    .btn {
+      appearance: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #d4af37, #9b7222);
+      color: #ffffff;
+      box-shadow: 0 4px 14px rgba(184, 141, 61, 0.25);
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(184, 141, 61, 0.4);
+      background: linear-gradient(135deg, #dfbe4a, #aa7e2a);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid rgba(184, 141, 61, 0.35);
+      color: #5c471b;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+    .btn-outline:hover {
+      background: #ffffff;
+      border-color: #b88d3d;
+      color: #1e2838;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(184, 141, 61, 0.15);
+    }
+
+    .btn-outline.active {
+      background: rgba(212, 175, 55, 0.15);
+      border-color: #b88d3d;
+      color: #7a5814;
+    }
+
+    /* 证书视口容器 */
+    .viewport {
+      width: 100%;
+      max-width: 960px;
+      perspective: 2000px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 35px;
+    }
+
+    /* 3D 翻转卡片结构 */
+    .certificate-card {
+      width: 860px;
+      height: 608px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+      cursor: pointer;
+    }
+
+    .certificate-card.flipped {
+      transform: rotateY(180deg);
+    }
+
+    /* 双面公共容器 */
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 8px;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      box-shadow: 
+        0 20px 45px -12px rgba(28, 41, 61, 0.14),
+        0 0 0 1px rgba(184, 141, 61, 0.4),
+        0 2px 4px rgba(0, 0, 0, 0.03);
+      overflow: hidden;
+      user-select: none;
+    }
+
+    /* ==========================================================================
+       正面内页：象牙白典雅学术面 (Certificate Front - Ivory Parchment)
+       ========================================================================== */
+    .card-front {
+      background-color: var(--paper-front);
+      background-image: 
+        radial-gradient(ellipse at center, rgba(255, 255, 255, 0.98) 0%, rgba(246, 241, 230, 0.95) 100%),
+        url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v40H0V0zm20 20h20v20H20V20z' fill='%239C92AC' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+      color: var(--ink-primary);
+      display: flex;
+      flex-direction: column;
+      padding: 38px 48px;
+      position: relative;
+    }
+
+    /* 物理烫金流光层 */
+    .foil-shimmer {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background: radial-gradient(circle 500px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 223, 128, 0.8), transparent 70%);
+      mix-blend-mode: color-dodge;
+      z-index: 10;
+      transition: opacity 0.3s;
+    }
+
+    /* 极细数学几何防伪底纹 (Watermark: 斐波那契对数螺旋 & 柏拉图多面体) */
+    .watermark-geometry {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 520px;
+      height: 520px;
+      opacity: 0.055;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* 正面外边框：双金线与几何拐角花结 */
+    .cert-frame {
+      position: absolute;
+      inset: 16px;
+      border: 2px solid #b88d3d;
+      border-radius: 4px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .cert-frame-inner {
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(184, 141, 61, 0.45);
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .corner-bracket {
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      z-index: 3;
+    }
+    .corner-tl { top: 12px; left: 12px; }
+    .corner-tr { top: 12px; right: 12px; transform: rotate(90deg); }
+    .corner-br { bottom: 12px; right: 12px; transform: rotate(180deg); }
+    .corner-bl { bottom: 12px; left: 12px; transform: rotate(270deg); }
+
+    /* 正面内部层级排版 */
+    .front-content {
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: space-between;
+    }
+
+    /* 1. 顶部学术徽记与冠部 */
+    .cert-header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .emblem-wrapper {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 6px;
+      filter: drop-shadow(0 2px 5px rgba(184, 141, 61, 0.3));
+    }
+
+    .org-en-sub {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: #927027;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    .org-cn-sub {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1f3047;
+      letter-spacing: 6px;
+      margin-bottom: 6px;
+    }
+
+    .ornament-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      margin: 2px 0 8px;
+    }
+    .ornament-line::before, .ornament-line::after {
+      content: "";
+      height: 1px;
+      width: 140px;
+      background: linear-gradient(90deg, transparent, #b88d3d, transparent);
+    }
+    .ornament-icon {
+      color: #b88d3d;
+      font-size: 11px;
+    }
+
+    /* 主标题：聘任证书 */
+    .main-title {
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: 16px;
+      margin-left: 16px;
+      color: #0d1e35;
+      text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(13, 30, 53, 0.08);
+      position: relative;
+    }
+
+    .title-en {
+      font-family: 'Cinzel', serif;
+      font-size: 9.5px;
+      letter-spacing: 5px;
+      color: #8c6721;
+      font-weight: 700;
+      margin-top: 3px;
+      margin-bottom: 4px;
+    }
+
+    /* 2. 证书主体文案区 */
+    .cert-body {
+      margin: 8px auto;
+      width: 90%;
+      text-align: justify;
+      text-align-last: center;
+      line-height: 2.15;
+      color: #1a2536;
+      font-size: 16px;
+      font-weight: 500;
+    }
+
+    .recipient-name-box {
+      display: inline-block;
+      min-width: 150px;
+      border-bottom: 1.5px solid #b88d3d;
+      padding: 0 16px 2px;
+      margin: 0 6px;
+      font-family: 'Noto Serif SC', 'Songti SC', serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #0a192f;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+
+    .highlight-role {
+      font-weight: 700;
+      color: #8c6721;
+      letter-spacing: 1px;
+    }
+
+    .academic-affirmation {
+      color: #33445c;
+      font-size: 15px;
+      margin-top: 4px;
+      letter-spacing: 1.5px;
+    }
+
+    /* 3. 底部签署落款区 */
+    .cert-footer {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+      padding: 0 16px 8px;
+    }
+
+    /* 左下角：防伪编码与数学箴言 */
+    .security-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 5px;
+    }
+
+    .math-formula-tag {
+      font-family: 'Cormorant Garamond', 'Times New Roman', serif;
+      font-size: 14px;
+      font-style: italic;
+      color: #64748b;
+      letter-spacing: 1px;
+    }
+
+    .cert-id-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-family: 'Cinzel', monospace;
+      font-size: 11px;
+      color: #556980;
+      letter-spacing: 1.5px;
+    }
+
+    .cert-id-tag span.code {
+      font-weight: 700;
+      color: #0d1e35;
+      background: rgba(184, 141, 61, 0.12);
+      padding: 2px 7px;
+      border-radius: 3px;
+      border: 1px solid rgba(184, 141, 61, 0.28);
+    }
+
+    /* 右下角：官方印章与签署落款 */
+    .sign-authority {
+      position: relative;
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    .org-official-name {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: #0d1e35;
+      letter-spacing: 1.8px;
+      margin-bottom: 6px;
+    }
+
+    .issue-date {
+      font-size: 14px;
+      font-weight: 600;
+      color: #475569;
+      letter-spacing: 3px;
+    }
+
+    /* 真实朱砂印章效果（矢量叠加并带轻微倾斜与晕染） */
+    .official-seal-svg {
+      position: absolute;
+      right: 24px;
+      bottom: -10px;
+      width: 122px;
+      height: 122px;
+      pointer-events: none;
+      z-index: 12;
+      opacity: 0.88;
+      mix-blend-mode: multiply;
+      transform: rotate(-6deg);
+      filter: drop-shadow(0 1px 2px rgba(166, 30, 30, 0.22));
+    }
+
+    /* ==========================================================================
+       背面封底：高定浅色系象牙白金装帧 (Certificate Back - Alabaster & Champagne Gold)
+       ========================================================================== */
+    .card-back {
+      background: radial-gradient(circle at 50% 45%, #ffffff 0%, #faf6ee 60%, #eee6d6 100%);
+      color: var(--ink-primary);
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 44px 50px;
+      position: relative;
+    }
+
+    /* 背面浅色奢华暗纹：极细金色几何坐标网格 */
+    .back-mesh-bg {
+      position: absolute;
+      inset: 0;
+      opacity: 0.07;
+      background-image: 
+        linear-gradient(to right, #b88d3d 1px, transparent 1px),
+        linear-gradient(to bottom, #b88d3d 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+    }
+
+    /* 背面多层金色边框 */
+    .back-outer-border {
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(184, 141, 61, 0.4);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+    .back-inner-border {
+      position: absolute;
+      inset: 22px;
+      border: 2px solid #b88d3d;
+      border-radius: 2px;
+      pointer-events: none;
+    }
+
+    /* 背面中央：大号学术殿堂勋章 */
+    .back-center-piece {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+      position: relative;
+      z-index: 4;
+    }
+
+    .grand-olympiad-crest {
+      width: 190px;
+      height: 190px;
+      margin-bottom: 22px;
+      filter: drop-shadow(0 4px 16px rgba(184, 141, 61, 0.25));
+    }
+
+    .back-main-heading {
+      font-family: 'Cinzel', serif;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #7b5917;
+      margin-bottom: 6px;
+      text-align: center;
+    }
+
+    .back-cn-heading {
+      font-family: 'Noto Serif SC', serif;
+      font-size: 18px;
+      letter-spacing: 8px;
+      color: #1a283c;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    .back-motto-ribbon {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 4px;
+    }
+    .back-motto-ribbon::before, .back-motto-ribbon::after {
+      content: "";
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #b88d3d);
+    }
+    .back-motto-ribbon::after {
+      background: linear-gradient(90deg, #b88d3d, transparent);
+    }
+
+    .back-latin-motto {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+      font-style: italic;
+      color: #8c6721;
+      letter-spacing: 2.5px;
+      font-weight: 600;
+    }
+
+    /* 背面底端学术版权注记 */
+    .back-footer-notes {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+      font-size: 11.5px;
+      color: #64748b;
+      letter-spacing: 2px;
+      line-height: 1.8;
+      border-top: 1px solid rgba(184, 141, 61, 0.25);
+      padding-top: 14px;
+      width: 85%;
+    }
+
+    /* 翻转提示标签 */
+    .flip-hint-pill {
+      font-size: 12.5px;
+      color: #64748b;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+
+    /* ==========================================================================
+       并排平铺模式 (Side by Side Review Mode)
+       ========================================================================== */
+    .viewport.side-by-side {
+      max-width: 1760px;
+      perspective: none;
+    }
+
+    .viewport.side-by-side .certificate-card {
+      width: 1760px;
+      height: 608px;
+      transform: none !important;
+      display: flex;
+      gap: 40px;
+      cursor: default;
+    }
+
+    .viewport.side-by-side .card-front {
+      position: relative;
+      width: 860px;
+      height: 608px;
+    }
+
+    .viewport.side-by-side .card-back {
+      position: relative;
+      width: 860px;
+      height: 608px;
+      transform: none;
+    }
+
+    /* ==========================================================================
+       定制控制面板 (Interactive Editor Drawer)
+       ========================================================================== */
+    .editor-card {
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(184, 141, 61, 0.35);
+      backdrop-filter: blur(16px);
+      border-radius: 12px;
+      padding: 24px 28px;
+      max-width: 860px;
+      width: 100%;
+      box-shadow: 0 10px 30px rgba(28, 41, 61, 0.08);
+    }
+
+    .editor-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #8c6721;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .editor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .input-label {
+      font-size: 12px;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .input-control {
+      background: #ffffff;
+      border: 1px solid #d8e0ea;
+      border-radius: 6px;
+      padding: 8px 12px;
+      color: #1e293b;
+      font-size: 14px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .input-control:focus {
+      border-color: #b88d3d;
+      box-shadow: 0 0 0 3px rgba(184, 141, 61, 0.15);
+    }
+
+    /* ==========================================================================
+       打印与 A4 导出支持 (@media print)
+       ========================================================================== */
+    @media print {
+      body {
+        background: none !important;
+        color: #000 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+
+      header, .toolbar-container, .editor-card, .flip-hint-pill {
+        display: none !important;
+      }
+
+      .viewport {
+        max-width: 100% !important;
+        perspective: none !important;
+        display: block !important;
+        margin: 0 !important;
+      }
+
+      .certificate-card {
+        width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+        display: block !important;
+        box-shadow: none !important;
+      }
+
+      .card-face {
+        position: relative !important;
+        width: 297mm !important;
+        height: 210mm !important; /* A4 横版打印尺寸 */
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        page-break-after: always;
+        break-after: page;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      .card-back {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部设计说明 -->
+  <header>
+    <div class="badge-pill">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+      </svg>
+      全浅色系高定方案 · 象牙金与羊皮质感
+    </div>
+    <h1 class="project-title" id="pageMainHeader">第二十一届中国北方数学奥林匹克 · 命题专家聘任证书</h1>
+    <p class="project-sub">NORTH CHINA MATHEMATICAL OLYMPIAD · APPOINTMENT DOSSIER</p>
+  </header>
+
+  <!-- 快捷功能与视图切换工具条 -->
+  <div class="toolbar-container">
+    <button class="btn btn-gold" id="btnFlip" onclick="toggleCardFlip()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+      </svg>
+      3D 翻转卡片 (正面 / 背面)
+    </button>
+
+    <button class="btn btn-outline" id="btnViewMode" onclick="toggleSideBySide()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="9" height="18" rx="2"/><rect x="13" y="3" width="9" height="18" rx="2"/>
+      </svg>
+      双面并排对比预览
+    </button>
+
+    <button class="btn btn-outline" onclick="window.print()">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+        <rect x="6" y="14" width="12" height="8"></rect>
+      </svg>
+      打印 / 导出为高清 PDF
+    </button>
+  </div>
+
+  <!-- 证书视口与 3D 卡片主体 -->
+  <div class="viewport" id="certViewport">
+    <div class="certificate-card" id="certCard" onclick="handleCardClick(event)">
+      
+      <!-- ======================================================================
+           正面内页 (CERTIFICATE FRONT - IVORY PARCHMENT)
+           ====================================================================== -->
+      <div class="card-face card-front" id="cardFront">
+        <!-- 烫金微光层 -->
+        <div class="foil-shimmer" id="foilShimmer"></div>
+
+        <!-- 极细几何水印：斐波那契螺旋与几何测度 -->
+        <svg class="watermark-geometry" viewBox="0 0 200 200" fill="none" stroke="#b88d3d" stroke-width="0.75">
+          <!-- 黄金分割对数螺旋 -->
+          <path d="M100,100 m0,-80 a80,80 0 0,1 80,80 a50,50 0 0,1 -50,50 a31,31 0 0,1 -31,-31 a19,19 0 0,1 19,-19 a12,12 0 0,1 -12,12" />
+          <!-- 柏拉图正多面体拓扑正投影 -->
+          <polygon points="100,20 176,64 176,136 100,180 24,136 24,64" stroke-dasharray="2 2" opacity="0.6"/>
+          <circle cx="100" cy="100" r="92" stroke-dasharray="1 3"/>
+          <circle cx="100" cy="100" r="45" stroke="#b88d3d" stroke-width="0.5"/>
+        </svg>
+
+        <!-- 双层古典金质边框与拐角纹饰 -->
+        <div class="cert-frame"></div>
+        <div class="cert-frame-inner"></div>
+
+        <!-- 四角矢量花角 -->
+        <svg class="corner-bracket corner-tl" viewBox="0 0 30 30" fill="none" stroke="#b88d3d" stroke-width="1.8">
+          <path d="M0,0 L30,0 M0,0 L0,30 M6,6 L24,6 M6,6 L6,24 M12,12 L12,18 M12,12 L18,12" />
+        </svg>
+        <svg class="corner-bracket corner-tr" viewBox="0 0 30 30" fill="none" stroke="#b88d3d" stroke-width="1.8">
+          <path d="M0,0 L30,0 M0,0 L0,30 M6,6 L24,6 M6,6 L6,24 M12,12 L12,18 M12,12 L18,12" />
+        </svg>
+        <svg class="corner-bracket corner-br" viewBox="0 0 30 30" fill="none" stroke="#b88d3d" stroke-width="1.8">
+          <path d="M0,0 L30,0 M0,0 L0,30 M6,6 L24,6 M6,6 L6,24 M12,12 L12,18 M12,12 L18,12" />
+        </svg>
+        <svg class="corner-bracket corner-bl" viewBox="0 0 30 30" fill="none" stroke="#b88d3d" stroke-width="1.8">
+          <path d="M0,0 L30,0 M0,0 L0,30 M6,6 L24,6 M6,6 L6,24 M12,12 L12,18 M12,12 L18,12" />
+        </svg>
+
+        <!-- 正面内容排版 -->
+        <div class="front-content">
+          
+          <!-- 1. 顶部学术徽记与标题 -->
+          <div class="cert-header">
+            <!-- 专属奥林匹克学术殿堂金徽 -->
+            <div class="emblem-wrapper">
+              <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- 桂冠 -->
+                <path d="M22,65 C18,50 22,34 33,23 C36,32 30,46 32,56" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <path d="M78,65 C82,50 78,34 67,23 C64,32 70,46 68,56" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- 正十二面体几何核心 (浅色透底) -->
+                <circle cx="50" cy="50" r="30" fill="#fcfaf5" stroke="url(#goldGrad)" stroke-width="2"/>
+                <polygon points="50,26 68,39 61,61 39,61 32,39" stroke="url(#goldGrad)" stroke-width="1.5" fill="rgba(212, 175, 55, 0.15)"/>
+                <!-- 数学符号核心 π 与 顶点 -->
+                <text x="50" y="56" text-anchor="middle" fill="url(#goldGrad)" font-family="'Cinzel', serif" font-size="19" font-weight="bold">π</text>
+                <!-- 底部学术丝带 -->
+                <path d="M30,76 L50,71 L70,76 L64,84 L50,80 L36,84 Z" fill="url(#goldGrad)"/>
+                
+                <defs>
+                  <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#dfc07e" />
+                    <stop offset="40%" stop-color="#b88d3d" />
+                    <stop offset="80%" stop-color="#87611a" />
+                    <stop offset="100%" stop-color="#dfc07e" />
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <div class="org-en-sub">NORTH CHINA MATHEMATICAL OLYMPIAD</div>
+            <div class="org-cn-sub" id="displayOrgHead">第二十一届中国北方数学奥林匹克</div>
+            
+            <div class="ornament-line">
+              <span class="ornament-icon">✦</span>
+              <span class="ornament-icon">◆</span>
+              <span class="ornament-icon">✦</span>
+            </div>
+
+            <h2 class="main-title">聘 任 证 书</h2>
+            <div class="title-en">CERTIFICATE OF APPOINTMENT</div>
+          </div>
+
+          <!-- 2. 正文核心授受文案 -->
+          <div class="cert-body">
+            <p>
+              兹聘任 
+              <span class="recipient-name-box" id="displayName">张景中</span> 
+              <span id="displayTitleSuffix">先生</span> 为
+            </p>
+            <p style="margin-top: 8px;">
+              <strong style="color: #0d1e35; font-size: 17px;" id="displayContestName">第二十一届中国北方数学奥林匹克</strong>
+              <span class="highlight-role" id="displayRoleName">命题委员会委员</span>。
+            </p>
+            <p class="academic-affirmation" id="displayBodyText">
+              圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。
+            </p>
+          </div>
+
+          <!-- 3. 底部机构落款与防伪认证 -->
+          <div class="cert-footer">
+
+            <!-- 组织委员会落款与印章 -->
+            <div class="sign-authority">
+              <div class="org-official-name" id="displayAuthorityName">中国北方数学奥林匹克组织委员会</div>
+              <div class="issue-date" id="displayDate">二〇二四年八月</div>
+
+              <!-- 矢量朱砂印章 (10 字中国北方数学奥林匹克标准排布) -->
+              <svg class="official-seal-svg" viewBox="0 0 120 120">
+                <!-- 印泥外圈 -->
+                <circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="3" stroke-dasharray="100 0.5"/>
+                <circle cx="60" cy="60" r="52" fill="none" stroke="#c92a2a" stroke-width="0.8"/>
+                
+                <!-- 五角星 -->
+                <polygon points="60,38 65,49 77,50 68,58 71,70 60,63 49,70 52,58 43,50 55,49" fill="#c92a2a"/>
+                
+                <!-- 弧形沿圆文字：中国北方数学奥林匹克 (10 字精准排布) -->
+                <path id="sealPathTop" d="M 16,60 A 44,44 0 1,1 104,60" fill="none"/>
+                <text fill="#c92a2a" font-size="10.6" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="1.2">
+                  <textPath href="#sealPathTop" startOffset="50%" text-anchor="middle">
+                    中国北方数学奥林匹克
+                  </textPath>
+                </text>
+
+                <!-- 底部横排文字：组织委员会 -->
+                <text x="60" y="86" text-anchor="middle" fill="#c92a2a" font-size="11.5" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="3">
+                  组织委员会
+                </text>
+              </svg>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ======================================================================
+           背面封底：高定浅色系象牙白金装帧 (CERTIFICATE BACK - LIGHT PALETTE ALABASTER)
+           ====================================================================== -->
+      <div class="card-face card-back" id="cardBack">
+        <div class="back-mesh-bg"></div>
+        <div class="back-outer-border"></div>
+        <div class="back-inner-border"></div>
+
+        <!-- 四角星芒徽纹 (浅金色) -->
+        <svg class="corner-bracket corner-tl" viewBox="0 0 30 30" fill="none" stroke="#b88d3d" stroke-width="1.8">
+          <path d="M0,0 L30,0 M0,0 L0,30 M6,6 L24,6 M6,6 L6,24" />
+        </svg>
+        <svg class="corner-bracket corner-tr" viewBox="0 0 30 30" fill="none" stroke="#b88d3d" stroke-width="1.8">
+          <path d="M0,0 L30,0 M0,0 L0,30 M6,6 L24,6 M6,6 L6,24" />
+        </svg>
+        <svg class="corner-bracket corner-br" viewBox="0 0 30 30" fill="none" stroke="#b88d3d" stroke-width="1.8">
+          <path d="M0,0 L30,0 M0,0 L0,30 M6,6 L24,6 M6,6 L6,24" />
+        </svg>
+        <svg class="corner-bracket corner-bl" viewBox="0 0 30 30" fill="none" stroke="#b88d3d" stroke-width="1.8">
+          <path d="M0,0 L30,0 M0,0 L0,30 M6,6 L24,6 M6,6 L6,24" />
+        </svg>
+
+        <!-- 背面中央主视觉徽章 (高定浅色底座 + 香槟金浮雕) -->
+        <div class="back-center-piece">
+          <div class="grand-olympiad-crest">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- 浅色底盘微发光 -->
+              <circle cx="100" cy="100" r="95" fill="rgba(255, 255, 255, 0.9)" stroke="#b88d3d" stroke-width="1.2" stroke-dasharray="3 3"/>
+              <circle cx="100" cy="100" r="90" stroke="url(#goldBackGrad)" stroke-width="2.5"/>
+              <circle cx="100" cy="100" r="70" stroke="#b88d3d" stroke-width="1"/>
+
+              <!-- 环形文字：NORTH CHINA MATHEMATICAL OLYMPIAD -->
+              <path id="backSealPath" d="M 28,100 A 72,72 0 1,1 172,100" fill="none"/>
+              <text fill="#7b5917" font-size="8.5" font-family="'Cinzel', serif" font-weight="700" letter-spacing="3.2">
+                <textPath href="#backSealPath" startOffset="50%" text-anchor="middle">
+                  NORTH CHINA MATHEMATICAL OLYMPIAD
+                </textPath>
+              </text>
+
+              <!-- 环形底部：★ AD VERITATEM ★ -->
+              <path id="backSealPathBot" d="M 166,100 A 72,72 0 0,1 34,100" fill="none"/>
+              <text fill="#b88d3d" font-size="8" font-family="'Cinzel', serif" font-weight="700" letter-spacing="4">
+                <textPath href="#backSealPathBot" startOffset="50%" text-anchor="middle">
+                  ★ AD VERITATEM ★
+                </textPath>
+              </text>
+
+              <!-- 中央几何：柏拉图正二十面体与神圣比例晶体 -->
+              <g transform="translate(100, 100) scale(0.65)">
+                <polygon points="0,-60 52,-30 52,30 0,60 -52,30 -52,-30" stroke="url(#goldBackGrad)" stroke-width="3" fill="rgba(253, 251, 247, 0.85)"/>
+                <line x1="0" y1="-60" x2="0" y2="60" stroke="#b88d3d" stroke-width="2"/>
+                <line x1="-52" y1="-30" x2="52" y2="30" stroke="#b88d3d" stroke-width="1.5"/>
+                <line x1="-52" y1="30" x2="52" y2="-30" stroke="#b88d3d" stroke-width="1.5"/>
+                <polygon points="0,-60 52,30 -52,30" stroke="#c99a3e" stroke-width="2" fill="none"/>
+                <polygon points="0,60 -52,-30 52,-30" stroke="#c99a3e" stroke-width="2" fill="none"/>
+                <circle cx="0" cy="0" r="5" fill="url(#goldBackGrad)"/>
+              </g>
+
+              <defs>
+                <linearGradient id="goldBackGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#dfc07e"/>
+                  <stop offset="35%" stop-color="#b88d3d"/>
+                  <stop offset="70%" stop-color="#87611a"/>
+                  <stop offset="100%" stop-color="#dfc07e"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <h3 class="back-main-heading">North China Mathematical Olympiad</h3>
+          <div class="back-cn-heading">中国北方数学奥林匹克</div>
+
+          <div class="back-motto-ribbon">
+            <span class="back-latin-motto">Veritas et Numerorum Pulchritudo</span>
+          </div>
+        </div>
+
+        <!-- 背面底端学术版权注记 -->
+        <div class="back-footer-notes">
+          <div style="font-weight: 600; color: #475569;">OFFICIAL APPOINTMENT DOSSIER · ACADEMIC COMMITTEE</div>
+          <div style="margin-top: 4px; color: #64748b;">本聘书由中国北方数学奥林匹克组织委员会严格审定并颁发 · 载入赛事学术档案册</div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="flip-hint-pill">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/>
+    </svg>
+    提示：在卡片任意位置点击或按上方按钮，即可在「正面内页」与「背面封底」之间流畅翻转
+  </div>
+
+  <!-- ======================================================================
+       实时定制编辑控制台 (Real-time Customization Drawer)
+       ====================================================================== -->
+  <div class="editor-card">
+    <div class="editor-title">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 20h9"></path>
+        <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+      </svg>
+      证书内容实时编辑器 (即改即显，所见即所得)
+    </div>
+    
+    <div class="editor-grid">
+      <div class="input-group">
+        <label class="input-label">受聘专家姓名</label>
+        <input type="text" class="input-control" id="inputName" value="张景中" oninput="updateCertData()">
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">称谓后缀</label>
+        <select class="input-control" id="inputSuffix" onchange="updateCertData()">
+          <option value="先生">先生</option>
+          <option value="女士">女士</option>
+          <option value="教授">教授</option>
+          <option value="院士">院士</option>
+          <option value="专家">专家</option>
+          <option value="">(无后缀)</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">聘任身份职务</label>
+        <input type="text" class="input-control" id="inputRole" value="命题委员会委员" oninput="updateCertData()">
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">赛事机构全称</label>
+        <input type="text" class="input-control" id="inputContest" value="第二十一届中国北方数学奥林匹克" oninput="updateCertData()">
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">颁发日期落款</label>
+        <input type="text" class="input-control" id="inputDate" value="二〇二四年八月" oninput="updateCertData()">
+      </div>
+    </div>
+
+    <div style="margin-top: 16px; display: flex; gap: 10px; align-items: center; justify-content: flex-end;">
+      <span style="font-size: 12px; color: #64748b; font-weight: 500;">文案风格选择：</span>
+      <button class="btn btn-outline active" id="btnStyleA" onclick="setTextStyle('academic')">典雅学术版 (推荐)</button>
+      <button class="btn btn-outline" id="btnStyleB" onclick="setTextStyle('original')">忠实原版文案</button>
+    </div>
+  </div>
+
+  <!-- 交互脚本 -->
+  <script>
+    const certCard = document.getElementById('certCard');
+    const certViewport = document.getElementById('certViewport');
+    const foilShimmer = document.getElementById('foilShimmer');
+
+    let isFlipped = false;
+    let isSideBySide = false;
+    let currentStyle = 'academic';
+
+    // 翻转卡片
+    function toggleCardFlip() {
+      if (isSideBySide) {
+        toggleSideBySide();
+      }
+      isFlipped = !isFlipped;
+      certCard.classList.toggle('flipped', isFlipped);
+      document.getElementById('btnFlip').innerHTML = isFlipped 
+        ? `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg> 翻转回 正面内页` 
+        : `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg> 3D 翻转卡片 (正面 / 背面)`;
+    }
+
+    function handleCardClick(e) {
+      if (isSideBySide) return;
+      toggleCardFlip();
+    }
+
+    // 双面平铺模式
+    function toggleSideBySide() {
+      isSideBySide = !isSideBySide;
+      certViewport.classList.toggle('side-by-side', isSideBySide);
+      const btn = document.getElementById('btnViewMode');
+      if (isSideBySide) {
+        btn.classList.add('active');
+        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/></svg> 返回 3D 翻转模式`;
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="9" height="18" rx="2"/><rect x="13" y="3" width="9" height="18" rx="2"/></svg> 双面并排对比预览`;
+        certCard.classList.toggle('flipped', isFlipped);
+      }
+    }
+
+    // 鼠标移动跟随烫金高光
+    document.addEventListener('mousemove', (e) => {
+      const rect = certCard.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      certCard.style.setProperty('--mouse-x', `${x}px`);
+      certCard.style.setProperty('--mouse-y', `${y}px`);
+    });
+
+    // 实时同步输入框内容到证书视图
+    function updateCertData() {
+      const name = document.getElementById('inputName').value || '受聘专家';
+      const suffix = document.getElementById('inputSuffix').value;
+      const role = document.getElementById('inputRole').value || '命题委员会委员';
+      const contest = document.getElementById('inputContest').value || '第二十一届中国北方数学奥林匹克';
+      const date = document.getElementById('inputDate').value || '二〇二四年八月';
+
+      document.getElementById('displayName').textContent = name;
+      document.getElementById('displayTitleSuffix').textContent = suffix;
+      document.getElementById('displayRoleName').textContent = role;
+      document.getElementById('displayContestName').textContent = contest;
+      document.getElementById('displayOrgHead').textContent = contest;
+      document.getElementById('displayDate').textContent = date;
+    }
+
+    // 文案风格切换
+    function setTextStyle(style) {
+      currentStyle = style;
+      const btnA = document.getElementById('btnStyleA');
+      const btnB = document.getElementById('btnStyleB');
+      const bodyTextEl = document.getElementById('displayBodyText');
+
+      if (style === 'academic') {
+        btnA.classList.add('active');
+        btnB.classList.remove('active');
+        bodyTextEl.textContent = '圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。';
+      } else {
+        btnB.classList.add('active');
+        btnA.classList.remove('active');
+        bodyTextEl.textContent = '圆满完成本年度竞赛命题工作，特此证明。';
+      }
+    }
+  </script>
+</body>
+</html>
