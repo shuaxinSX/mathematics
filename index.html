@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第二十一届中国北方数学奥林匹克 · 命题专家聘任证书</title>
+  <title>第二十一届中国北方数学奥林匹克 · 命题证书</title>
   <!-- Google Fonts: 顶级学术与典雅衬线字体 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -807,19 +807,19 @@
       </svg>
       全浅色系高定方案 · 象牙金与羊皮质感
     </div>
-    <h1 class="project-title" id="pageMainHeader">第二十一届中国北方数学奥林匹克 · 命题专家聘任证书</h1>
-    <p class="project-sub">NORTH CHINA MATHEMATICAL OLYMPIAD · APPOINTMENT DOSSIER</p>
+    <h1 class="project-title" id="pageMainHeader">第二十一届中国北方数学奥林匹克 · 命题证书</h1>
+    <p class="project-sub">NORTH CHINA MATHEMATICAL OLYMPIAD · CERTIFICATE OF PROPOSITION</p>
   </header>
 
   <!-- 快捷功能与视图切换工具条 -->
   
   <!-- 证书体系预设切换器 -->
   <div class="preset-selector-bar">
-    <span class="preset-label">📜 选择证书体系：</span>
-    <button class="preset-tab active" id="tabQhExpert" onclick="applyCertPreset('qihang-expert')">🎓 启航联盟 · 命题专家聘书</button>
-    <button class="preset-tab" id="tabQhCoach" onclick="applyCertPreset('qihang-coach')">🏅 启航联盟 · 金牌主教练聘书</button>
-    <button class="preset-tab" id="tabQhSchool" onclick="applyCertPreset('qihang-school')">🏛️ 启航联盟 · 理事成员校授牌</button>
-    <button class="preset-tab" id="tabNorthExpert" onclick="applyCertPreset('north-expert')">📜 北方奥赛 · 命题专家聘书 (历史原版)</button>
+    <span class="preset-label">📜 当前证书体系：</span>
+    <button class="preset-tab active" id="tabNorthProposal" onclick="applyCertPreset('north-proposal')">📜 北方奥赛 · 命题证书 (公章留白 · 默认)</button>
+    <button class="preset-tab" id="tabQhExpert" onclick="applyCertPreset('qihang-expert')">🎓 启航联盟 · 专家聘书</button>
+    <button class="preset-tab" id="tabQhCoach" onclick="applyCertPreset('qihang-coach')">🏅 启航联盟 · 教练聘书</button>
+    <button class="preset-tab" id="tabQhSchool" onclick="applyCertPreset('qihang-school')">🏛️ 启航联盟 · 成员校授牌</button>
     <a href="qihang-alliance-logo/index.html" class="preset-tab portal-link-btn" title="直达启航联盟品牌视觉规范门户">🎨 查看启航联盟视觉规范门户 →</a>
   </div>
 
@@ -926,36 +926,36 @@
               <span class="ornament-icon">✦</span>
             </div>
 
-            <h2 class="main-title" id="displayMainTitle">聘 任 证 书</h2>
-            <div class="title-en" id="displayTitleEn">CERTIFICATE OF APPOINTMENT</div>
+            <h2 class="main-title" id="displayMainTitle">命 题 证 书</h2>
+            <div class="title-en" id="displayTitleEn">CERTIFICATE OF PROPOSITION</div>
           </div>
 
           <!-- 2. 正文核心授受文案 -->
-          <div class="cert-body">
-            <p>
-              兹聘任 
-              <span class="recipient-name-box" id="displayName">张景中</span> 
-              <span id="displayTitleSuffix">先生</span> 为
+          <div class="cert-body" id="certBodyContent" style="width: 86%; margin: 18px auto; text-align: justify; line-height: 2.3; font-size: 16.5px; color: #1a2536;">
+            <p style="text-indent: 2em; margin-bottom: 12px;">
+              兹证明 <span class="recipient-name-box" id="displayName" style="min-width: 140px; border-bottom: 1.5px solid #0d1e35; padding: 0 12px; display: inline-block; text-align: center; font-weight: 800; color: #0d1e35;">__________</span> 老师所提供的数学竞赛试题，经<span id="displayCommittee">中国北方奥林匹克主试委员会</span>审定，入选<span id="displayContestYear">2026年第二十一届中国北方数学奥林匹克</span>竞赛试题。
             </p>
-            <p style="margin-top: 8px;">
-              <strong style="color: #0d1e35; font-size: 17px;" id="displayContestName">第二十一届中国北方数学奥林匹克</strong>
-              <span class="highlight-role" id="displayRoleName">命题委员会委员</span>。
-            </p>
-            <p class="academic-affirmation" id="displayBodyText">
-              圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。
+            <p style="text-indent: 2em;" id="displayBodyEnding">
+              特颁此证，以资证明。
             </p>
           </div>
 
           <!-- 3. 底部机构落款与防伪认证 -->
-          <div class="cert-footer">
+          <div class="cert-footer" style="display: flex; justify-content: flex-end; align-items: flex-end; padding: 0 32px 12px;">
 
-            <!-- 组织委员会落款与印章 -->
-            <div class="sign-authority">
-              <div class="org-official-name" id="displayAuthorityName">中国北方数学奥林匹克组织委员会</div>
-              <div class="issue-date" id="displayDate">二〇二四年八月</div>
+            <!-- 组织委员会落款与公章留白处 -->
+            <div class="sign-authority" style="position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; min-width: 220px;">
+              <div class="org-official-name" id="displayAuthorityName" style="font-size: 16px; font-weight: 800; color: #0d1e35; line-height: 1.5; letter-spacing: 2px;">
+                中国北方数学奥林匹克<br>组织委员会
+              </div>
+              <div class="issue-date" id="displayDate" style="margin-top: 10px; font-size: 15px; font-weight: 700; color: #334155; letter-spacing: 3px;">
+                ____年____月
+              </div>
 
-              <!-- 矢量朱砂印章 (标准排布) -->
-              <div id="displaySealWrapper"><svg class="official-seal-svg" viewBox="0 0 120 120"><circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="1.8"/><circle cx="60" cy="60" r="54" fill="none" stroke="#c92a2a" stroke-width="0.5"/><polygon points="60.00,47.40 62.83,56.11 71.98,56.11 64.58,61.49 67.41,70.19 60.00,64.81 52.59,70.19 55.42,61.49 48.02,56.11 57.17,56.11" fill="#c92a2a"/><path id="sealPathTopQH" d="M 17.71,75.39 A 45,45 0 1 1 102.29,75.39" fill="none"/><text fill="#c92a2a" font-size="5.8" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="0.4"><textPath href="#sealPathTopQH" startOffset="50%" text-anchor="middle">高中数学奥林匹克启航联盟组织委员会</textPath></text><text x="60" y="89" text-anchor="middle" fill="#c92a2a" font-size="4.2" font-family="'Noto Serif SC', serif" font-weight="800" letter-spacing="1.2">★ 专用电子印鉴 ★</text><text x="60" y="97" text-anchor="middle" fill="#c92a2a" font-size="3.2" font-family="'Space Grotesk', monospace" font-weight="700" letter-spacing="0.6">NO. 2026-HSMO-8848</text></svg></div>
+              <!-- 矢量朱砂印章 (公章处留白，供线下实体加盖公章使用) -->
+              <div id="displaySealWrapper" style="position: absolute; right: -10px; bottom: -10px; width: 122px; height: 122px; pointer-events: none; z-index: 12;">
+                <!-- 留白：供线下实体加盖中国北方数学奥林匹克组织委员会公章 -->
+              </div>
             </div>
 
           </div>
@@ -990,11 +990,11 @@
         <div class="back-center-piece">
           <div class="grand-olympiad-crest" id="displayBackCrestWrapper"></div>
 
-          <h3 class="back-main-heading">North China Mathematical Olympiad</h3>
+          <h3 class="back-main-heading" id="displayBackMainHeading">North China Mathematical Olympiad</h3>
           <div class="back-cn-heading" id="displayBackCnHeading">中国北方数学奥林匹克</div>
 
           <div class="back-motto-ribbon">
-            <span class="back-latin-motto">Veritas et Numerorum Pulchritudo</span>
+            <span class="back-latin-motto" id="displayBackMotto">Veritas et Numerorum Pulchritudo</span>
           </div>
         </div>
 
@@ -1030,35 +1030,37 @@
     
     <div class="editor-grid">
       <div class="input-group">
-        <label class="input-label">受聘专家姓名</label>
-        <input type="text" class="input-control" id="inputName" value="张景中" oninput="updateCertData()">
+        <label class="input-label">受聘/证明教师姓名 (留空显示下划线)</label>
+        <input type="text" class="input-control" id="inputName" placeholder="留空显示：__________" value="" oninput="updateCertData()">
       </div>
 
       <div class="input-group">
-        <label class="input-label">称谓后缀</label>
-        <select class="input-control" id="inputSuffix" onchange="updateCertData()">
-          <option value="先生">先生</option>
-          <option value="女士">女士</option>
-          <option value="教授">教授</option>
-          <option value="院士">院士</option>
-          <option value="专家">专家</option>
-          <option value="">(无后缀)</option>
+        <label class="input-label">主试/审定委员会全称</label>
+        <input type="text" class="input-control" id="inputCommittee" value="中国北方奥林匹克主试委员会" oninput="updateCertData()">
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">入选赛事全称与年份</label>
+        <input type="text" class="input-control" id="inputContest" value="2026年第二十一届中国北方数学奥林匹克" oninput="updateCertData()">
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">颁发与签发机构落款</label>
+        <input type="text" class="input-control" id="inputAuthority" value="中国北方数学奥林匹克
+组织委员会" oninput="updateCertData()">
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">落款日期 (留白或填写具体年月)</label>
+        <input type="text" class="input-control" id="inputDate" value="____年____月" oninput="updateCertData()">
+      </div>
+
+      <div class="input-group">
+        <label class="input-label">公章显示模式</label>
+        <select class="input-control" id="inputSealMode" onchange="toggleSealMode(this.value)">
+          <option value="blank" selected>公章处留白 (供实体盖章，推荐)</option>
+          <option value="show">加盖电子公章 (仅供电子版预览)</option>
         </select>
-      </div>
-
-      <div class="input-group">
-        <label class="input-label">聘任身份职务</label>
-        <input type="text" class="input-control" id="inputRole" value="命题委员会委员" oninput="updateCertData()">
-      </div>
-
-      <div class="input-group">
-        <label class="input-label">赛事机构全称</label>
-        <input type="text" class="input-control" id="inputContest" value="第二十一届中国北方数学奥林匹克" oninput="updateCertData()">
-      </div>
-
-      <div class="input-group">
-        <label class="input-label">颁发日期落款</label>
-        <input type="text" class="input-control" id="inputDate" value="二〇二四年八月" oninput="updateCertData()">
       </div>
     </div>
 
@@ -1261,7 +1263,27 @@
       </defs>
     </svg>`;
 
+    
     const CERT_PRESETS = {
+      'north-proposal': {
+        pageTitle: '第二十一届中国北方数学奥林匹克 · 命题证书',
+        orgEn: 'NORTH CHINA MATHEMATICAL OLYMPIAD',
+        orgCn: '第二十一届中国北方数学奥林匹克',
+        mainTitle: '命 题 证 书',
+        titleEn: 'CERTIFICATE OF PROPOSITION',
+        name: '',
+        committee: '中国北方奥林匹克主试委员会',
+        contest: '2026年第二十一届中国北方数学奥林匹克',
+        authority: '中国北方数学奥林匹克<br>组织委员会',
+        date: '____年____月',
+        emblem: SVG_EMBLEM_NORTH,
+        seal: '', // 公章处留白
+        sealShow: false,
+        backCrest: SVG_BACK_CREST_NORTH,
+        backMainHead: 'NORTH CHINA MATHEMATICAL OLYMPIAD',
+        backCnHead: '第二十一届中国北方数学奥林匹克',
+        backMotto: '“Veritas et Numerorum Pulchritudo”'
+      },
       'qihang-expert': {
         pageTitle: '高中数学奥林匹克启航联盟 · 命题专家聘任证书',
         orgEn: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE',
@@ -1269,15 +1291,13 @@
         mainTitle: '聘 任 证 书',
         titleEn: 'CERTIFICATE OF APPOINTMENT',
         name: '张景中',
-        suffix: '院士',
-        role: '学术委员会顾问 · 命题专家组组长',
+        committee: '启航联盟学术命题专家组',
         contest: '全国高中数学奥林匹克启航联盟',
-        authority: '高中数学奥林匹克启航联盟组织委员会',
+        authority: '高中数学奥林匹克启航联盟<br>组织委员会',
         date: '二〇二六年九月',
-        affirmation: '鉴于您在数学奥林匹克领域的深厚学术造诣与崇高威望，特聘请您担任',
-        bodyEnding: '圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。',
         emblem: SVG_EMBLEM_QIHANG,
         seal: SVG_SEAL_QIHANG,
+        sealShow: true,
         backCrest: SVG_BACK_CREST_QIHANG,
         backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
         backCnHead: '全国高中数学奥林匹克启航联盟',
@@ -1290,15 +1310,13 @@
         mainTitle: '聘 任 证 书',
         titleEn: 'CERTIFICATE OF APPOINTMENT',
         name: '李晨阳',
-        suffix: '特级教师',
-        role: '国家集训队奥林匹克金牌主教练',
+        committee: '启航联盟国家集训教练组',
         contest: '全国高中数学奥林匹克启航联盟',
-        authority: '高中数学奥林匹克启航联盟组织委员会',
+        authority: '高中数学奥林匹克启航联盟<br>组织委员会',
         date: '二〇二六年九月',
-        affirmation: '鉴于您在拔尖创新人才培养中的杰出教练水准与卓著育人成果，特聘任您为',
-        bodyEnding: '主持金牌集训队课程指导与学术梯队集训。特发此证，谨致崇高敬意。',
         emblem: SVG_EMBLEM_QIHANG,
         seal: SVG_SEAL_QIHANG,
+        sealShow: true,
         backCrest: SVG_BACK_CREST_QIHANG,
         backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
         backCnHead: '全国高中数学奥林匹克启航联盟',
@@ -1311,44 +1329,34 @@
         mainTitle: '成 员 校 证 书',
         titleEn: 'CERTIFICATE OF MEMBERSHIP',
         name: '清华大学附属中学',
-        suffix: '',
-        role: '首批学术理事成员校 · 拔尖创新联合培养基地',
+        committee: '启航联盟理事大会',
         contest: '全国高中数学奥林匹克启航联盟',
-        authority: '高中数学奥林匹克启航联盟组织委员会',
+        authority: '高中数学奥林匹克启航联盟<br>组织委员会',
         date: '二〇二六年九月',
-        affirmation: '兹确认该校正式加入全国高中数学奥林匹克启航联盟，确立为',
-        bodyEnding: '携手推进高阶数学思维拔尖创新人才早期贯通培养。特颁此证。',
         emblem: SVG_EMBLEM_QIHANG,
         seal: SVG_SEAL_QIHANG,
+        sealShow: true,
         backCrest: SVG_BACK_CREST_QIHANG,
         backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
         backCnHead: '全国高中数学奥林匹克启航联盟',
         backMotto: '“Sovereign Alliance of Mathematical Excellence”'
-      },
-      'north-expert': {
-        pageTitle: '第二十一届中国北方数学奥林匹克 · 命题专家聘任证书',
-        orgEn: 'NORTH CHINA MATHEMATICAL OLYMPIAD',
-        orgCn: '第二十一届中国北方数学奥林匹克',
-        mainTitle: '聘 任 证 书',
-        titleEn: 'CERTIFICATE OF APPOINTMENT',
-        name: '顾晓明',
-        suffix: '教授',
-        role: '命题委员会特聘专家',
-        contest: '第二十一届中国北方数学奥林匹克',
-        authority: '中国北方数学奥林匹克组织委员会',
-        date: '二〇二四年八月',
-        affirmation: '鉴于您在数学奥林匹克领域的深厚学术造诣与卓越贡献，特聘请您担任',
-        bodyEnding: '圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。',
-        emblem: SVG_EMBLEM_NORTH,
-        seal: SVG_SEAL_NORTH,
-        backCrest: SVG_BACK_CREST_NORTH,
-        backMainHead: 'NORTH CHINA MATHEMATICAL OLYMPIAD',
-        backCnHead: '第二十一届中国北方数学奥林匹克',
-        backMotto: '“Veritas et Numerorum Pulchritudo”'
       }
     };
 
     let currentPresetKey = 'qihang-expert';
+
+    
+    let sealDisplayMode = 'blank'; // 默认公章处留白
+
+    function toggleSealMode(mode) {
+      sealDisplayMode = mode;
+      const wrap = document.getElementById('displaySealWrapper');
+      if (mode === 'blank') {
+        wrap.innerHTML = '';
+      } else {
+        wrap.innerHTML = (currentPresetKey === 'north-proposal') ? SVG_SEAL_NORTH : SVG_SEAL_QIHANG;
+      }
+    }
 
     function applyCertPreset(presetKey) {
       currentPresetKey = presetKey;
@@ -1357,10 +1365,10 @@
 
       // 更新 Tab 高亮
       document.querySelectorAll('.preset-tab').forEach(tab => tab.classList.remove('active'));
+      if (presetKey === 'north-proposal') document.getElementById('tabNorthProposal').classList.add('active');
       if (presetKey === 'qihang-expert') document.getElementById('tabQhExpert').classList.add('active');
       if (presetKey === 'qihang-coach') document.getElementById('tabQhCoach').classList.add('active');
       if (presetKey === 'qihang-school') document.getElementById('tabQhSchool').classList.add('active');
-      if (presetKey === 'north-expert') document.getElementById('tabNorthExpert').classList.add('active');
 
       // 更新页面标题与页眉
       document.getElementById('pageMainHeader').textContent = p.pageTitle;
@@ -1373,18 +1381,34 @@
       document.getElementById('displayMainTitle').textContent = p.mainTitle;
       document.getElementById('displayTitleEn').textContent = p.titleEn;
 
-      document.getElementById('displayName').textContent = p.name;
-      document.getElementById('displayTitleSuffix').textContent = p.suffix;
-      document.getElementById('displayRoleName').textContent = p.role;
-      document.getElementById('displayContestName').textContent = p.contest;
-      document.getElementById('displayBodyText').textContent = p.bodyEnding;
-      
-      const affirmEl = document.querySelector('.academic-affirmation');
-      if (affirmEl) affirmEl.textContent = p.affirmation;
+      // 正文内容更新
+      const bodyBox = document.getElementById('certBodyContent');
+      if (presetKey === 'north-proposal') {
+        bodyBox.innerHTML = `
+          <p style="text-indent: 2em; margin-bottom: 12px;">
+            兹证明 <span class="recipient-name-box" id="displayName" style="min-width: 140px; border-bottom: 1.5px solid #0d1e35; padding: 0 12px; display: inline-block; text-align: center; font-weight: 800; color: #0d1e35;">${p.name || '__________'}</span> 老师所提供的数学竞赛试题，经<span id="displayCommittee">${p.committee}</span>审定，入选<span id="displayContestYear">${p.contest}</span>竞赛试题。
+          </p>
+          <p style="text-indent: 2em;" id="displayBodyEnding">
+            特颁此证，以资证明。
+          </p>
+        `;
+      } else {
+        bodyBox.innerHTML = `
+          <p style="text-indent: 2em; margin-bottom: 12px;">
+            兹聘任 <span class="recipient-name-box" id="displayName" style="min-width: 140px; border-bottom: 1.5px solid #0d1e35; padding: 0 12px; display: inline-block; text-align: center; font-weight: 800; color: #0d1e35;">${p.name || '__________'}</span> 为<strong style="color: #0d1e35;" id="displayContestYear">${p.contest}</strong><span id="displayCommittee" style="color:#8c6721; font-weight:700;"> · ${p.mainTitle}</span>。
+          </p>
+          <p style="text-indent: 2em;" id="displayBodyEnding">
+            圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。
+          </p>
+        `;
+      }
 
-      document.getElementById('displayAuthorityName').textContent = p.authority;
+      document.getElementById('displayAuthorityName').innerHTML = p.authority;
       document.getElementById('displayDate').textContent = p.date;
-      document.getElementById('displaySealWrapper').innerHTML = p.seal;
+      
+      // 公章留白处理
+      toggleSealMode(p.sealShow ? 'show' : 'blank');
+      document.getElementById('inputSealMode').value = p.sealShow ? 'show' : 'blank';
 
       // 更新背面
       document.getElementById('displayBackCrestWrapper').innerHTML = p.backCrest;
@@ -1394,45 +1418,58 @@
 
       // 同步输入框
       document.getElementById('inputName').value = p.name;
-      document.getElementById('inputSuffix').value = p.suffix;
-      document.getElementById('inputRole').value = p.role;
+      document.getElementById('inputCommittee').value = p.committee;
       document.getElementById('inputContest').value = p.contest;
+      document.getElementById('inputAuthority').value = p.authority.replace('<br>', '\n');
       document.getElementById('inputDate').value = p.date;
     }
 
     function updateCertData() {
-      const name = document.getElementById('inputName').value || '受聘专家';
-      const suffix = document.getElementById('inputSuffix').value;
-      const role = document.getElementById('inputRole').value || '命题委员会委员';
-      const contest = document.getElementById('inputContest').value || '第二十一届中国北方数学奥林匹克';
-      const date = document.getElementById('inputDate').value || '二〇二四年八月';
+      const name = document.getElementById('inputName').value.trim();
+      const committee = document.getElementById('inputCommittee').value;
+      const contest = document.getElementById('inputContest').value;
+      const authority = document.getElementById('inputAuthority').value.replace('\n', '<br>');
+      const date = document.getElementById('inputDate').value;
 
-      document.getElementById('displayName').textContent = name;
-      document.getElementById('displayTitleSuffix').textContent = suffix;
-      document.getElementById('displayRoleName').textContent = role;
-      document.getElementById('displayContestName').textContent = contest;
-      document.getElementById('displayOrgHead').textContent = contest;
+      document.getElementById('displayName').textContent = name ? name : '__________';
+      if (document.getElementById('displayCommittee')) document.getElementById('displayCommittee').textContent = committee;
+      if (document.getElementById('displayContestYear')) document.getElementById('displayContestYear').textContent = contest;
+      document.getElementById('displayAuthorityName').innerHTML = authority;
       document.getElementById('displayDate').textContent = date;
     }
+
 
     // 文案风格切换
     function setTextStyle(style) {
       currentStyle = style;
       const btnA = document.getElementById('btnStyleA');
       const btnB = document.getElementById('btnStyleB');
-      const bodyTextEl = document.getElementById('displayBodyText');
+      const bodyTextEl = document.getElementById('displayBodyEnding');
+      if (!bodyTextEl) return;
 
-      if (style === 'academic') {
-        btnA.classList.add('active');
-        btnB.classList.remove('active');
-        bodyTextEl.textContent = '圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。';
+      if (currentPresetKey === 'north-proposal') {
+        if (style === 'academic') {
+          btnA.classList.add('active');
+          btnB.classList.remove('active');
+          bodyTextEl.textContent = '特颁此证，以资证明。';
+        } else {
+          btnB.classList.add('active');
+          btnA.classList.remove('active');
+          bodyTextEl.textContent = '特颁此证，谨致谢忱。';
+        }
       } else {
-        btnB.classList.add('active');
-        btnA.classList.remove('active');
-        bodyTextEl.textContent = '圆满完成本年度竞赛命题工作，特此证明。';
+        if (style === 'academic') {
+          btnA.classList.add('active');
+          btnB.classList.remove('active');
+          bodyTextEl.textContent = '圆满完成本年度高水平学术赛题的研制、论证与审定工作。特发此证，谨致崇高敬意。';
+        } else {
+          btnB.classList.add('active');
+          btnA.classList.remove('active');
+          bodyTextEl.textContent = '圆满完成本年度竞赛工作，特此证明。';
+        }
       }
     }
-    applyCertPreset('qihang-expert');
+    applyCertPreset('north-proposal');
   </script>
 </body>
 </html>
