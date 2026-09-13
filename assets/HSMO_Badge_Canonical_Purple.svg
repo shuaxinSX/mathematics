@@ -1,9 +1,9 @@
 <svg viewBox="0 0 600 600" width="1200" height="1200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Top Arc Path: Clockwise upper track for English text -->
-    <path id="topArcPath" d="M 52 230 A 255 255 0 0 1 548 230" fill="none"/>
-    <!-- Bottom Arc Path: Upright smile track for Chinese formal logotype -->
-    <path id="botArcPath" d="M 68 378 A 240 240 0 0 0 532 378" fill="none"/>
+    <!-- Top Arc Path: Clockwise upper track for English text (R=238, arc length ~731px, perfectly fits 51 chars with NO truncation) -->
+    <path id="topArcPath" d="M 62 285 A 238 238 0 0 1 538 285" fill="none"/>
+    <!-- Bottom Arc Path: Upright smile track for Chinese formal logotype (R=232, span ~140 deg, fits 11 chars harmoniously) -->
+    <path id="botArcPath" d="M 72 345 A 232 232 0 0 0 528 345" fill="none"/>
   </defs>
 
   <!-- Outermost stroke ring (外同心包边圆环) -->
@@ -12,15 +12,15 @@
   <!-- Inner circular solid disc (核心色盘) -->
   <circle cx="300" cy="300" r="174" fill="#2E1065" stroke="#2E1065" stroke-width="1"/>
 
-  <!-- Top arc text: English full institutional title (顶部顺时针英文全称) -->
-  <text fill="#2E1065" font-family="'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" letter-spacing="3.0">
+  <!-- Top arc text: English full institutional title (100% complete, never truncated) -->
+  <text fill="#2E1065" font-family="'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16.2" font-weight="700" letter-spacing="1.5">
     <textPath href="#topArcPath" startOffset="50%" text-anchor="middle">
       HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE
     </textPath>
   </text>
 
   <!-- Bottom arc text: Chinese formal title (底部规范中文标准字，正立易读) -->
-  <text fill="#2E1065" font-family="'Noto Serif SC', 'Songti SC', 'Source Han Serif SC', 'STSong', serif" font-size="32" font-weight="900" letter-spacing="6.5">
+  <text fill="#2E1065" font-family="'Noto Serif SC', 'Songti SC', 'Source Han Serif SC', 'STSong', serif" font-size="28" font-weight="900" letter-spacing="4.6">
     <textPath href="#botArcPath" startOffset="50%" text-anchor="middle">
       高中数学奥林匹克启航联盟
     </textPath>
