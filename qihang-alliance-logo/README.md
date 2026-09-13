@@ -29,6 +29,18 @@
 
 ## 🚀 运行与查看方式 (Usage)
 
+### 原型圆形徽标的紧凑排版
+
+页面首项原型徽标使用 `vector_exports/HSMO_Badge_Canonical_*.svg`。紫、红、蓝、黑四色和 Prototype 别名共用同一套几何与排字：600 单位画布，外环半径 286，内环半径 216，中心色盘半径 209，文字可用环带宽 65。中英文均以圆心 `(300, 300)`、字面中心半径 `249.5` 排列。
+
+英文采用 **Cinzel Bold（700）**，中文采用 **思源宋体 Source Han Serif SC Bold**；所有字形均已转为矢量路径，SVG 显示与打印不依赖接收设备安装字体。完整双语名称保留在 SVG 的可访问标题与文字组标签中。
+
+主体在此前微调基础上再次右移 2pt，以页面 300px 预览为基准，对应 SVG 的 5.33333 单位；垂直位置沿用此前的居中修正。
+
+字号、字距、颜色及原始帆形路径统一维护在 [`../scripts/build_canonical_badges.py`](../scripts/build_canonical_badges.py)。在具备 `fontTools` 的环境运行 `python3 scripts/build_canonical_badges.py --png`（仓库根目录，PNG 导出使用 macOS `sips`），可同步三处 SVG 与两处 1000px 透明 PNG。构建默认读取 `~/Library/Caches/math_olympiad_certificate/fonts/` 下的 `Cinzel-Variable.ttf` 与 `SourceHanSerifSC-Bold.otf`；可通过 `--english-font`、`--chinese-font` 指定其他字体文件路径。
+
+构建字体来自 [Google Fonts 的 Cinzel 官方字体目录](https://github.com/google/fonts/tree/main/ofl/cinzel)（`wght=700` 实例）和 [Adobe 思源宋体官方仓库](https://github.com/adobe-fonts/source-han-serif/tree/release/OTF/SimplifiedChinese)（Bold）；两份原始字体及各自的 OFL 许可证保存在上述本机缓存目录。
+
 双击打开 [`index.html`](./index.html) 即可在任意浏览器中体验：
 - **十大视觉规范全景交互控制台**（材质切换、横竖版切换、单色对比、水印滑块、尺寸对比）
 - **官方金属胸牌 3D 镜面反光扫光** 与 **4 大角色身份实时切换**
