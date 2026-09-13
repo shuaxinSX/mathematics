@@ -1,33 +1,36 @@
 <svg viewBox="0 0 600 600" width="1200" height="1200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <!-- Top Arc Path: Clockwise upper track for English text (R=238, arc length ~731px, perfectly fits 51 chars with NO truncation) -->
-    <path id="topArcPath" d="M 62 285 A 238 238 0 0 1 538 285" fill="none"/>
-    <!-- Bottom Arc Path: Upright smile track for Chinese formal logotype (R=232, span ~140 deg, fits 11 chars harmoniously) -->
-    <path id="botArcPath" d="M 72 345 A 232 232 0 0 0 528 345" fill="none"/>
+    <!-- Top Arc Path: Clockwise upper track for English text (R=236, arc length ~718px, fits 51 chars with NO truncation) -->
+    <path id="topHarmonic" d="M 66 278 A 236 236 0 0 1 534 278" fill="none"/>
+    <!-- Bottom Arc Path: Upright smile track for Chinese formal logotype (R=230, balanced and spacious) -->
+    <path id="botHarmonic" d="M 80 348 A 230 230 0 0 0 520 348" fill="none"/>
   </defs>
 
-  <!-- Outermost stroke ring (外同心包边圆环) -->
-  <circle cx="300" cy="300" r="285" fill="#ffffff" stroke="#9B2034" stroke-width="12"/>
-  
-  <!-- Inner circular solid disc (核心色盘) -->
-  <circle cx="300" cy="300" r="174" fill="#9B2034" stroke="#9B2034" stroke-width="1"/>
+  <!-- 1. Outermost stroke ring (外同心包边圆环) -->
+  <circle cx="300" cy="300" r="286" fill="#ffffff" stroke="#9B2034" stroke-width="10"/>
 
-  <!-- Top arc text: English full institutional title (100% complete, never truncated) -->
-  <text fill="#9B2034" font-family="'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16.2" font-weight="700" letter-spacing="1.5">
-    <textPath href="#topArcPath" startOffset="50%" text-anchor="middle">
+  <!-- 2. Concentric inner precision ring (华东师大校徽精髓：内嵌同心细圈) -->
+  <circle cx="300" cy="300" r="186" fill="none" stroke="#9B2034" stroke-width="2.5"/>
+
+  <!-- 3. Inner circular solid disc (核心实体色盘) -->
+  <circle cx="300" cy="300" r="176" fill="#9B2034"/>
+
+  <!-- 4. Top arc text: English full institutional title (加粗有力无衬线，字号16.5px，100%完整无截断) -->
+  <text fill="#9B2034" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Space Grotesk', sans-serif" font-size="16.5" font-weight="800" letter-spacing="1.4">
+    <textPath href="#topHarmonic" startOffset="50%" text-anchor="middle">
       HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE
     </textPath>
   </text>
 
-  <!-- Bottom arc text: Chinese formal title (底部规范中文标准字，正立易读) -->
-  <text fill="#9B2034" font-family="'Noto Serif SC', 'Songti SC', 'Source Han Serif SC', 'STSong', serif" font-size="28" font-weight="900" letter-spacing="4.6">
-    <textPath href="#botArcPath" startOffset="50%" text-anchor="middle">
+  <!-- 5. Bottom arc text: Chinese formal title (规范中文标准字，字号24px，字距5.2，与英文视觉重量黄金对等) -->
+  <text fill="#9B2034" font-family="'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', serif" font-size="24" font-weight="900" letter-spacing="5.2">
+    <textPath href="#botHarmonic" startOffset="50%" text-anchor="middle">
       高中数学奥林匹克启航联盟
     </textPath>
   </text>
   
-  <!-- Central motif: pure white Mobius Sail silhouette (中央纯白拓扑之帆母标图腾) -->
-  <g transform="translate(133, 146.5) scale(1.55)" fill="#ffffff">
+  <!-- 6. Central motif: pure white Mobius Sail silhouette (放大至1.76倍，充满张力，绝不空旷) -->
+  <g transform="translate(112, 126) scale(1.76)" fill="#ffffff">
     <!-- Base wave / hull -->
     <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z"/>
     <!-- Small secondary sail -->
