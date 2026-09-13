@@ -42,7 +42,7 @@
     }
 
     body {
-      background: radial-gradient(circle at 50% 15%, #ffffff 0%, #f3f5f8 55%, #e5e9ef 100%);
+      background: #ffffff;
       color: var(--ink-primary);
       font-family: 'Noto Serif SC', 'Songti SC', 'STSong', serif;
       min-height: 100vh;
@@ -1288,20 +1288,25 @@
     }
 
     const SVG_SEAL_QIHANG = `<svg class="official-seal-svg" viewBox="0 0 120 120">
-      <circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="1.8"/>
-      <circle cx="60" cy="60" r="54" fill="none" stroke="#c92a2a" stroke-width="0.5"/>
-      <polygon points="60.00,47.40 62.83,56.11 71.98,56.11 64.58,61.49 67.41,70.19 60.00,64.81 52.59,70.19 55.42,61.49 48.02,56.11 57.17,56.11" fill="#c92a2a"/>
-      <path id="sealPathTopQH" d="M 17.71,75.39 A 45,45 0 1 1 102.29,75.39" fill="none"/>
-      <text fill="#c92a2a" font-size="5.8" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="0.4">
+      <defs>
+        <path id="sealPathTopQH" d="M 19.2 64.5 A 41 41 0 1 1 100.8 64.5" fill="none"/>
+        <path id="sealPathCodeQH" d="M 36 95 A 45 45 0 0 0 84 95" fill="none"/>
+      </defs>
+      <!-- 标准外圆环 -->
+      <circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="1.6"/>
+      <!-- 中心正五角星 -->
+      <polygon points="60.00,45.00 63.71,56.40 75.70,56.40 65.99,63.44 69.70,74.84 60.00,67.80 50.30,74.84 54.01,63.44 44.30,56.40 56.29,56.40" fill="#c92a2a"/>
+      <!-- 上弧规范机构全称 -->
+      <text fill="#c92a2a" stroke="#c92a2a" stroke-width="0.2" font-size="6.5" font-family="'Noto Serif SC', 'Source Han Serif SC', 'Songti SC', 'STSong', serif" font-weight="900" letter-spacing="0.35">
         <textPath href="#sealPathTopQH" startOffset="50%" text-anchor="middle">
           高中数学奥林匹克启航联盟组织委员会
         </textPath>
       </text>
-      <text x="60" y="89" text-anchor="middle" fill="#c92a2a" font-size="4.2" font-family="'Noto Serif SC', serif" font-weight="800" letter-spacing="1.2">
-        ★ 专用电子印鉴 ★
-      </text>
-      <text x="60" y="97" text-anchor="middle" fill="#c92a2a" font-size="3.2" font-family="'Space Grotesk', monospace" font-weight="700" letter-spacing="0.6">
-        NO. 2026-HSMO-8848
+      <!-- 下弧微缩防伪数字 -->
+      <text fill="#c92a2a" font-size="3.5" font-family="'Space Grotesk', monospace" font-weight="700" letter-spacing="1.0">
+        <textPath href="#sealPathCodeQH" startOffset="50%" text-anchor="middle">
+          1101082026884
+        </textPath>
       </text>
     </svg>`;
 

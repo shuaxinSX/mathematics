@@ -9,32 +9,32 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Serif+SC:wght@500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --purple-base: #0a0714;
-      --purple-surface: #120d26;
-      --purple-card: #1a1238;
-      --purple-border: #3c2a74;
-      --purple-border-subtle: rgba(139, 92, 246, 0.22);
+      --purple-base: #f8fafc;
+      --purple-surface: #ffffff;
+      --purple-card: #ffffff;
+      --purple-border: #e2e8f0;
+      --purple-border-subtle: rgba(46, 16, 101, 0.12);
       
-      --brand-primary: #8b5cf6;       /* 极光电紫 Electric Violet */
-      --brand-primary-light: #a78bfa;
-      --brand-dark: #4c1d95;          /* 帝王深紫 Royal Purple */
-      --brand-deep: #1e1b4b;          /* 深空星渊 Deep Cosmic */
-      --brand-neon: #c084fc;          /* 霓虹亮紫 Neon Lilac */
-      --brand-magenta: #d946ef;       /* 虚数洋红 Cyber Magenta */
-      --brand-gold: #f59e0b;          /* 欧拉香槟金 Euler Gold */
-      --brand-gold-glow: #fde68a;
-      --brand-cyan: #06b6d4;          /* 拓扑天青 Cyan */
+      --brand-primary: #7c3aed;       /* 皇家典雅紫 */
+      --brand-primary-light: #8b5cf6;
+      --brand-dark: #2e1065;          /* 启航深紫 */
+      --brand-deep: #1e1b4b;          /* 学术深蓝紫 */
+      --brand-neon: #9333ea;
+      --brand-magenta: #c026d3;
+      --brand-gold: #d97706;          /* 典雅香槟金 */
+      --brand-gold-glow: #fef08a;
+      --brand-cyan: #0891b2;
 
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
+      --text-main: #0f172a;           /* 深邃高对比度正文黑 */
+      --text-muted: #475569;          /* 次级说明板岩灰 */
       --text-dim: #64748b;
-      --bg-page: #080511;
-      --card-bg: rgba(26, 18, 56, 0.75);
-      --card-bg-solid: #160f33;
-      --header-bg: rgba(10, 7, 20, 0.9);
+      --bg-page: #ffffff;             /* 纯白色背景 */
+      --card-bg: #ffffff;
+      --card-bg-solid: #ffffff;
+      --header-bg: rgba(255, 255, 255, 0.94);
 
-      --shadow-glow: 0 0 35px rgba(139, 92, 246, 0.25);
-      --shadow-card: 0 12px 35px -5px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(168, 85, 247, 0.18);
+      --shadow-glow: 0 4px 25px rgba(46, 16, 101, 0.08);
+      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(226, 232, 240, 0.9);
       --radius-sm: 8px;
       --radius-md: 14px;
       --radius-lg: 22px;
@@ -42,20 +42,20 @@
       --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    [data-theme="light"] {
-      --bg-page: #f8f6fc;
-      --purple-surface: #ffffff;
-      --purple-card: #ffffff;
-      --purple-border: #e2d9f3;
-      --purple-border-subtle: rgba(124, 58, 237, 0.15);
-      --text-main: #0f0b20;
-      --text-muted: #4d456b;
-      --text-dim: #80779e;
-      --card-bg: rgba(255, 255, 255, 0.94);
-      --card-bg-solid: #ffffff;
-      --header-bg: rgba(248, 246, 252, 0.92);
-      --shadow-glow: 0 0 30px rgba(139, 92, 246, 0.12);
-      --shadow-card: 0 10px 30px -5px rgba(124, 58, 237, 0.08), 0 0 0 1px rgba(124, 58, 237, 0.12);
+    [data-theme="dark"] {
+      --bg-page: #080511;
+      --purple-surface: #120d26;
+      --purple-card: #1a1238;
+      --purple-border: #3c2a74;
+      --purple-border-subtle: rgba(139, 92, 246, 0.22);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-dim: #64748b;
+      --card-bg: rgba(26, 18, 56, 0.85);
+      --card-bg-solid: #160f33;
+      --header-bg: rgba(10, 7, 20, 0.95);
+      --shadow-glow: 0 0 35px rgba(139, 92, 246, 0.25);
+      --shadow-card: 0 12px 35px -5px rgba(0, 0, 0, 0.6);
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -66,11 +66,7 @@
       background-color: var(--bg-page);
       color: var(--text-main);
       line-height: 1.6;
-      background-image: 
-        radial-gradient(ellipse 90% 60% at 50% -10%, rgba(124, 58, 237, 0.25), transparent 70%),
-        radial-gradient(circle at 90% 30%, rgba(217, 70, 239, 0.12), transparent 50%),
-        radial-gradient(circle at 10% 70%, rgba(6, 182, 212, 0.1), transparent 50%);
-      background-attachment: fixed;
+      background-image: none;
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -135,13 +131,13 @@
       font-size: 1.1rem;
       font-weight: 800;
       letter-spacing: -0.01em;
-      background: linear-gradient(90deg, #fff, var(--brand-primary-light));
+      background: linear-gradient(90deg, #0f172a 0%, #2E1065 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    [data-theme="light"] .brand-title {
-      background: linear-gradient(90deg, #1e1035, #6d28d9);
+    [data-theme="dark"] .brand-title {
+      background: linear-gradient(90deg, #fff, var(--brand-primary-light));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -1577,7 +1573,7 @@
         📜 证书设计制作系统 ↗
       </a>
       <button class="btn btn-outline" id="themeToggleBtn">
-        <span id="themeIcon">☀️</span> 明亮模式
+        <span id="themeIcon">🌙</span> 深空夜色
       </button>
     </div>
   </header>
@@ -1651,14 +1647,14 @@
          01. 高校规范级 · 原型版本圆形徽标 (Canonical Prototype Master Badge)
          ====================================================================== -->
     <div id="canonical-prototype"></div>
-    <div class="ten-card" style="margin-bottom: 2.5rem; border-color: rgba(245, 158, 11, 0.45); background: linear-gradient(180deg, rgba(30, 16, 62, 0.8) 0%, rgba(18, 10, 38, 0.95) 100%);">
+    <div class="ten-card" style="margin-bottom: 2.5rem; border-color: rgba(184, 141, 61, 0.4); background: #ffffff; box-shadow: 0 8px 30px rgba(0,0,0,0.06);">
       <div class="ten-card-header">
         <div>
-          <span class="ten-card-num" style="background: rgba(245, 158, 11, 0.2); color: #FDE047; border: 1px solid rgba(245, 158, 11, 0.4);">TOP PRIORITY · 01</span>
-          <h3 class="ten-card-title" style="color: #FDE047; margin-top: 4px; font-size: 1.35rem;">
+          <span class="ten-card-num" style="background: rgba(184, 141, 61, 0.12); color: #87611a; border: 1px solid rgba(184, 141, 61, 0.35);">TOP PRIORITY · 01</span>
+          <h3 class="ten-card-title" style="color: #2E1065; margin-top: 4px; font-size: 1.35rem;">
             高校规范级 · 原型版本圆形徽标 (Canonical Prototype Institutional Seal)
           </h3>
-          <p style="font-size: 0.85rem; color: #a78bfa; margin-top: 2px;">
+          <p style="font-size: 0.85rem; color: #64748b; margin-top: 2px;">
             严格遵循华东师范大学等中国顶级高校校徽布局体系 · 纯白双语环形轨道 · 纯净莫比乌斯之帆母标
           </p>
         </div>
@@ -1672,9 +1668,9 @@
 
       <div style="display: grid; grid-template-columns: 360px 1fr; gap: 2.5rem; align-items: center;">
         <!-- 原型徽标预览舞台 -->
-        <div class="ten-preview-stage" style="height: 360px; background: radial-gradient(circle, #25134A 0%, #0A0414 100%); border-radius: var(--radius-md); border: 1px solid var(--purple-border-subtle); display: flex; align-items: center; justify-content: center;">
+        <div class="ten-preview-stage" style="height: 360px; background: #f8fafc; border-radius: var(--radius-md); border: 1px solid #e2e8f0; display: flex; align-items: center; justify-content: center;">
           <div id="canonicalStageSlot" style="width: 300px; height: 300px; display: flex; align-items: center; justify-content: center;">
-            <img src="vector_exports/HSMO_Badge_Canonical_Purple.svg" alt="启航联盟原型徽标" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 12px 30px rgba(0,0,0,0.65));">
+            <img src="vector_exports/HSMO_Badge_Canonical_Purple.svg" alt="启航联盟原型徽标" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 10px 25px rgba(46, 16, 101, 0.2));">
           </div>
         </div>
 
@@ -1689,25 +1685,25 @@
             </span>
           </div>
 
-          <h4 style="font-size: 1.12rem; color: #FFFFFF; font-weight: 800; margin-bottom: 0.5rem;">
+          <h4 style="font-size: 1.12rem; color: var(--text-main); font-weight: 800; margin-bottom: 0.5rem;">
             外同心包边 · 纯白双语环形轨道 · 核心色盘 · 拓扑之帆母标
           </h4>
           <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.1rem;">
-            以华东师范大学等百年名校官方印章构图为基准蓝本，采用中国高校最高法定规格进行空间推演：外同心圆环确立建制边界；内嵌纯白环形轨道，顶弧顺时针镌刻英文全称 <code style="color:#FEF08A; font-weight:700;">HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE</code>，底弧正立对仗镌刻中文正名 <code style="color:#FEF08A; font-weight:700;">高中数学奥林匹克启航联盟</code>；中央同心纯色盘中，纯白无瑕的「拓扑之帆 · 莫比乌斯之帆」与北极星引领奇点破浪而起，构筑起殿堂级学术共同体的庄严权威。
+            以华东师范大学等百年名校官方印章构图为基准蓝本，采用中国高校最高法定规格进行空间推演：外同心圆环确立建制边界；内嵌纯白环形轨道，顶弧顺时针镌刻英文全称 <code style="color: #2E1065; background: #ede9fe; padding: 2px 6px; border-radius: 4px; font-weight:700;">HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE</code>，底弧正立对仗镌刻中文正名 <code style="color: #2E1065; background: #ede9fe; padding: 2px 6px; border-radius: 4px; font-weight:700;">高中数学奥林匹克启航联盟</code>；中央同心纯色盘中，纯白无瑕的「拓扑之帆 · 莫比乌斯之帆」与北极星引领奇点破浪而起，构筑起殿堂级学术共同体的庄严权威。
           </p>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.25rem; font-size: 0.82rem;">
-            <div style="background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #8b5cf6;">
-              <strong style="color:#f8fafc;">外环双语对仗：</strong> 顶弧英文大写与底弧中文正体优雅呼应
+            <div style="background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0; border-left: 3px solid #7c3aed;">
+              <strong style="color: #0f172a;">外环双语对仗：</strong> 顶弧英文大写与底弧中文正体优雅呼应
             </div>
-            <div style="background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #10b981;">
-              <strong style="color:#f8fafc;">核心图腾纯净：</strong> 零杂线干扰，极度利落的高清几何剪影
+            <div style="background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0; border-left: 3px solid #10b981;">
+              <strong style="color: #0f172a;">核心图腾纯净：</strong> 零杂线干扰，极度利落的高清几何剪影
             </div>
-            <div style="background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #f59e0b;">
-              <strong style="color:#f8fafc;">全场景通用性：</strong> 官方聘书、学术出版物、防伪印鉴与校旗
+            <div style="background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0; border-left: 3px solid #d97706;">
+              <strong style="color: #0f172a;">全场景通用性：</strong> 官方聘书、学术出版物、防伪印鉴与校旗
             </div>
-            <div style="background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #06b6d4;">
-              <strong style="color:#f8fafc;">四色标准体系：</strong> 皇家紫母色 + 师大红 + 工程蓝 + 极简黑
+            <div style="background: #f8fafc; padding: 8px 12px; border-radius: 6px; border: 1px solid #e2e8f0; border-left: 3px solid #0891b2;">
+              <strong style="color: #0f172a;">四色标准体系：</strong> 皇家紫母色 + 师大红 + 工程蓝 + 极简黑
             </div>
           </div>
 
@@ -1730,11 +1726,11 @@
     </div>
 
     <!-- 01-B. 仪式典藏版 · 3D 金属大勋章 (用于奖章与金属胸针) -->
-    <div class="ten-card" style="margin-bottom: 2rem; border-color: rgba(139, 92, 246, 0.35);">
+    <div class="ten-card" style="margin-bottom: 2rem; border-color: rgba(124, 58, 237, 0.25);">
       <div class="ten-card-header">
         <div>
           <span class="ten-card-num">SPECIAL CRAFT · 01-B</span>
-          <h3 class="ten-card-title" style="color: #c084fc; margin-top: 4px;">仪式典藏版 · 3D浮雕金属大勋章 (Ceremonial Metal Medal Badge)</h3>
+          <h3 class="ten-card-title" style="color: #7c3aed; margin-top: 4px;">仪式典藏版 · 3D浮雕金属大勋章 (Ceremonial Metal Medal Badge)</h3>
         </div>
         <div class="badge-material-tabs">
           <button class="mini-tab-btn active" onclick="switchBadgeTexture('color')">① 极光紫金殿堂版</button>
@@ -1744,18 +1740,18 @@
       </div>
 
       <div style="display: grid; grid-template-columns: 340px 1fr; gap: 2rem; align-items: center;">
-        <div class="ten-preview-stage" style="height: 320px; background: radial-gradient(circle, #1F0D3D 0%, #0D041A 100%);">
+        <div class="ten-preview-stage" style="height: 320px; background: radial-gradient(circle, #2E1065 0%, #0F0521 100%);">
           <div id="badgeStageSlot" style="width: 260px; height: 260px; display: flex; align-items: center; justify-content: center;">
             <img src="vector_exports/HSMO_Badge_Circular_Master.svg" alt="官方圆形学术徽标" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));">
           </div>
         </div>
 
         <div>
-          <h4 style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; margin-bottom: 0.5rem;">
-            双层同心金属拉丝包边 · 欧拉四大常数 · 莫比乌斯无限之帆
+          <h4 style="font-size: 1.05rem; color: var(--text-main); font-weight: 800; margin-bottom: 0.5rem;">
+            双层同心金属拉丝包边 · 双语规范全称 · 莫比乌斯无限之帆
           </h4>
           <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
-            专为最高级别颁奖典礼与实体纪念品打造！外环采用拉丝香槟金包边与深紫轨道，镌刻四大数学常数 <code style="color:#FEF08A;">π · e · i · φ</code>；内嵌极细天文坐标射线，散发实体冲压金牌与珐琅徽章的质感光辉。
+            专为最高级别颁奖典礼与实体纪念品打造！外环采用拉丝香槟金包边与深紫轨道，镌刻完整官方双语全称 <code style="color: #2E1065; background: #ede9fe; padding: 2px 6px; border-radius: 4px; font-weight:700;">HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE</code> 与 <code style="color: #2E1065; background: #ede9fe; padding: 2px 6px; border-radius: 4px; font-weight:700;">高中数学奥林匹克启航联盟</code>；内嵌极细天文坐标射线，散发实体冲压金牌与珐琅徽章的质感光辉。
           </p>
           <div class="craft-chips" style="margin-bottom: 1.1rem;">
             <span class="craft-chip">金银铜奖牌压铸 (65mm)</span>
@@ -1996,7 +1992,7 @@
           <ul class="download-specs-list">
             <li><span>法定文字：</span><span>高中数学奥林匹克启航联盟组织委员会</span></li>
             <li><span>印鉴色值：</span><span>传统天然朱砂红 #C92A2A (纯净高保真矢量)</span></li>
-            <li><span>防伪标记：</span><span>★ 专用电子印鉴 ★ / NO. 2026-HSMO-8848</span></li>
+            <li><span>防伪标记：</span><span>国标 13 位微缩防伪数字印鉴编码 1101082026884</span></li>
             <li><span>格式优势：</span><span>纯矢量无损叠加，支持 PDF 电子签章与直接送印</span></li>
           </ul>
         </div>
@@ -3071,21 +3067,18 @@
       if (e.key === "Escape") closeLightboxDirect();
     });
 
-    // 主题切换
+    // 主题切换 (默认纯白学术规范，支持切换深空夜色)
     const themeBtn = document.getElementById("themeToggleBtn");
-    const themeIcon = document.getElementById("themeIcon");
-    let isLight = false;
+    let isDark = false;
 
     themeBtn.addEventListener("click", () => {
-      isLight = !isLight;
-      if (isLight) {
-        document.body.setAttribute("data-theme", "light");
-        themeIcon.innerText = "🌙";
-        themeBtn.innerHTML = `<span>🌙</span> 深空夜色`;
+      isDark = !isDark;
+      if (isDark) {
+        document.body.setAttribute("data-theme", "dark");
+        themeBtn.innerHTML = `<span>☀️</span> 纯白规范模式`;
       } else {
         document.body.removeAttribute("data-theme");
-        themeIcon.innerText = "☀️";
-        themeBtn.innerHTML = `<span>☀️</span> 明亮模式`;
+        themeBtn.innerHTML = `<span>🌙</span> 深空夜色`;
       }
     });
 
