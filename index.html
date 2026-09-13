@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>第二十一届中国北方数学奥林匹克 · 命题证书</title>
+  <title>高中数学奥林匹克启航联盟 · 官方证书系统</title>
   <!-- Google Fonts: 顶级学术与典雅衬线字体 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+SC:wght@300;400;600;700;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -49,60 +49,167 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 28px 16px 65px;
+      padding: 20px 16px 65px;
       overflow-x: hidden;
     }
 
-    /* 顶部导航与控制栏 */
-    header {
-      text-align: center;
-      margin-bottom: 24px;
-      max-width: 900px;
-    }
-
-    .badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 5px 16px;
-      background: rgba(212, 175, 55, 0.12);
+    /* ==========================================================================
+       全新整合式一体化导航工作台 (Unified Studio Navigation Bar)
+       ========================================================================== */
+    .studio-navbar {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto 24px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       border: 1px solid rgba(184, 141, 61, 0.35);
-      border-radius: 9999px;
-      font-size: 12px;
-      color: #8c6721;
-      letter-spacing: 2px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(184, 141, 61, 0.08);
+      border-radius: 16px;
+      padding: 12px 20px;
+      box-shadow: 0 8px 30px rgba(184, 141, 61, 0.12), 0 1px 3px rgba(0,0,0,0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
     }
 
-    h1.project-title {
+    .studio-nav-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-bottom: 1px solid rgba(184, 141, 61, 0.15);
+      padding-bottom: 10px;
+    }
+
+    .studio-brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .studio-brand-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      box-shadow: 0 3px 12px rgba(46, 16, 101, 0.25);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .studio-brand-badge:hover {
+      transform: rotate(15deg) scale(1.08);
+    }
+
+    .studio-brand-text h1 {
       font-family: 'Cinzel', 'Noto Serif SC', serif;
-      font-size: 27px;
-      font-weight: 700;
-      color: #162438;
-      letter-spacing: 2px;
-      margin-bottom: 6px;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.05);
+      font-size: 18px;
+      font-weight: 800;
+      color: #141f30;
+      letter-spacing: 1px;
+      line-height: 1.25;
     }
 
-    p.project-sub {
+    .studio-brand-text p {
+      font-size: 11.5px;
       color: #64748b;
-      font-size: 13.5px;
-      letter-spacing: 1.5px;
+      letter-spacing: 0.8px;
       font-weight: 500;
     }
 
-    /* 快捷工具条 */
-    .toolbar-container {
+    .studio-actions-group {
       display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    /* 证书体系预设胶囊栏 */
+    .studio-nav-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       flex-wrap: wrap;
       gap: 12px;
-      justify-content: center;
-      margin-bottom: 28px;
-      z-index: 50;
     }
+
+    .preset-pill-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .preset-label {
+      font-size: 13px;
+      font-weight: 700;
+      color: #8c6721;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .preset-tab {
+      background: rgba(248, 250, 252, 0.9);
+      border: 1px solid rgba(184, 141, 61, 0.25);
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #475569;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .preset-tab:hover {
+      color: #8c6721;
+      background: rgba(212, 175, 55, 0.12);
+      border-color: rgba(184, 141, 61, 0.5);
+    }
+    .preset-tab.active {
+      background: linear-gradient(135deg, #dfc07e, #b88d3d);
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(184, 141, 61, 0.3);
+      border-color: transparent;
+      font-weight: 700;
+    }
+
+    /* 徽标色彩切换点 */
+    .color-picker-box {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(241, 245, 249, 0.85);
+      padding: 4px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(184, 141, 61, 0.25);
+    }
+    .color-picker-box span {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #64748b;
+    }
+    .color-dot-btn {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #ffffff;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .color-dot-btn:hover {
+      transform: scale(1.2);
+    }
+    .color-dot-btn.active {
+      box-shadow: 0 0 0 2px #b88d3d;
+      transform: scale(1.18);
+    }
+    .dot-purple { background: #2E1065; }
+    .dot-crimson { background: #9B2034; }
+    .dot-navy { background: #0F172A; }
 
     .btn {
       appearance: none;
@@ -110,25 +217,25 @@
       outline: none;
       cursor: pointer;
       font-family: inherit;
-      font-size: 13px;
-      padding: 10px 20px;
+      font-size: 12.5px;
+      padding: 7px 15px;
       border-radius: 6px;
       font-weight: 600;
       transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       text-decoration: none;
     }
 
     .btn-gold {
       background: linear-gradient(135deg, #d4af37, #9b7222);
       color: #ffffff;
-      box-shadow: 0 4px 14px rgba(184, 141, 61, 0.25);
+      box-shadow: 0 4px 12px rgba(184, 141, 61, 0.25);
     }
     .btn-gold:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(184, 141, 61, 0.4);
+      box-shadow: 0 6px 18px rgba(184, 141, 61, 0.4);
       background: linear-gradient(135deg, #dfbe4a, #aa7e2a);
     }
 
@@ -147,7 +254,16 @@
       box-shadow: 0 4px 12px rgba(184, 141, 61, 0.15);
     }
 
-    .btn-outline.active {
+    .btn-portal {
+      color: #7c3aed;
+      border: 1px dashed rgba(124, 58, 237, 0.4);
+      background: rgba(124, 58, 237, 0.06);
+    }
+    .btn-portal:hover {
+      background: rgba(124, 58, 237, 0.14);
+      color: #6d28d9;
+      transform: translateY(-1px);
+    }
       background: rgba(212, 175, 55, 0.15);
       border-color: #b88d3d;
       color: #7a5814;
@@ -821,53 +937,67 @@
 </head>
 <body>
 
-  <!-- 顶部设计说明 -->
-  <header>
-    <div class="badge-pill">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
-      </svg>
-      全浅色系高定方案 · 象牙金与羊皮质感
+  <!-- ======================================================================
+       全新一体化顶部导航工作台 (Unified Studio Console)
+       ====================================================================== -->
+  <div class="studio-navbar">
+    <div class="studio-nav-top">
+      <div class="studio-brand-wrap">
+        <img src="assets/HSMO_Badge_Canonical_Purple.svg" alt="启航联盟徽标" class="studio-brand-badge" id="navBrandBadge">
+        <div class="studio-brand-text">
+          <h1 id="pageMainHeader">高中数学奥林匹克启航联盟 · 命题证书</h1>
+          <p id="pageSubHeader">高中数学奥林匹克启航联盟 · 官方学术认证与防伪验证工作台</p>
+        </div>
+      </div>
+
+      <div class="studio-actions-group">
+        <!-- 徽标色彩即时切换 -->
+        <div class="color-picker-box" title="切换证书徽标色系">
+          <span>徽标色：</span>
+          <button class="color-dot-btn dot-purple active" id="dotPurple" title="启航皇家紫 (标准母色)" onclick="setEmblemPalette('purple')"></button>
+          <button class="color-dot-btn dot-crimson" id="dotCrimson" title="华东师大红 (典雅学术红)" onclick="setEmblemPalette('crimson')"></button>
+          <button class="color-dot-btn dot-navy" id="dotNavy" title="经典深蓝 (工程规范蓝)" onclick="setEmblemPalette('navy')"></button>
+        </div>
+
+        <button class="btn btn-gold" id="btnFlip" onclick="toggleCardFlip()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
+          </svg>
+          3D 翻转 (正/反面)
+        </button>
+
+        <button class="btn btn-outline" id="btnViewMode" onclick="toggleSideBySide()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="3" width="9" height="18" rx="2"/><rect x="13" y="3" width="9" height="18" rx="2"/>
+          </svg>
+          双面并排预览
+        </button>
+
+        <button class="btn btn-outline" onclick="window.print()">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          打印 / 导出 PDF
+        </button>
+
+        <a href="qihang-alliance-logo/index.html" class="btn btn-portal" title="直达启航联盟品牌视觉规范门户">
+          🎨 查看品牌视觉规范门户 →
+        </a>
+      </div>
     </div>
-    <h1 class="project-title" id="pageMainHeader">第二十一届中国北方数学奥林匹克 · 命题证书</h1>
-    <p class="project-sub" id="pageSubHeader">第二十一届中国北方数学奥林匹克 · 官方学术命题证书系统</p>
-  </header>
 
-  <!-- 快捷功能与视图切换工具条 -->
-  
-  <!-- 证书体系预设切换器 -->
-  <div class="preset-selector-bar">
-    <span class="preset-label">📜 当前证书体系：</span>
-    <button class="preset-tab active" id="tabNorthProposal" onclick="applyCertPreset('north-proposal')">📜 北方奥赛 · 命题证书 (公章留白 · 默认)</button>
-    <button class="preset-tab" id="tabQhExpert" onclick="applyCertPreset('qihang-expert')">🎓 启航联盟 · 专家聘书</button>
-    <button class="preset-tab" id="tabQhCoach" onclick="applyCertPreset('qihang-coach')">🏅 启航联盟 · 教练聘书</button>
-    <button class="preset-tab" id="tabQhSchool" onclick="applyCertPreset('qihang-school')">🏛️ 启航联盟 · 成员校授牌</button>
-    <a href="qihang-alliance-logo/index.html" class="preset-tab portal-link-btn" title="直达启航联盟品牌视觉规范门户">🎨 查看启航联盟视觉规范门户 →</a>
-  </div>
-
-  <div class="toolbar-container">
-    <button class="btn btn-gold" id="btnFlip" onclick="toggleCardFlip()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/>
-      </svg>
-      3D 翻转卡片 (正面 / 背面)
-    </button>
-
-    <button class="btn btn-outline" id="btnViewMode" onclick="toggleSideBySide()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="2" y="3" width="9" height="18" rx="2"/><rect x="13" y="3" width="9" height="18" rx="2"/>
-      </svg>
-      双面并排对比预览
-    </button>
-
-    <button class="btn btn-outline" onclick="window.print()">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="6 9 6 2 18 2 18 9"></polyline>
-        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-        <rect x="6" y="14" width="12" height="8"></rect>
-      </svg>
-      打印 / 导出为高清 PDF
-    </button>
+    <!-- 证书体系预设分类胶囊 -->
+    <div class="studio-nav-bottom">
+      <div class="preset-pill-group">
+        <span class="preset-label">📜 官方证书体系：</span>
+        <button class="preset-tab active" id="tabQhProposal" onclick="applyCertPreset('qihang-proposal')">📜 启航联盟 · 命题证书 (熊昌进 · 默认)</button>
+        <button class="preset-tab" id="tabQhExpert" onclick="applyCertPreset('qihang-expert')">🎓 启航联盟 · 命题专家聘书 (张景中)</button>
+        <button class="preset-tab" id="tabQhCoach" onclick="applyCertPreset('qihang-coach')">🏅 启航联盟 · 金牌主教练聘书 (李晨阳)</button>
+        <button class="preset-tab" id="tabQhSchool" onclick="applyCertPreset('qihang-school')">🏛️ 启航联盟 · 理事成员校授牌 (清华附中)</button>
+      </div>
+    </div>
   </div>
 
   <!-- 证书视口与 3D 卡片主体 -->
@@ -914,13 +1044,13 @@
           
           <!-- 1. 顶部学术徽记与标题 -->
           <div class="cert-header">
-            <!-- 中国北方数学奥林匹克官方徽标 CNMO -->
+            <!-- 统一为高中数学奥林匹克启航联盟 原型徽标 -->
             <div class="emblem-wrapper" id="displayEmblemWrapper">
-              <img src="assets/cnmo_official_logo.png" alt="中国北方数学奥林匹克 CNMO 官方徽标">
+              <img src="assets/HSMO_Badge_Canonical_Purple.svg" alt="高中数学奥林匹克启航联盟 原型徽标" id="frontEmblemImg" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 3px 10px rgba(46, 16, 101, 0.2));">
             </div>
 
-            <div class="org-en-sub" id="displayOrgEn"></div>
-            <div class="org-cn-sub" id="displayOrgHead">第二十一届中国北方数学奥林匹克</div>
+            <div class="org-en-sub" id="displayOrgEn">HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE</div>
+            <div class="org-cn-sub" id="displayOrgHead">高中数学奥林匹克启航联盟</div>
             
             <div class="ornament-line">
               <span class="ornament-icon">✦</span>
@@ -929,13 +1059,13 @@
             </div>
 
             <h2 class="main-title" id="displayMainTitle">命 题 证 书</h2>
-            <div class="title-en" id="displayTitleEn"></div>
+            <div class="title-en" id="displayTitleEn">CERTIFICATE OF PROBLEM PROPOSAL</div>
           </div>
 
           <!-- 2. 正文核心授受文案 -->
           <div class="cert-body" id="certBodyContent" style="width: 86%; margin: 18px auto; text-align: justify; line-height: 2.3; font-size: 16.5px; color: #1a2536;">
             <p style="text-indent: 2em; margin-bottom: 12px;">
-              兹证明 <span class="recipient-name-box" id="displayName">熊昌进</span> 老师所提供的数学竞赛试题，经<span id="displayCommittee">中国北方奥林匹克主试委员会</span>审定，入选<span id="displayContestYear">2026年第二十一届中国北方数学奥林匹克</span>竞赛试题。
+              兹证明 <span class="recipient-name-box" id="displayName">熊昌进</span> 老师所提供的数学竞赛试题，经<span id="displayCommittee">高中数学奥林匹克启航联盟主试委员会</span>审定，入选<span id="displayContestYear">2026年高中数学奥林匹克启航联盟</span>竞赛试题。
             </p>
             <p style="text-indent: 2em;" id="displayBodyEnding">
               特颁此证，以资证明。
@@ -947,16 +1077,15 @@
 
             <!-- 组织委员会落款与公章留白处 -->
             <div class="sign-authority" style="position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; min-width: 220px;">
-              <div class="org-official-name north-authority-single-line" id="displayAuthorityName" style="font-size: 16px; font-weight: 800; color: #0d1e35; line-height: 1.5; letter-spacing: 2px;">
-                中国北方数学奥林匹克组织委员会
+              <div class="org-official-name" id="displayAuthorityName" style="font-size: 16px; font-weight: 800; color: #0d1e35; line-height: 1.5; letter-spacing: 2px;">
+                高中数学奥林匹克启航联盟<br>组织委员会
               </div>
               <div class="issue-date" id="displayDate" style="margin-top: 10px; font-size: 15px; font-weight: 700; color: #334155; letter-spacing: 3px;">
                 2026年8月
               </div>
 
-              <!-- 矢量朱砂印章 (公章处留白，供线下实体加盖公章使用) -->
+              <!-- 矢量朱砂印章 (默认公章处留白，供线下实体加盖公章使用；支持一键加盖官方电子印鉴) -->
               <div id="displaySealWrapper" style="position: absolute; right: -10px; bottom: -10px; width: 122px; height: 122px; pointer-events: none; z-index: 12;">
-                <!-- 留白：供线下实体加盖中国北方数学奥林匹克组织委员会公章 -->
               </div>
             </div>
 
@@ -988,24 +1117,24 @@
           <path d="M0,0 L30,0 M0,0 L0,30 M6,6 L24,6 M6,6 L6,24" />
         </svg>
 
-        <!-- 背面中央主视觉徽章 (高定浅色底座 + 香槟金浮雕) -->
+        <!-- 背面中央主视觉徽章 (原型版本徽标) -->
         <div class="back-center-piece">
           <div class="grand-olympiad-crest" id="displayBackCrestWrapper">
-            <img src="assets/cnmo_purple_logo.png" alt="中国北方数学奥林匹克 CNMO 紫色徽标" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 6px 18px rgba(61, 30, 109, 0.28));">
+            <img src="assets/HSMO_Badge_Canonical_Purple.svg" alt="高中数学奥林匹克启航联盟 背面徽标" id="backCrestImg" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 8px 24px rgba(46, 16, 101, 0.25));">
           </div>
 
-          <h3 class="back-main-heading" id="displayBackMainHeading"></h3>
-          <div class="back-cn-heading" id="displayBackCnHeading">第二十一届中国北方数学奥林匹克</div>
+          <h3 class="back-main-heading" id="displayBackMainHeading">HIGH SCHOOL MATHEMATICAL OLYMPIAD</h3>
+          <div class="back-cn-heading" id="displayBackCnHeading">高中数学奥林匹克启航联盟</div>
 
           <div class="back-motto-ribbon">
-            <span class="back-latin-motto" id="displayBackMotto">“格物致知 · 极数穷理”</span>
+            <span class="back-latin-motto" id="displayBackMotto">“Per Aspera ad Astra · 启航数学真理之光”</span>
           </div>
         </div>
 
         <!-- 背面底端学术版权注记 -->
         <div class="back-footer-notes">
-          <div id="displayBackSubNote" style="font-weight: 600; color: #475569;">中国北方数学奥林匹克组织委员会</div>
-          <div style="margin-top: 4px; color: #64748b;">本证书由中国北方数学奥林匹克组织委员会严格审定并颁发</div>
+          <div id="displayBackSubNote" style="font-weight: 600; color: #475569;">高中数学奥林匹克启航联盟组织委员会</div>
+          <div style="margin-top: 4px; color: #64748b;">本证书由高中数学奥林匹克启航联盟组织委员会与主试委员会严格审定并颁发</div>
         </div>
 
       </div>
@@ -1040,17 +1169,17 @@
 
       <div class="input-group">
         <label class="input-label">主试/审定委员会全称</label>
-        <input type="text" class="input-control" id="inputCommittee" value="中国北方奥林匹克主试委员会" oninput="updateCertData()">
+        <input type="text" class="input-control" id="inputCommittee" value="高中数学奥林匹克启航联盟主试委员会" oninput="updateCertData()">
       </div>
 
       <div class="input-group">
         <label class="input-label">入选赛事全称与年份</label>
-        <input type="text" class="input-control" id="inputContest" value="2026年第二十一届中国北方数学奥林匹克" oninput="updateCertData()">
+        <input type="text" class="input-control" id="inputContest" value="2026年高中数学奥林匹克启航联盟" oninput="updateCertData()">
       </div>
 
       <div class="input-group">
         <label class="input-label">颁发与签发机构落款</label>
-        <input type="text" class="input-control" id="inputAuthority" value="中国北方数学奥林匹克
+        <input type="text" class="input-control" id="inputAuthority" value="高中数学奥林匹克启航联盟
 组织委员会" oninput="updateCertData()">
       </div>
 
@@ -1129,28 +1258,34 @@
     // 实时同步输入框内容到证书视图
     
     // ==========================================
-    // 启航联盟与北方奥赛 4 大证书体系数据预设
+    // 高中数学奥林匹克启航联盟 · 官方证书体系数据预设
     // ==========================================
-    const SVG_EMBLEM_QIHANG = `<svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="goldCrestGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#dfc07e" />
-          <stop offset="40%" stop-color="#b88d3d" />
-          <stop offset="80%" stop-color="#87611a" />
-          <stop offset="100%" stop-color="#dfc07e" />
-        </linearGradient>
-      </defs>
-      <circle cx="50" cy="50" r="46" stroke="url(#goldCrestGrad)" stroke-width="1.8"/>
-      <circle cx="50" cy="50" r="42" stroke="url(#goldCrestGrad)" stroke-width="0.8" stroke-dasharray="2 2"/>
-      <g transform="translate(18, 14) scale(0.32)">
-        <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="url(#goldCrestGrad)"/>
-        <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="url(#goldCrestGrad)"/>
-        <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="url(#goldCrestGrad)"/>
-        <circle cx="138" cy="28" r="7" fill="url(#goldCrestGrad)"/>
-      </g>
-    </svg>`;
+    const BADGE_PURPLE_PATH = 'assets/HSMO_Badge_Canonical_Purple.svg';
+    const BADGE_CRIMSON_PATH = 'assets/HSMO_Badge_Canonical_Crimson.svg';
+    const BADGE_NAVY_PATH = 'assets/HSMO_Badge_Canonical_Navy.svg';
+    let currentBadgeColor = 'purple';
 
-    const SVG_EMBLEM_NORTH = `<img src="assets/cnmo_official_logo.png" alt="中国北方数学奥林匹克 CNMO 官方徽标" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 3px 8px rgba(12, 121, 79, 0.22));">`;
+    function getBadgePath() {
+      if (currentBadgeColor === 'crimson') return BADGE_CRIMSON_PATH;
+      if (currentBadgeColor === 'navy') return BADGE_NAVY_PATH;
+      return BADGE_PURPLE_PATH;
+    }
+
+    function setEmblemPalette(color) {
+      currentBadgeColor = color;
+      document.querySelectorAll('.color-dot-btn').forEach(btn => btn.classList.remove('active'));
+      if (color === 'purple') document.getElementById('dotPurple')?.classList.add('active');
+      if (color === 'crimson') document.getElementById('dotCrimson')?.classList.add('active');
+      if (color === 'navy') document.getElementById('dotNavy')?.classList.add('active');
+
+      const path = getBadgePath();
+      const frontImg = document.getElementById('frontEmblemImg');
+      if (frontImg) frontImg.src = path;
+      const backImg = document.getElementById('backCrestImg');
+      if (backImg) backImg.src = path;
+      const navImg = document.getElementById('navBrandBadge');
+      if (navImg) navImg.src = path;
+    }
 
     const SVG_SEAL_QIHANG = `<svg class="official-seal-svg" viewBox="0 0 120 120">
       <circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="1.8"/>
@@ -1170,138 +1305,74 @@
       </text>
     </svg>`;
 
-    const SVG_SEAL_NORTH = `<svg class="official-seal-svg" viewBox="0 0 120 120">
-      <circle cx="60" cy="60" r="56" fill="none" stroke="#c92a2a" stroke-width="3" stroke-dasharray="100 0.5"/>
-      <circle cx="60" cy="60" r="52" fill="none" stroke="#c92a2a" stroke-width="0.8"/>
-      <polygon points="60,38 65,49 77,50 68,58 71,70 60,63 49,70 52,58 43,50 55,49" fill="#c92a2a"/>
-      <path id="sealPathTopN" d="M 20.5,60 A 39.5,39.5 0 1,1 99.5,60" fill="none"/>
-      <text fill="#c92a2a" font-size="9.8" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="1.1">
-        <textPath href="#sealPathTopN" startOffset="50%" text-anchor="middle">
-          中国北方数学奥林匹克
-        </textPath>
-      </text>
-      <text x="60" y="86" text-anchor="middle" fill="#c92a2a" font-size="11.5" font-family="'Noto Serif SC', 'Songti SC', serif" font-weight="900" letter-spacing="3">
-        组织委员会
-      </text>
-    </svg>`;
-
-    const SVG_BACK_CREST_QIHANG = `<svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="100" cy="100" r="95" fill="rgba(255, 255, 255, 0.9)" stroke="#b88d3d" stroke-width="1.2" stroke-dasharray="3 3"/>
-      <circle cx="100" cy="100" r="90" stroke="url(#goldBackGradQ)" stroke-width="2.5"/>
-      <circle cx="100" cy="100" r="70" stroke="#b88d3d" stroke-width="1"/>
-      <path id="backSealPathQ" d="M 24,100 A 76,76 0 1,1 176,100" fill="none"/>
-      <text fill="#7b5917" font-size="7.5" font-family="'Cinzel', serif" font-weight="800" letter-spacing="2.2">
-        <textPath href="#backSealPathQ" startOffset="50%" text-anchor="middle">
-          HIGH SCHOOL MATHEMATICAL OLYMPIAD
-        </textPath>
-      </text>
-      <path id="backSealPathBotQ" d="M 170,100 A 74,74 0 0,1 30,100" fill="none"/>
-      <text fill="#b88d3d" font-size="7.5" font-family="'Cinzel', serif" font-weight="800" letter-spacing="3">
-        <textPath href="#backSealPathBotQ" startOffset="50%" text-anchor="middle">
-          ★ QIHANG ALLIANCE · π · e · i · φ ★
-        </textPath>
-      </text>
-      <g transform="translate(48, 48) scale(0.52)">
-        <path d="M 30 162 C 55 142 80 182 105 162 C 130 142 155 178 178 152 C 158 172 125 180 102 166 C 82 152 50 178 30 162 Z" fill="url(#goldBackGradQ)"/>
-        <path d="M 106 156 C 118 135 132 95 148 76 C 140 105 130 135 124 154 Z" fill="url(#goldBackGradQ)"/>
-        <path d="M 52 150 C 65 110 92 60 138 28 C 122 68 110 115 102 158 Z" fill="url(#goldBackGradQ)"/>
-        <circle cx="138" cy="28" r="7" fill="url(#goldBackGradQ)"/>
-      </g>
-      <defs>
-        <linearGradient id="goldBackGradQ" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#dfc07e"/>
-          <stop offset="35%" stop-color="#b88d3d"/>
-          <stop offset="70%" stop-color="#87611a"/>
-          <stop offset="100%" stop-color="#dfc07e"/>
-        </linearGradient>
-      </defs>
-    </svg>`;
-
-    const SVG_BACK_CREST_NORTH = `<img src="assets/cnmo_purple_logo.png" alt="中国北方数学奥林匹克 CNMO 紫色徽标" style="width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 6px 18px rgba(61, 30, 109, 0.28));">`;
-
-    
     const CERT_PRESETS = {
-      'north-proposal': {
-        pageTitle: '第二十一届中国北方数学奥林匹克 · 命题证书',
-        orgEn: '', // 彻底去除英文
-        orgCn: '第二十一届中国北方数学奥林匹克',
+      'qihang-proposal': {
+        pageTitle: '高中数学奥林匹克启航联盟 · 命题证书',
+        orgEn: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE',
+        orgCn: '高中数学奥林匹克启航联盟',
         mainTitle: '命 题 证 书',
-        titleEn: '', // 彻底去除英文
+        titleEn: 'CERTIFICATE OF PROBLEM PROPOSAL',
         name: '熊昌进',
-        committee: '中国北方奥林匹克主试委员会',
-        contest: '2026年第二十一届中国北方数学奥林匹克',
-        authority: '中国北方数学奥林匹克组织委员会',
+        committee: '高中数学奥林匹克启航联盟主试委员会',
+        contest: '2026年高中数学奥林匹克启航联盟',
+        authority: '高中数学奥林匹克启航联盟<br>组织委员会',
         date: '2026年8月',
-        emblem: SVG_EMBLEM_NORTH,
-        seal: '', // 公章处留白
         sealShow: false,
-        backCrest: SVG_BACK_CREST_NORTH,
-        backMainHead: '', // 彻底去除英文
-        backCnHead: '第二十一届中国北方数学奥林匹克',
-        backMotto: '“格物致知 · 极数穷理”'
+        backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
+        backCnHead: '高中数学奥林匹克启航联盟',
+        backMotto: '“Per Aspera ad Astra · 启航数学真理之光”'
       },
       'qihang-expert': {
         pageTitle: '高中数学奥林匹克启航联盟 · 命题专家聘任证书',
         orgEn: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE',
-        orgCn: '全国高中数学奥林匹克启航联盟',
+        orgCn: '高中数学奥林匹克启航联盟',
         mainTitle: '聘 任 证 书',
         titleEn: 'CERTIFICATE OF APPOINTMENT',
         name: '张景中',
         committee: '启航联盟学术命题专家组',
-        contest: '全国高中数学奥林匹克启航联盟',
+        contest: '高中数学奥林匹克启航联盟',
         authority: '高中数学奥林匹克启航联盟<br>组织委员会',
         date: '二〇二六年九月',
-        emblem: SVG_EMBLEM_QIHANG,
-        seal: SVG_SEAL_QIHANG,
         sealShow: true,
-        backCrest: SVG_BACK_CREST_QIHANG,
         backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
-        backCnHead: '全国高中数学奥林匹克启航联盟',
+        backCnHead: '高中数学奥林匹克启航联盟',
         backMotto: '“Per Aspera ad Astra · 启航数学真理之光”'
       },
       'qihang-coach': {
         pageTitle: '高中数学奥林匹克启航联盟 · 金牌主教练聘任证书',
         orgEn: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE',
-        orgCn: '全国高中数学奥林匹克启航联盟',
+        orgCn: '高中数学奥林匹克启航联盟',
         mainTitle: '聘 任 证 书',
         titleEn: 'CERTIFICATE OF APPOINTMENT',
         name: '李晨阳',
         committee: '启航联盟国家集训教练组',
-        contest: '全国高中数学奥林匹克启航联盟',
+        contest: '高中数学奥林匹克启航联盟',
         authority: '高中数学奥林匹克启航联盟<br>组织委员会',
         date: '二〇二六年九月',
-        emblem: SVG_EMBLEM_QIHANG,
-        seal: SVG_SEAL_QIHANG,
         sealShow: true,
-        backCrest: SVG_BACK_CREST_QIHANG,
         backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
-        backCnHead: '全国高中数学奥林匹克启航联盟',
+        backCnHead: '高中数学奥林匹克启航联盟',
         backMotto: '“Per Aspera ad Astra · 培根铸魂 启智润心”'
       },
       'qihang-school': {
         pageTitle: '高中数学奥林匹克启航联盟 · 理事成员校授牌证书',
         orgEn: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE',
-        orgCn: '全国高中数学奥林匹克启航联盟',
+        orgCn: '高中数学奥林匹克启航联盟',
         mainTitle: '成 员 校 证 书',
         titleEn: 'CERTIFICATE OF MEMBERSHIP',
         name: '清华大学附属中学',
         committee: '启航联盟理事大会',
-        contest: '全国高中数学奥林匹克启航联盟',
+        contest: '高中数学奥林匹克启航联盟',
         authority: '高中数学奥林匹克启航联盟<br>组织委员会',
         date: '二〇二六年九月',
-        emblem: SVG_EMBLEM_QIHANG,
-        seal: SVG_SEAL_QIHANG,
         sealShow: true,
-        backCrest: SVG_BACK_CREST_QIHANG,
         backMainHead: 'HIGH SCHOOL MATHEMATICAL OLYMPIAD',
-        backCnHead: '全国高中数学奥林匹克启航联盟',
+        backCnHead: '高中数学奥林匹克启航联盟',
         backMotto: '“Sovereign Alliance of Mathematical Excellence”'
       }
     };
 
-    let currentPresetKey = 'qihang-expert';
-
-    
+    let currentPresetKey = 'qihang-proposal';
     let sealDisplayMode = 'blank'; // 默认公章处留白
 
     function toggleSealMode(mode) {
@@ -1310,7 +1381,7 @@
       if (mode === 'blank') {
         wrap.innerHTML = '';
       } else {
-        wrap.innerHTML = (currentPresetKey === 'north-proposal') ? SVG_SEAL_NORTH : SVG_SEAL_QIHANG;
+        wrap.innerHTML = SVG_SEAL_QIHANG;
       }
     }
 
@@ -1321,17 +1392,23 @@
 
       // 更新 Tab 高亮
       document.querySelectorAll('.preset-tab').forEach(tab => tab.classList.remove('active'));
-      if (presetKey === 'north-proposal') document.getElementById('tabNorthProposal').classList.add('active');
-      if (presetKey === 'qihang-expert') document.getElementById('tabQhExpert').classList.add('active');
-      if (presetKey === 'qihang-coach') document.getElementById('tabQhCoach').classList.add('active');
-      if (presetKey === 'qihang-school') document.getElementById('tabQhSchool').classList.add('active');
+      if (presetKey === 'qihang-proposal') document.getElementById('tabQhProposal')?.classList.add('active');
+      if (presetKey === 'qihang-expert') document.getElementById('tabQhExpert')?.classList.add('active');
+      if (presetKey === 'qihang-coach') document.getElementById('tabQhCoach')?.classList.add('active');
+      if (presetKey === 'qihang-school') document.getElementById('tabQhSchool')?.classList.add('active');
 
       // 更新页面标题与页眉
       document.getElementById('pageMainHeader').textContent = p.pageTitle;
       document.title = p.pageTitle;
 
-      // 更新正面
-      document.getElementById('displayEmblemWrapper').innerHTML = p.emblem;
+      // 更新徽标图片路径
+      const badgeSrc = getBadgePath();
+      const frontImg = document.getElementById('frontEmblemImg');
+      if (frontImg) frontImg.src = badgeSrc;
+      const backImg = document.getElementById('backCrestImg');
+      if (backImg) backImg.src = badgeSrc;
+
+      // 更新正面文本
       document.getElementById('displayOrgEn').textContent = p.orgEn;
       document.getElementById('displayOrgHead').textContent = p.orgCn;
       document.getElementById('displayMainTitle').textContent = p.mainTitle;
@@ -1339,7 +1416,7 @@
 
       // 正文内容更新
       const bodyBox = document.getElementById('certBodyContent');
-      if (presetKey === 'north-proposal') {
+      if (presetKey === 'qihang-proposal') {
         bodyBox.innerHTML = `
           <p style="text-indent: 2em; margin-bottom: 12px;">
             兹证明 <span class="recipient-name-box" id="displayName">${p.name || '__________'}</span> 老师所提供的数学竞赛试题，经<span id="displayCommittee">${p.committee}</span>审定，入选<span id="displayContestYear">${p.contest}</span>竞赛试题。
@@ -1360,7 +1437,6 @@
       }
 
       document.getElementById('displayAuthorityName').innerHTML = p.authority;
-      document.getElementById('displayAuthorityName').classList.toggle('north-authority-single-line', presetKey === 'north-proposal');
       document.getElementById('displayDate').textContent = p.date;
       
       // 公章留白处理
@@ -1368,7 +1444,6 @@
       document.getElementById('inputSealMode').value = p.sealShow ? 'show' : 'blank';
 
       // 更新背面
-      document.getElementById('displayBackCrestWrapper').innerHTML = p.backCrest;
       document.getElementById('displayBackMainHeading').textContent = p.backMainHead;
       document.getElementById('displayBackCnHeading').textContent = p.backCnHead;
       document.getElementById('displayBackMotto').textContent = p.backMotto;
@@ -1395,7 +1470,6 @@
       document.getElementById('displayDate').textContent = date;
     }
 
-
     // 文案风格切换
     function setTextStyle(style) {
       currentStyle = style;
@@ -1404,7 +1478,7 @@
       const bodyTextEl = document.getElementById('displayBodyEnding');
       if (!bodyTextEl) return;
 
-      if (currentPresetKey === 'north-proposal') {
+      if (currentPresetKey === 'qihang-proposal') {
         if (style === 'academic') {
           btnA.classList.add('active');
           btnB.classList.remove('active');
@@ -1426,7 +1500,9 @@
         }
       }
     }
-    applyCertPreset('north-proposal');
+
+    // 默认加载启航联盟·命题证书预设
+    applyCertPreset('qihang-proposal');
   </script>
 </body>
 </html>

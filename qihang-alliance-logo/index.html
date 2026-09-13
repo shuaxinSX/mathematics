@@ -97,20 +97,38 @@
       text-decoration: none;
     }
 
-    .brand-mini-symbol {
-      width: 38px;
-      height: 38px;
-      background: linear-gradient(135deg, var(--brand-primary), var(--brand-magenta));
-      border-radius: var(--radius-sm);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 900;
-      font-size: 20px;
-      font-family: 'Cinzel', serif;
-      box-shadow: 0 0 16px rgba(139, 92, 246, 0.6);
+    .brand-canonical-logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      box-shadow: 0 0 16px rgba(139, 92, 246, 0.5);
       flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .brand-canonical-logo:hover {
+      transform: rotate(15deg) scale(1.08);
+    }
+
+    .btn-cert-portal {
+      background: linear-gradient(135deg, #dfc07e 0%, #b88d3d 50%, #87611a 100%);
+      color: #ffffff;
+      border: 1px solid rgba(253, 224, 71, 0.4);
+      box-shadow: 0 4px 14px rgba(184, 141, 61, 0.3);
+      font-weight: 700;
+      text-decoration: none;
+      padding: 0.5rem 1.15rem;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+    .btn-cert-portal:hover {
+      background: linear-gradient(135deg, #f5d796 0%, #c99a3e 50%, #9e7323 100%);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(184, 141, 61, 0.45);
+      color: #ffffff;
     }
 
     .brand-title {
@@ -139,22 +157,23 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
+      gap: 0.5rem;
       list-style: none;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1100px) {
       .nav-links { display: none; }
     }
 
     .nav-links a {
       color: var(--text-muted);
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 500;
       transition: var(--transition);
-      padding: 0.4rem 0.6rem;
+      padding: 0.35rem 0.55rem;
       border-radius: 6px;
+      white-space: nowrap;
     }
 
     .nav-links a:hover {
@@ -1536,30 +1555,30 @@
   <!-- 顶部导航 -->
   <header>
     <a href="#" class="brand-title-wrap">
-      <div class="brand-mini-symbol">Σ</div>
+      <img src="vector_exports/HSMO_Badge_Canonical_Purple.svg" alt="启航联盟原型徽标" class="brand-canonical-logo">
       <div>
         <div class="brand-title">高中数学奥林匹克启航联盟</div>
-        <div class="brand-subtitle">HSMO QiHang Mathematical Alliance</div>
+        <div class="brand-subtitle">HSMO QIHANG ALLIANCE · BRAND IDENTITY</div>
       </div>
     </a>
 
     <ul class="nav-links">
-      <li><a href="#ten-deliverables" style="color: #FDE047; font-weight:700;">★ 十大视觉规范</a></li>
+      <li><a href="#canonical-prototype" style="color: #FDE047; font-weight:700;">★ 01 原型徽标</a></li>
+      <li><a href="#ten-deliverables">10大视觉规范</a></li>
       <li><a href="#master-logo">纯净母标</a></li>
       <li><a href="#lapel-badge-sec">官方金属胸牌</a></li>
       <li><a href="#gallery">1:1 实景画廊</a></li>
       <li><a href="#vector-exports">工程矢量交付</a></li>
-      <li><a href="#showcase">3D 视觉看板</a></li>
-      <li><a href="#palette">紫色色彩系统</a></li>
-      <li><a href="#history">历史原稿对比</a></li>
       <li><a href="#specs">工艺标准</a></li>
     </ul>
 
     <div class="nav-actions">
+      <a href="../index.html" class="btn btn-cert-portal" title="前往官方证书设计与防伪系统">
+        📜 证书设计制作系统 ↗
+      </a>
       <button class="btn btn-outline" id="themeToggleBtn">
         <span id="themeIcon">☀️</span> 明亮模式
       </button>
-      <a href="#gallery" class="btn btn-primary">查看所有落地图</a>
     </div>
   </header>
 
@@ -1628,12 +1647,94 @@
       </p>
     </section>
 
-    <!-- 01. 圆形徽标 / Master Badge (优先级最高) -->
-    <div class="ten-card" style="margin-bottom: 2rem; border-color: rgba(245, 158, 11, 0.45);">
+    <!-- ======================================================================
+         01. 高校规范级 · 原型版本圆形徽标 (Canonical Prototype Master Badge)
+         ====================================================================== -->
+    <div id="canonical-prototype"></div>
+    <div class="ten-card" style="margin-bottom: 2.5rem; border-color: rgba(245, 158, 11, 0.45); background: linear-gradient(180deg, rgba(30, 16, 62, 0.8) 0%, rgba(18, 10, 38, 0.95) 100%);">
       <div class="ten-card-header">
         <div>
-          <span class="ten-card-num">TOP PRIORITY · 01</span>
-          <h3 class="ten-card-title" style="color: #FDE047; margin-top: 4px;">尊崇圆形徽标 · 官方学术大徽章 (Master Badge)</h3>
+          <span class="ten-card-num" style="background: rgba(245, 158, 11, 0.2); color: #FDE047; border: 1px solid rgba(245, 158, 11, 0.4);">TOP PRIORITY · 01</span>
+          <h3 class="ten-card-title" style="color: #FDE047; margin-top: 4px; font-size: 1.35rem;">
+            高校规范级 · 原型版本圆形徽标 (Canonical Prototype Institutional Seal)
+          </h3>
+          <p style="font-size: 0.85rem; color: #a78bfa; margin-top: 2px;">
+            严格遵循华东师范大学等中国顶级高校校徽布局体系 · 纯白双语环形轨道 · 纯净莫比乌斯之帆母标
+          </p>
+        </div>
+        <div class="badge-material-tabs">
+          <button class="mini-tab-btn active" onclick="switchCanonicalBadge('purple')">① 启航皇家紫 (标准母色)</button>
+          <button class="mini-tab-btn" onclick="switchCanonicalBadge('crimson')">② 华东师大红 (参考基准色)</button>
+          <button class="mini-tab-btn" onclick="switchCanonicalBadge('navy')">③ 经典工程蓝 (奥赛深蓝)</button>
+          <button class="mini-tab-btn" onclick="switchCanonicalBadge('mono')">④ 极简纯黑版 (试卷与公文)</button>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 360px 1fr; gap: 2.5rem; align-items: center;">
+        <!-- 原型徽标预览舞台 -->
+        <div class="ten-preview-stage" style="height: 360px; background: radial-gradient(circle, #25134A 0%, #0A0414 100%); border-radius: var(--radius-md); border: 1px solid var(--purple-border-subtle); display: flex; align-items: center; justify-content: center;">
+          <div id="canonicalStageSlot" style="width: 300px; height: 300px; display: flex; align-items: center; justify-content: center;">
+            <img src="vector_exports/HSMO_Badge_Canonical_Purple.svg" alt="启航联盟原型徽标" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 12px 30px rgba(0,0,0,0.65));">
+          </div>
+        </div>
+
+        <!-- 解构与规范说明 -->
+        <div>
+          <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 0.75rem;">
+            <span style="font-size: 0.75rem; padding: 2px 8px; background: rgba(16, 185, 129, 0.2); border: 1px solid rgba(16, 185, 129, 0.4); color: #34d399; border-radius: 4px; font-weight: 700;">
+              ✓ 权威建制布局
+            </span>
+            <span style="font-size: 0.75rem; padding: 2px 8px; background: rgba(139, 92, 246, 0.2); border: 1px solid rgba(139, 92, 246, 0.4); color: #c084fc; border-radius: 4px; font-weight: 700;">
+              ✓ 100% 矢量生产级
+            </span>
+          </div>
+
+          <h4 style="font-size: 1.12rem; color: #FFFFFF; font-weight: 800; margin-bottom: 0.5rem;">
+            外同心包边 · 纯白双语环形轨道 · 核心色盘 · 拓扑之帆母标
+          </h4>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.65; margin-bottom: 1.1rem;">
+            以华东师范大学等百年名校官方印章构图为基准蓝本，采用中国高校最高法定规格进行空间推演：外同心圆环确立建制边界；内嵌纯白环形轨道，顶弧顺时针镌刻英文全称 <code style="color:#FEF08A; font-weight:700;">HIGH SCHOOL MATHEMATICAL OLYMPIAD · QIHANG ALLIANCE</code>，底弧正立对仗镌刻中文正名 <code style="color:#FEF08A; font-weight:700;">高中数学奥林匹克启航联盟</code>；中央同心纯色盘中，纯白无瑕的「拓扑之帆 · 莫比乌斯之帆」与北极星引领奇点破浪而起，构筑起殿堂级学术共同体的庄严权威。
+          </p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 1.25rem; font-size: 0.82rem;">
+            <div style="background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #8b5cf6;">
+              <strong style="color:#f8fafc;">外环双语对仗：</strong> 顶弧英文大写与底弧中文正体优雅呼应
+            </div>
+            <div style="background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #10b981;">
+              <strong style="color:#f8fafc;">核心图腾纯净：</strong> 零杂线干扰，极度利落的高清几何剪影
+            </div>
+            <div style="background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #f59e0b;">
+              <strong style="color:#f8fafc;">全场景通用性：</strong> 官方聘书、学术出版物、防伪印鉴与校旗
+            </div>
+            <div style="background: rgba(255,255,255,0.04); padding: 8px 12px; border-radius: 6px; border-left: 3px solid #06b6d4;">
+              <strong style="color:#f8fafc;">四色标准体系：</strong> 皇家紫母色 + 师大红 + 工程蓝 + 极简黑
+            </div>
+          </div>
+
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <a href="vector_exports/HSMO_Badge_Canonical_Purple.svg" download="HSMO_Badge_Canonical_Purple.svg" class="download-action-btn" style="flex:1; min-width: 170px;">
+              ⬇️ 下载启航紫母标 (SVG)
+            </a>
+            <a href="vector_exports/HSMO_Badge_Canonical_Crimson.svg" download="HSMO_Badge_Canonical_Crimson.svg" class="download-action-btn" style="flex:1; min-width: 170px; background: linear-gradient(135deg, #9B2034, #661020);">
+              ⬇️ 下载师大红参考版 (SVG)
+            </a>
+            <a href="vector_exports/HSMO_Badge_Canonical_Navy.svg" download="HSMO_Badge_Canonical_Navy.svg" class="download-action-btn" style="flex:1; min-width: 170px; background: linear-gradient(135deg, #0F172A, #1E293B);">
+              ⬇️ 下载工程蓝版 (SVG)
+            </a>
+            <a href="../index.html" class="btn btn-outline" style="align-items: center; justify-content: center; font-weight:700;">
+              📜 立即应用到证书系统 →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 01-B. 仪式典藏版 · 3D 金属大勋章 (用于奖章与金属胸针) -->
+    <div class="ten-card" style="margin-bottom: 2rem; border-color: rgba(139, 92, 246, 0.35);">
+      <div class="ten-card-header">
+        <div>
+          <span class="ten-card-num">SPECIAL CRAFT · 01-B</span>
+          <h3 class="ten-card-title" style="color: #c084fc; margin-top: 4px;">仪式典藏版 · 3D浮雕金属大勋章 (Ceremonial Metal Medal Badge)</h3>
         </div>
         <div class="badge-material-tabs">
           <button class="mini-tab-btn active" onclick="switchBadgeTexture('color')">① 极光紫金殿堂版</button>
@@ -1643,34 +1744,31 @@
       </div>
 
       <div style="display: grid; grid-template-columns: 340px 1fr; gap: 2rem; align-items: center;">
-        <!-- 徽章预览舞台 -->
-        <div class="ten-preview-stage" style="height: 340px; background: radial-gradient(circle, #1F0D3D 0%, #0D041A 100%);">
-          <div id="badgeStageSlot" style="width: 280px; height: 280px; display: flex; align-items: center; justify-content: center;">
+        <div class="ten-preview-stage" style="height: 320px; background: radial-gradient(circle, #1F0D3D 0%, #0D041A 100%);">
+          <div id="badgeStageSlot" style="width: 260px; height: 260px; display: flex; align-items: center; justify-content: center;">
             <img src="vector_exports/HSMO_Badge_Circular_Master.svg" alt="官方圆形学术徽标" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));">
           </div>
         </div>
 
-        <!-- 解构与规范说明 -->
         <div>
-          <h4 style="font-size: 1.1rem; color: #FFFFFF; font-weight: 800; margin-bottom: 0.5rem;">
-            双层同心金属环 · 四大数学常数 · 莫比乌斯无限之帆
+          <h4 style="font-size: 1.05rem; color: #FFFFFF; font-weight: 800; margin-bottom: 0.5rem;">
+            双层同心金属拉丝包边 · 欧拉四大常数 · 莫比乌斯无限之帆
           </h4>
-          <p style="font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
-            专为最高级别仪式打造！外环为拉丝香槟金包边与深紫环形轨道，顶弧镌刻英文全称 <code style="color:#FEF08A;">HIGH SCHOOL MATHEMATICAL OLYMPIAD</code>，底环点缀 <code style="color:#FEF08A;">★ 启航联盟 · π · e · i · φ ★</code>；内圈嵌以极细天文坐标射线底纹，莫比乌斯之帆破空而起，奇点之星高悬，散发无与伦比的正统学术权威感。
+          <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 1rem;">
+            专为最高级别颁奖典礼与实体纪念品打造！外环采用拉丝香槟金包边与深紫轨道，镌刻四大数学常数 <code style="color:#FEF08A;">π · e · i · φ</code>；内嵌极细天文坐标射线，散发实体冲压金牌与珐琅徽章的质感光辉。
           </p>
-          <div class="craft-chips" style="margin-bottom: 1.25rem;">
-            <span class="craft-chip">胸牌别针 (25-35mm)</span>
-            <span class="craft-chip">结业聘任证书烫印</span>
-            <span class="craft-chip">金银牌压铸 (65mm)</span>
-            <span class="craft-chip">双面纪念币冲压</span>
-            <span class="craft-chip">万人峰会大屏主标</span>
+          <div class="craft-chips" style="margin-bottom: 1.1rem;">
+            <span class="craft-chip">金银铜奖牌压铸 (65mm)</span>
+            <span class="craft-chip">高级别刺绣徽章</span>
+            <span class="craft-chip">金属纪念币冲压</span>
+            <span class="craft-chip">闭幕式颁奖主视觉</span>
           </div>
           <div style="display: flex; gap: 12px;">
-            <a href="vector_exports/HSMO_Badge_Circular_Master.svg" download="HSMO_Badge_Circular_Master.svg" class="download-action-btn" style="max-width: 320px;">
-              ⬇️ 下载圆形徽标生产级矢量文件 (SVG)
+            <a href="vector_exports/HSMO_Badge_Circular_Master.svg" download="HSMO_Badge_Circular_Master.svg" class="download-action-btn" style="max-width: 300px;">
+              ⬇️ 下载 3D 金属勋章矢量文件 (SVG)
             </a>
             <button class="btn btn-outline" onclick="openLightbox('assets/mockup_medal.jpg', '圆形徽标在全国奥赛纯金珐琅奖章中的 1:1 实物实拍')">
-              🔍 查看实物奖章实拍
+              🔍 查看实体奖章实拍
             </button>
           </div>
         </div>
@@ -2781,7 +2879,26 @@
     // 十大规范交互控制脚本 (10 Deliverables JS)
     // ==========================================
 
-    // 01. 徽标材质切换
+    // 01. 原型徽标四色规范切换 (高校学术建制规范)
+    function switchCanonicalBadge(palette) {
+      const slot = document.getElementById('canonicalStageSlot');
+      const btns = event.target.parentElement.querySelectorAll('.mini-tab-btn');
+      btns.forEach(b => b.classList.remove('active'));
+      event.target.classList.add('active');
+
+      const fileMap = {
+        'purple': { file: 'HSMO_Badge_Canonical_Purple.svg', name: '启航皇家紫 (标准母色 #2E1065)' },
+        'crimson': { file: 'HSMO_Badge_Canonical_Crimson.svg', name: '华东师大红 (参考基准色 #9B2034)' },
+        'navy': { file: 'HSMO_Badge_Canonical_Navy.svg', name: '经典工程蓝 (奥赛深蓝 #0F172A)' },
+        'mono': { file: 'HSMO_Badge_Canonical_Mono.svg', name: '极简纯黑版 (试卷与公文 #111111)' }
+      };
+
+      const item = fileMap[palette] || fileMap['purple'];
+      slot.innerHTML = `<img src="vector_exports/${item.file}" alt="${item.name}" style="max-width: 100%; max-height: 100%; filter: drop-shadow(0 12px 30px rgba(0,0,0,0.65));">`;
+      showToast(`已切换至原型徽标：${item.name}`);
+    }
+
+    // 01-B. 仪式典藏版 3D 勋章材质切换
     function switchBadgeTexture(type) {
       const slot = document.getElementById('badgeStageSlot');
       const btns = event.target.parentElement.querySelectorAll('.mini-tab-btn');
